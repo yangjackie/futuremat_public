@@ -1,5 +1,7 @@
 import warnings
 import logging
+import math
+import numpy as np
 
 from pymatgen.core.structure import IStructure as pymatstructure
 import settings
@@ -8,6 +10,7 @@ from core.internal.builders.crystal import map_pymatgen_IStructure_to_crystal, e
 from core.models.element import pbe_pp_choices
 from core.models import *
 from core.dao.abstract_io import *
+from core.models.lattice import Lattice
 
 logger = logging.getLogger("futuremat.core.dao.vasp")
 
@@ -121,6 +124,31 @@ class VaspReader(FileReader):
         elif 'OUTCAR' in self.input_location:
             return self.get_free_energies_from_outcar()
 
+    def get_rpa_frequency_dependent_dielectric_tensor_from_outcar(self):
+        import cmath
+        dielectric_tensor = {}
+        start_read = None
+        for line_no, line in enumerate(self.file_content):
+            if ('INVERSE MACROSCOPIC DIELECTRIC TENSOR (including local field effects in RPA (Hartree))' in line) or (
+                    'MACROSCOPIC STATIC DIELECTRIC TENSOR (including local field effects in DFT)' in line):
+                start_read = line_no
+
+            if (start_read is not None):
+                if 'w=' in line:
+                    energy = float(line.split()[1])
+                    _xrow = [float(i) for i in self.file_content[line_no + 1].split()]
+                    _yrow = [float(i) for i in self.file_content[line_no + 2].split()]
+                    _zrow = [float(i) for i in self.file_content[line_no + 3].split()]
+                    dielectric_tensor[energy] = {'xx': complex(_xrow[0], _xrow[1]),
+                                                 'xy': complex(_xrow[2], _xrow[3]),
+                                                 'xz': complex(_xrow[4], _xrow[5]),
+                                                 'yy': complex(_yrow[2], _yrow[3]),
+                                                 'yz': complex(_yrow[4], _yrow[5]),
+                                                 'zz': complex(_zrow[4], _zrow[5])}
+                if 'cpu time' in line:
+                    start_read = None
+        return dielectric_tensor
+
     def get_free_energies_from_oszicar(self):
         """
         Given the location of the OSZICAR file, read all the free energies from each optimisation step.
@@ -159,7 +187,8 @@ class VaspReader(FileReader):
                 if 'f/i' not in line:
                     phonon_frequencies.append(float(line.split()[3]))
                 else:
-                    phonon_frequencies.append(-1.0*float(line.split()[2])) #negative frequencies, instabilities!
+                    freq = float(line.split()[2])
+                    phonon_frequencies.append(complex(0, freq))  # imaginary frequencies, instabilities!
         return phonon_frequencies
 
     def read_XDATCAR(self):
@@ -219,8 +248,12 @@ class VaspReader(FileReader):
         _atoms = []
         for line in self.file_content:
 
+            if _counter == 1:
+                scaling_factor = float(line.split()[0])
+
             if _counter in [2, 3, 4]:  # read in values of the lattice vectors from the second to forth line of the file
-                _lvs.append(cVector3D(float(line.split()[0]), float(line.split()[1]), float(line.split()[2])))
+                _lh = [float(l) * scaling_factor for l in line.split()]
+                _lvs.append(cVector3D(_lh[0], _lh[1], _lh[2]))
 
             if _counter == 4:
                 lattice_vectors = cMatrix3D(_lvs[0], _lvs[1], _lvs[2])
@@ -251,15 +284,47 @@ class VaspReader(FileReader):
         lattice = Lattice.from_lattice_vectors(lattice_vectors)
         lattice.lattice_vectors = lattice_vectors
 
-        logger.warning("===                                WARNING                                           ===")
-        logger.warning("=== Setting Lattice Vector as originally provided in the POSCAR to prevent rotation! ===")
-        logger.warning("=== Check this is what you wanted and it gives back exactly the same thing as wanted!===")
+        # logger.warning("===                                WARNING                                           ===")
+        # logger.warning("=== Setting Lattice Vector as originally provided in the POSCAR to prevent rotation! ===")
+        # logger.warning("=== Check this is what you wanted and it gives back exactly the same thing as wanted!===")
 
         crystal = Crystal(lattice=lattice,
                           asymmetric_unit=[Molecule(atoms=_atoms)],
                           space_group=CrystallographicSpaceGroups.get(1))  # all vasp input assumes P1
 
         return crystal
+
+    def read_CHGCAR(self):
+        # this routine is adapted from MacroDensity Package with modifications
+        crystal = self.read_POSCAR()
+        _counter = 0
+        _chg_start = len(crystal.all_atoms()) + 9
+
+        # read all the values of the densities into a plane list
+        potential = []
+        for line in self.file_content:
+            if _counter > len(crystal.all_atoms()) + 7:
+                if _counter == _chg_start:
+                    NGX, NGY, NGZ = [int(x) for x in line.split()]
+                elif (_counter > _chg_start) and (_counter <= _chg_start + int(math.ceil(NGX * NGY * NGZ / 5))):
+                    for _l in line.split():
+                        potential.append(float(_l))
+            _counter += 1
+        # put this into a matrix form
+        l = 0
+        potential_grid = np.zeros(shape=(NGX, NGY, NGZ))
+        # if charge:
+        #    point_volume = 1.0 / (NGX * NGY * NGZ)
+        # else:
+        #    point_volume = 1
+        for k in range(NGZ):
+            for j in range(NGY):
+                for i in range(NGX):
+                    potential_grid[i, j, k] = potential[l]  # * point_volume
+                    l += 1
+        return potential_grid, crystal
+
+
 
 
 class VaspWriter(object):
@@ -287,7 +352,7 @@ class VaspWriter(object):
                 incar.write(str(key).upper() + ' = ' + str(default_options[key]).upper() + '\n')
         incar.close()
 
-    def write_potcar(self, crystal, filename='POTCAR', sort=True, unique=True, magnetic=False):
+    def write_potcar(self, crystal, filename='POTCAR', sort=True, unique=True, magnetic=False, use_GW=False):
         if settings.functional is not None:
             if settings.functional.lower() == 'pbe':
                 pass
@@ -311,10 +376,20 @@ class VaspWriter(object):
             else:
                 all_atom_label = _all_atom_label
         else:
-            all_atom_label = [k[0] for k,v in crystal.mag_group]
+            all_atom_label = [k[0] for k, v in crystal.mag_group]
 
-        potcars = [settings.vasp_pp_directory + '/' + pbe_pp_choices[e] + '/POTCAR' for e in
-                   all_atom_label]
+        if not use_GW:
+            potcars = [settings.vasp_pp_directory + '/' + pbe_pp_choices[e] + '/POTCAR' for e in
+                       all_atom_label]
+        else:
+            logger.info("Using GW version of the pseudopotential requested!")
+            potcars = []
+            import os
+            for e in all_atom_label:
+                if os.path.exists(settings.vasp_pp_directory + '/' + pbe_pp_choices[e] + '_GW/'):
+                    potcars.append(settings.vasp_pp_directory + '/' + pbe_pp_choices[e] + '_GW/POTCAR')
+                else:
+                    potcars.append(settings.vasp_pp_directory + '/' + pbe_pp_choices[e] + '/POTCAR')
 
         with open(filename, 'w') as outfile:
             for fn in potcars:
@@ -340,7 +415,7 @@ class VaspWriter(object):
         # Write atom positions in scaled or cartesian coordinatesq
 
         # Get all atoms and corresponding symbols
-        all_unqiue_labels=None
+        all_unqiue_labels = None
         if not magnetic:
             all_atoms = crystal.all_atoms(sort=sort)
             all_atom_label = [i.clean_label for i in all_atoms]
@@ -417,37 +492,45 @@ class VaspWriter(object):
         if type(filename) == str:
             f.close()
 
-    def write_KPOINTS(self, crystal, filename='KPOINTS', MP_points=None, grid=0.025, molecular=False):
+    def write_KPOINTS(self, crystal, filename='KPOINTS', K_points=None, grid=0.025, molecular=False,
+                      gamma_centered=False, kpoint_str=None):
         kpoint_file = open(filename, 'w')
-        kpoint_file.write("KPOINTS created by Entdecker Program\n")
-        kpoint_file.write('0\n')
-        kpoint_file.write('Monkhorst-Pack\n')
 
-        if MP_points is not None:
-            kpoint_file.write(str(MP_points[0]) + ' ' + str(MP_points[1]) + ' ' + str(MP_points[2]) + '\n')
+        if kpoint_str is None:
+            kpoint_file.write("KPOINTS created by Entdecker Program\n")
+            kpoint_file.write('0\n')
+            if not gamma_centered:
+                kpoint_file.write('Monkhorst-Pack\n')
+            else:
+                kpoint_file.write('Gamma\n')
+
+            if K_points is not None:
+                kpoint_file.write(str(K_points[0]) + ' ' + str(K_points[1]) + ' ' + str(K_points[2]) + '\n')
+            else:
+                from core.utils.kpoints import kpoints_from_grid
+                kpoints = kpoints_from_grid(crystal, grid=grid, molecular=molecular)
+                if [int(k) for k in kpoints] == [1, 1, 1]:
+                    crystal.gamma_only = True
+                kpoint_file.write(str(int(kpoints[0])) + ' ' + str(int(kpoints[1])) + ' ' + str(int(kpoints[2])) + '\n')
+            kpoint_file.write("0 0 0")
         else:
-            from core.utils.kpoints import kpoints_from_grid
-            kpoints = kpoints_from_grid(crystal, grid=grid, molecular=molecular)
-            if [int(k) for k in kpoints] == [1, 1, 1]:
-                crystal.gamma_only = True
-            kpoint_file.write(str(int(kpoints[0])) + ' ' + str(int(kpoints[1])) + ' ' + str(int(kpoints[2])) + '\n')
-        kpoint_file.write("0 0 0")
+            kpoint_file.write(kpoint_str)
 
         # TODO - write K-POINT paths for bandstructure calculations
 
         kpoint_file.close()
 
 
-def prepare_potcar(poscar_file):
+def prepare_potcar(poscar_file,gw=False):
     crystal = VaspReader(input_location=poscar_file).read_POSCAR()
-    VaspWriter().write_potcar(crystal)
+    VaspWriter().write_potcar(crystal, use_GW=gw)
     # write out the crystal again to get rid of the atom re-ordering problem?
     VaspWriter().write_structure(crystal)
 
 
 def prepare_kpoints(poscar_file, MP_points, grid):
     crystal = VaspReader(input_location=poscar_file).read_POSCAR()
-    VaspWriter().write_KPOINTS(crystal, MP_points=MP_points, grid=grid, molecular=False)
+    VaspWriter().write_KPOINTS(crystal, K_points=MP_points, grid=grid, molecular=False)
 
 
 def convert_xml_to_pickle():
@@ -468,14 +551,14 @@ if __name__ == "__main__":
                         help='string of comma separated integer denoting number of K-points along each reciprocal space direction.')
     parser.add_argument("--mp_grid", type=float, default=0.025, help='grid spacing for generating MP Kpoints')
     parser.add_argument('--convert_xml', action='store_true')
+    parser.add_argument('--gw', action='store_true')
     args = parser.parse_args()
 
     if args.genpot:
-        prepare_potcar("./POSCAR")
+        prepare_potcar("./POSCAR", gw=args.gw)
 
     if args.gen_mp_k:
         prepare_kpoints("./POSCAR", MP_points=args.mp_points, grid=args.mp_grid)
 
     if args.convert_xml:
         convert_xml_to_pickle()
-

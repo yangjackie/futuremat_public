@@ -83,7 +83,10 @@ class Crystal(object):
 
         return all_atoms
 
-    def all_atoms_count_dictionaries(self):
+    def total_num_atoms(self) -> int:
+        return len(self.all_atoms(unique=False))
+
+    def all_atoms_count_dictionaries(self) -> dict:
         """
         Method to retrieve all atoms in the asymmetric unit of the crystal and returns
         a dictionary for the number of each element in the asymmetric unit.
