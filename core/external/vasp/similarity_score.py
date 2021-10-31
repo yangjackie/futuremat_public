@@ -27,15 +27,15 @@ params = {'legend.fontsize': '15',
           'ytick.labelsize': 16}
 pylab.rcParams.update(params)
 
-trajectory = Trajectory.from_file("./vasprun_100K_correct.xml")
+trajectory = Trajectory.from_file("./vasprun_md.xml")
 trajectory.write_Xdatcar(filename='XDATCAR_temp')
 images = read_vasp_xdatcar('XDATCAR_temp',index=None)
 print("total number of frames: "+str(len(images)))
 os.remove('./XDATCAR_temp')
 
 
-reference_frame = read_vasp('./POSCAR_equ')
-desc = SOAP(species=[55,50,82,53], rcut=6.0, nmax=9, lmax=9, sigma=0.3, periodic=True, crossover=True, sparse=False)
+reference_frame = read_vasp('./SPOSCAR')
+desc = SOAP(species=[55,51,53], rcut=6.0, nmax=9, lmax=9, sigma=0.3, periodic=True, crossover=True, sparse=False)
 ref_features = desc.create(reference_frame)
 ref_features = normalize(ref_features)
 
@@ -49,7 +49,7 @@ for i,image in enumerate(images):
     print(i,re_kernel[0][1])
     similarities.append(re_kernel[0][1])
 
-scorer = AnharmonicScore(md_frames='./vasprun_100K_correct.xml', ref_frame='./POSCAR_equ', atoms=None)
+scorer = AnharmonicScore(md_frames='./vasprun_md.xml', ref_frame='./SPOSCAR',unit_cell_frame='./SPOSCAR')
 sigmas, _ = scorer.structural_sigma(return_trajectory=True)
 
 fig, ax1 = plt.subplots(figsize=(7,5))
@@ -69,4 +69,4 @@ ax2.tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
 
-plt.savefig("soap_100K.pdf")
+plt.savefig("soap_time_trajectory.pdf")

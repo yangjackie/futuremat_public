@@ -324,15 +324,17 @@ class VaspReader(FileReader):
                     l += 1
         return potential_grid, crystal
 
-
-
-
 class VaspWriter(object):
 
     def write_INCAR(self, filename='INCAR',
                     default_options=default_ionic_optimisation_set,
                     **kwargs):
         default_options.update(kwargs)
+
+        #do not overwrite existing INCAR option
+        #import os
+        #if os.path.isfile('./INCAR') and (os.path.getsize("./INCAR") != 0):
+        #-    return
 
         incar = open(filename, 'w')
         try:
@@ -521,7 +523,7 @@ class VaspWriter(object):
         kpoint_file.close()
 
 
-def prepare_potcar(poscar_file,gw=False):
+def prepare_potcar(poscar_file, gw=False):
     crystal = VaspReader(input_location=poscar_file).read_POSCAR()
     VaspWriter().write_potcar(crystal, use_GW=gw)
     # write out the crystal again to get rid of the atom re-ordering problem?
@@ -545,6 +547,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='cmd utils for VASP IO',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--input", type=str, help='name of the input file')
     parser.add_argument("--genpot", action='store_true')
     parser.add_argument("--gen_mp_k", action='store_true')
     parser.add_argument("--mp_points", type=str, default=None,
@@ -552,6 +555,7 @@ if __name__ == "__main__":
     parser.add_argument("--mp_grid", type=float, default=0.025, help='grid spacing for generating MP Kpoints')
     parser.add_argument('--convert_xml', action='store_true')
     parser.add_argument('--gw', action='store_true')
+    parser.add_argument("-f", "--f", action='store_true', help='extract MD frames and write them into folder')
     args = parser.parse_args()
 
     if args.genpot:
@@ -562,3 +566,16 @@ if __name__ == "__main__":
 
     if args.convert_xml:
         convert_xml_to_pickle()
+
+    if args.f:
+        import os
+        assert ('XDATCAR' in args.input)
+        frames = VaspReader(input_location=args.input).read_XDATCAR()
+        pwd=os.getcwd()
+        for i,frame in enumerate(frames):
+            folder_name='frame_'+str(str(i).zfill(len(str(len(frames)))))
+            if not os.path.exists(folder_name):
+                os.makedirs(folder_name)
+            os.chdir(folder_name)
+            VaspWriter().write_structure(frame)
+            os.chdir(pwd)

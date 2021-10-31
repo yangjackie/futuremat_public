@@ -170,7 +170,7 @@ def map_to_pymatgen_Structure(crystal):
 class SubstitutionalSolidSolutionBuilder(object):
 
     def __init__(self, primitive_cell, supercell_size=[1, 1, 1], atom_to_substitute='H', atom_substitute_to='F',
-                 number_of_substitutions=1, write_vasp=False, prefix=None, throttle=5):
+                 number_of_substitutions=1, write_vasp=False, prefix=None, throttle=5, max_structures=None):
         self.primitive_cell = map_to_pymatgen_Structure(primitive_cell)
         self.primitive_cell.make_supercell(supercell_size)
         self.sc_size = supercell_size
@@ -182,6 +182,7 @@ class SubstitutionalSolidSolutionBuilder(object):
         self.prefix = prefix
         self.substituted_sites = None
         self.throttle = throttle
+        self.max_structures = max_structures #retain up to this number of structures in each run
 
     def make_one_substitution(self, supercell):
         sga = SpacegroupAnalyzer(supercell)
@@ -225,12 +226,12 @@ class SubstitutionalSolidSolutionBuilder(object):
                     for extra_doped_supercell in self.make_one_substitution(supercell):
                         self.supercells.append(extra_doped_supercell)
 
-                        if self.write_vasp:
-                            dir_name = "SC_" + str(self.sc_size[0]) + "_" + str(self.sc_size[1]) + "_" + str(
-                                self.sc_size[2]) + '_' + self.prefix + '_' + str(substituted_count + 1) + "_str_" + str(
-                                len(self.supercells))
-                            self._write_vasp_files(extra_doped_supercell, dir_name=dir_name)
-                            unique += 1
+                        #if self.write_vasp:
+                        #    dir_name = "SC_" + str(self.sc_size[0]) + "_" + str(self.sc_size[1]) + "_" + str(
+                        #        self.sc_size[2]) + '_' + self.prefix + '_' + str(substituted_count + 1) + "_str_" + str(
+                        #        len(self.supercells))
+                        #    self._write_vasp_files(extra_doped_supercell, dir_name=dir_name)
+                        #    unique += 1
             else:
                 import random
 
@@ -257,18 +258,23 @@ class SubstitutionalSolidSolutionBuilder(object):
                             self.supercells.append(s)
                     print(len(self.supercells))
 
-                if self.write_vasp:
-                    for i, cell in enumerate(self.supercells):
-                        dir_name = "SC_" + str(self.sc_size[0]) + "_" + str(self.sc_size[1]) + "_" + str(
-                            self.sc_size[2]) + '_' + self.prefix + '_' + str(substituted_count + 1) + "_str_" + str(i)
-                        self._write_vasp_files(cell, dir_name=dir_name)
-                        unique += 1
+            if self.max_structures is not None:
+                if len(self.supercells)>self.max_structures:
+                    import random
+                    self.supercells=random.sample(self.supercells,self.max_structures)
+
+            if self.write_vasp:
+                for i, cell in enumerate(self.supercells):
+                    dir_name = "SC_" + str(self.sc_size[0]) + "_" + str(self.sc_size[1]) + "_" + str(
+                        self.sc_size[2]) + '_' + self.prefix + '_' + str(substituted_count + 1) + "_str_" + str(i)
+                    self._write_vasp_files(cell, dir_name=dir_name)
+                    unique += 1
 
             print("number of dopants:" + str(substituted_count + 1) + ' number of configurations:' + str(unique))
 
             substituted_count += 1
 
-        self.supercells = [map_pymatgen_IStructure_to_crystal(s) for s in self.supercells]
+        #self.supercells = [map_pymatgen_IStructure_to_crystal(s) for s in self.supercells]
 
         return self.supercells
 
