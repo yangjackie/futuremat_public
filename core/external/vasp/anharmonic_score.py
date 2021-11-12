@@ -316,6 +316,7 @@ class AnharmonicScore(object):
         print("Atomic forces along the MD trajectory loaded\n")
 
     def get_all_md_atomic_displacements(self):
+
         all_positions = []
         for frame in self.md_frames:
             if len(self.md_frames)!=1:
@@ -330,7 +331,7 @@ class AnharmonicScore(object):
                         if len(self.md_frames) != 1:
                             this.append(this_positions)
                         else:
-                            all_positions.append(this_position)
+                            all_positions.append(np.array(this_positions))
             if len(self.md_frames) != 1:
                 all_positions.append(this[-1])
 
