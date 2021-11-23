@@ -4,6 +4,7 @@ from core.dao.vasp import VaspReader, VaspWriter
 from twodPV.collect_data import populate_db, _atom_dict
 from pymatgen.io.vasp.outputs import Vasprun, BSVasprun
 from pymatgen.electronic_structure.core import Spin
+
 try:
     from sumo.electronic_structure.bandstructure import get_reconstructed_band_structure
 except:
@@ -17,7 +18,12 @@ from core.utils.loggings import setup_logger
 import phonopy
 from phonopy.phonon.band_structure import get_band_qpoints_and_path_connections
 
-logger = setup_logger(output_filename='data_collector.log')
+from phonopy.interface.calculator import read_crystal_structure, write_crystal_structure
+from phonopy.interface.vasp import parse_set_of_forces
+from phonopy.file_IO import write_force_constants_to_hdf5, write_FORCE_SETS, parse_disp_yaml, write_disp_yaml
+from phonopy import Phonopy
+
+# logger = setup_logger(output_filename='data_collector.log')
 # logger = setup_logger(output_filename='formation_energies_data.log')
 # logger = setup_logger(output_filename='phonon_data.log')
 
@@ -36,9 +42,9 @@ chalco_B = ['Ti', 'Zr', 'Hf', 'V', 'Nb', 'Ta', 'Cr', 'Mo', 'W', 'Mn', 'Tc', 'Re'
 
 # chalco_B=['Po']
 
-A_site_list = [chalco_A]#, halide_A]
-B_site_list = [chalco_B]#, halide_B]
-C_site_list = [chalco_C]#, halide_C]
+A_site_list = [chalco_A, halide_A]
+B_site_list = [chalco_B, halide_B]
+C_site_list = [chalco_C, halide_C]
 
 all_elements_list = list(itertools.chain(*[A_site_list, B_site_list, C_site_list]))
 all_elements_list = list(itertools.chain(*all_elements_list))
@@ -47,7 +53,7 @@ all_elements_list = list(set(all_elements_list))
 reference_atomic_energies = {}
 
 
-def element_energy(db):
+def element_energy(db,C=None):
     logger.info("========== Collecting reference energies for constituting elements ===========")
     cwd = os.getcwd()
     os.chdir('./elements')
@@ -86,7 +92,7 @@ def formation_energy(atoms):
     # print(fe,_atom_dict(atoms),reference_atomic_energies)
     for k in _atom_dict(atoms).keys():
         fe = fe - _atom_dict(atoms)[k] * reference_atomic_energies[k]
-    #   print(k,reference_atomic_energies[k],fe)
+        # print(k,reference_atomic_energies[k],fe)
     return fe / atoms.get_number_of_atoms()
 
 
@@ -98,10 +104,11 @@ def full_relax_data(db):
             for b in B_site_list[i]:
 
                 for c in C_site_list[i]:
-                    kvp={}
-                    data={}
-                    if (a!='Ra'):
-                        if (b!='Po'):
+
+                    kvp = {}
+                    data = {}
+                    if (a != 'Ra'):
+                        if (b != 'Po'):
                             continue
 
                     system_counter += 1
@@ -118,7 +125,6 @@ def full_relax_data(db):
                     except:
                         logger.info(system_name + '_Pm3m' + ' tar ball not working')
                         continue
-
 
                     try:
                         calculator = Vasp()
@@ -180,10 +186,10 @@ def full_relax_data(db):
                             if os.path.isdir('./str_' + str(counter)):
                                 os.chdir('./str_' + str(counter))
                                 try:
-                                   calculator = Vasp()
-                                   calculator.check_convergence()
-                                   atoms = None
-                                   if calculator.completed:
+                                    calculator = Vasp()
+                                    calculator.check_convergence()
+                                    atoms = None
+                                    if calculator.completed:
                                         atoms = [a for a in read_vasp_xml(index=-1)][-1]
                                         rkvp['uid'] = uid + '_rand_str_' + str(counter)
                                         rkvp['total_energy'] = atoms.get_calculator().get_potential_energy()
@@ -218,294 +224,406 @@ def full_relax_data(db):
                         pass
 
 
-def all_data(db):
+def all_data(db, C):
+
+    if C in halide_C:
+        C_site_list = [C]
+        A_site_list = halide_A
+        B_site_list = halide_B
+    if C in chalco_C:
+        C_site_list = [C]
+        A_site_list = chalco_A
+        B_site_list = chalco_B
+
     cwd = os.getcwd()
     system_counter = 0
-    for i in range(len(A_site_list)):
-        for a in A_site_list[i]:
-            for b in B_site_list[i]:
-                for c in C_site_list[i]:
+    # for i in range(len(A_site_list)):
+    for a in A_site_list:
+        for b in B_site_list:
+            for c in C_site_list:
 
-                    system_counter += 1
-                    logger.info("Working on system number: " + str(system_counter))
-                    system_name = a + b + c
-                    uid = system_name + '_Pm3m'
+                os.chdir(cwd)
 
-                    # open up the tar ball
-                    cwd = os.getcwd()
+                kvp = {}
+                data = {}
+
+                system_counter += 1
+                logger.info("Working on system number: " + str(system_counter))
+                system_name = a + b + c
+                uid = system_name + '_Pm3m'
+
+                row = None
+                tdep = None
+                sigma = None
+                try:
+                    row = db.get(selection=[('uid', '=', uid)])
+                except:
+                    pass
+                if row is not None:
                     try:
-                        tf = tarfile.open(system_name + '_Pm3m.tar.gz')
-                        tf.extractall()
-                        os.chdir(system_name + '_Pm3m')
-                    except:
-                        logger.info(system_name + '_Pm3m' + ' tar ball not working')
-                        continue
-
-                    # get the formation energies for the randomised structures
-                    try:
-                        tf = tarfile.open('randomised.tar.gz')
-                        tf.extractall()
+                        tdep = row.key_value_pairs['sigma_300K_4th_tdep_4']
+                        logger.info(uid + 'anharmonic score from TDEP ' + str(tdep))
                     except:
                         pass
-                    # print(os.getcwd())
-                    # if os.path.isdir('./randomised'):
-                    #     os.chdir('randomised')
-                    #     # print(os.getcwd()+'\n')
-                    #
-                    #     for counter in range(10):
-                    #         rkvp = {}
-                    #         if os.path.isdir('./str_' + str(counter)):
-                    #             os.chdir('./str_' + str(counter))
-                    #             try:
-                    #                 calculator = Vasp()
-                    #                 calculator.check_convergence()
-                    #                 atoms = None
-                    #                 if calculator.completed:
-                    #                     atoms = [a for a in read_vasp_xml(index=-1)][-1]
-                    #                     rkvp['uid'] = uid + '_rand_str_' + str(counter)
-                    #                     rkvp['total_energy'] = atoms.get_calculator().get_potential_energy()
-                    #
-                    #                     rkvp['formation_energy'] = formation_energy(atoms)
-                    #                     populate_db(db, atoms, rkvp, data)
-                    #                     logger.info(system_name + '_Pm3m' + ' formation energy (rand ' + str(
-                    #                         counter) + '): ' + str(rkvp['formation_energy']) + ' eV/atom')
-                    #                 # else:
-                    #                 #    continue
-                    #             except:
-                    #                 logger.info(
-                    #                     system_name + '_Pm3m' + ' formation energy (rand ' + str(counter) + '): ' + str(
-                    #                         'NaN'))
-                    #             os.chdir('..')
-                    #     os.chdir('..')
-                    #     try:
-                    #         shutil.rmtree('randomised')
-                    #     except:
-                    #         pass
-                    #     try:
-                    #         os.rmtree('randomised')
-                    #     except:
-                    #         pass
-
-                    kvp = {}
-                    data = {}
-
-                    # get the formation energies for the cubic Pm3m phase
-                    get_properties = True
                     try:
-                        calculator = Vasp()
-                        calculator.check_convergence()
-                        if calculator.completed:
-                            atoms = [a for a in read_vasp_xml(index=-1)][-1]
-                            kvp['uid'] = uid
-                            kvp['total_energy'] = atoms.get_calculator().get_potential_energy()
-                            kvp['formation_energy'] = formation_energy(atoms)
-                            populate_db(db, atoms, kvp, data)
-                            logger.info(system_name + '_Pm3m' + ' formation energy: ' + str(
-                                kvp['formation_energy']) + ' eV/atom')
-                        else:
-                            logger.info(
-                                system_name + '_Pm3m' + ' not converged in structure optimisation, not continuing ')
-                            os.chdir("..")
-                            try:
-                                shutil.rmtree(system_name + '_Pm3m')
-                            except:
-                                pass
-                            try:
-                                os.rmtree(system_name + '_Pm3m')
-                            except:
-                                pass
-                            get_properties = False
+                        sigma = row.key_value_pairs['sigma_300K_single']
                     except:
-                        logger.info(system_name + '_Pm3m' + ' formation energy: ' + str('NaN'))
+                        pass
+                if (tdep is not None) and (sigma is not None):
+                    logger.info("System already populated, skip..")
+                    continue
 
-                    #                    os.chdir("..")
-                    #                    try:
-                    #                        shutil.rmtree(system_name + '_Pm3m')
-                    #                    except:
-                    #                        pass
-                    #                    try:
-                    #                        os.rmtree(system_name + '_Pm3m')
-                    #                    except:
-                    #                        pass
+                # open up the tar ball
+                cwd = os.getcwd()
+                try:
+                    tf = tarfile.open(system_name + '_Pm3m.tar.gz')
+                    tf.extractall()
+                    os.chdir(system_name + '_Pm3m')
+                except:
+                    logger.info(system_name + '_Pm3m' + ' tar ball not working')
+                    continue
 
+                # get the formation energies for the randomised structures
+                try:
+                    tf = tarfile.open('randomised.tar.gz')
+                    tf.extractall()
+                except:
+                    pass
 
-                    print(system_name + '_Pm3m' + ' get_properties? ' + str(get_properties))
-                    if not get_properties: continue
+                if os.path.isdir('./randomised'):
+                    os.chdir('randomised')
 
-                    # collect the electronic structure data (band gap)
-                    # try:
-                    #     dos_tf = tarfile.open('dos.tar.gz')
-                    #     dos_tf.extractall()
-                    # except:
-                    #     pass
-                    #
-                    # if os.path.isdir('./dos'):
-                    #    logger.info(system_name + '_Pm3m' + ' collect band gap')
-                    #    os.chdir('./dos')
-                    #    if os.path.exists('vasprun_BAND.xml'):
-                    #        vr = BSVasprun('./vasprun_BAND.xml')
-                    #        bs = vr.get_band_structure(line_mode=True, kpoints_filename='KPOINTS')
-                    #        bs = get_reconstructed_band_structure([bs])
-                    #
-                    #        # =====================================
-                    #        # get band gap data
-                    #        # =====================================
-                    #        bg_data = bs.get_band_gap()
-                    #        kvp['direct_band_gap']=bg_data['direct']
-                    #        kvp['band_gap']=bg_data['energy']
-                    #        logger.info(system_name + '_Pm3m' + ' direct band gap '+str(bg_data['energy'])+'  band gap energy:'+str(kvp['band_gap'])+' eV')
-                    #        populate_db(db, atoms, kvp, data)
-                    #
-                    #    os.chdir('..')
-
-                    # Check the phonon calculations are converged
-                    force_constant_exists = os.path.isfile('force_constants.hdf5')
-                    md_calculations_exists = os.path.isfile('vasprun_md.xml')
-                    if force_constant_exists:
-                        try:
-                            phonon_tf = tarfile.open('phonon.tar.gz')
-                            phonon_tf.extractall()
-                        except:
-                            pass
-
-                    if os.path.isdir('./phonon'):
-                        # Check that individual finite displacement calculation is well converged
-                        phonon_converged = True
-                        os.chdir('phonon')
-                        for sub_f in ['ph-POSCAR-001', 'ph-POSCAR-002', 'ph-POSCAR-003']:
-                            os.chdir(sub_f)
-                            f = open('./OUTCAR', 'r')
-                            for l in f.readlines():
-                                if 'NELM' in l:
-                                    nelm = l.split()[2].replace(';', '')
-                                    nelm = int(nelm)
-                            f.close()
-
-                            f = open('./vasp.log', 'r')
-                            lines = []
-                            for l in f.readlines():
-                                if ('DAV:' in l) or ("RMM:" in l):
-                                    lines.append(l)
-                            if len(lines) >= nelm:
-                                phonon_converged = False
-                            os.chdir('..')  # step out from str_# directory
-                        os.chdir('..')  # step out from phonon directory
-
-                    if phonon_converged:
-                        # get the phonon eigen frequencies at high symmetry Q points
-                        at_phonon = False
-                        try:
-                            os.chdir('phonon')
-                            at_phonon = True
-                        except:
-                            pass
-                        try:
+                    for counter in range(10):
+                        rkvp = {}
+                        if os.path.isdir('./str_' + str(counter)):
+                            os.chdir('./str_' + str(counter))
                             try:
-                                os.rename('force_constants.hdf5', 'f.hdf5')
+                                calculator = Vasp()
+                                calculator.check_convergence()
+                                atoms = None
+                                if calculator.completed:
+                                    atoms = [a for a in read_vasp_xml(index=-1)][-1]
+                                    rkvp['uid'] = uid + '_rand_str_' + str(counter)
+                                    rkvp['total_energy'] = atoms.get_calculator().get_potential_energy()
+
+                                    rkvp['formation_energy'] = formation_energy(atoms)
+
+                                    populate_db(db, atoms, rkvp, data)
+
+                                    logger.info(system_name + '_Pm3m' + ' formation energy (rand ' + str(
+                                        counter) + '): ' + str(rkvp['formation_energy']) + ' eV/atom')
+                                # else:
+                                #    continue
                             except:
-                                pass
+                                logger.info(
+                                    system_name + '_Pm3m' + ' formation energy (rand ' + str(counter) + '): ' + str(
+                                        'NaN'))
+                            os.chdir('..')
+                    os.chdir('..')
+                    try:
+                        shutil.rmtree('randomised')
+                    except:
+                        pass
+                    try:
+                        os.rmtree('randomised')
+                    except:
+                        pass
 
-                            phonon = phonopy.load(supercell_matrix=[2, 2, 2], primitive_matrix='auto',
-                                                  unitcell_filename='POSCAR')
-                            path = [[[0, 0, 0], [0.5, 0.5, 0.5], [0.5, 0.5, 0.0], [0.0, 0.5, 0.0]]]
-                            labels = ["G", "R", "M", "X"]
-                            qpoints, connections = get_band_qpoints_and_path_connections(path, npoints=10)
-                            phonon.run_band_structure(qpoints, path_connections=connections, labels=labels)
-                            phonon_dict = phonon.get_band_structure_dict()
-
-                            for _pp, p in enumerate(path[0]):
-                                for _i, qset in enumerate(phonon_dict['qpoints']):
-                                    for _j, _q in enumerate(qset):
-                                        if (_q[0] == p[0]) and (_q[1] == p[1]) and (_q[2] == p[2]):
-                                            kvp[labels[_pp] + "_min_ph_freq"] = min(phonon_dict['frequencies'][_i][_j])
-
-                            for _pp, p in enumerate(path[0]):
-                                logger.info(system_name + ' ' + labels[_pp] + "_min_ph_freq:" + str(
-                                    kvp[labels[_pp] + "_min_ph_freq"]))
-                            populate_db(db, atoms, kvp, data)
-                        except:
-                            pass
-                        if at_phonon:
-                            os.chdir("..")  # step out of phonon directory
-
-                    md_done = False
-                    if md_calculations_exists:
-                        try:
-                            md_tf = tarfile.open('MD.tar.gz')
-                            md_tf.extractall()
-                        except:
-                            pass
-                    if os.path.isdir('./MD'):
-                        os.chdir('MD')
-                        t = 0
-                        try:
-                            f = open('./OSZICAR', 'r')
-                            for l in f.readlines():
-                                if 'T=' in l:
-                                    t += 1
-                            f.close()
-                        except:
-                            pass
-                        if t == 800:
-                            md_done = True
-                        os.chdir('..')  # step out from MD directory
-
-                    if force_constant_exists and phonon_converged and md_done:
-                        logger.info(system_name + '_Pm3m' + ' Valid Phonon and MD Results')
-                        uid = system_name + '_Pm3m'
+                # get the formation energies for the cubic Pm3m phase
+                get_properties = True
+                try:
+                    calculator = Vasp()
+                    calculator.check_convergence()
+                    if calculator.completed:
+                        atoms = [a for a in read_vasp_xml(index=-1)][-1]
                         kvp['uid'] = uid
-                        # calculate the anharmonic score
-                        os.chdir('./phonon')
-
+                        kvp['total_energy'] = atoms.get_calculator().get_potential_energy()
+                        kvp['formation_energy'] = formation_energy(atoms)
+                        populate_db(db, atoms, kvp, data)
+                        logger.info(system_name + '_Pm3m' + ' formation energy: ' + str(
+                            kvp['formation_energy']) + ' eV/atom')
+                    else:
+                        logger.info(
+                            system_name + '_Pm3m' + ' not converged in structure optimisation, not continuing ')
+                        os.chdir("..")
                         try:
-                            try:
-                                os.rename('force_constants.hdf5', 'f.hdf5')
-                            except:
-                                pass
-                            # scorer = AnharmonicScore(md_frames='../vasprun_md.xml',ref_frame='./SPOSCAR',force_constants=None)
-                            # __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
-                            scorer = AnharmonicScore(md_frames='../vasprun_md.xml', ref_frame='./SPOSCAR',
-                                                     force_constants=None, atoms=[a])
-                            __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
-                            kvp['sigma_300K_single_A'] = __sigmas
-                            logger.info(system_name + '_Pm3m' + ' anharmonic score done A ' + str(__sigmas))
+                            shutil.rmtree(system_name + '_Pm3m')
+                        except:
+                            pass
+                        try:
+                            os.rmtree(system_name + '_Pm3m')
+                        except:
+                            pass
+                        get_properties = False
+                except:
+                    logger.info(system_name + '_Pm3m' + ' formation energy: ' + str('NaN'))
+                    get_properties = False
 
-                            scorer = AnharmonicScore(md_frames='../vasprun_md.xml', ref_frame='./SPOSCAR',
-                                                     force_constants=None, atoms=[b])
-                            __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
-                            kvp['sigma_300K_single_B'] = __sigmas
-                            logger.info(system_name + '_Pm3m' + ' anharmonic score done B ' + str(__sigmas))
+                print(system_name + '_Pm3m' + ' get_properties? ' + str(get_properties))
+                if not get_properties: continue
 
-                            scorer = AnharmonicScore(md_frames='../vasprun_md.xml', ref_frame='./SPOSCAR',
-                                                     force_constants=None, atoms=[c])
-                            __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
-                            kvp['sigma_300K_single_C'] = __sigmas
-                            logger.info(system_name + '_Pm3m' + ' anharmonic score done C ' + str(__sigmas))
+                # Check the phonon calculations are converged
+                force_constant_exists = os.path.isfile('force_constants_222.hdf5') and os.path.isfile('FORCE_SETS_222')
+                md_calculations_exists = os.path.isfile('vasprun_md.xml')
 
-                            os.chdir('..')
-                            # kvp['sigma_300K']=True
-                            # kvp['sigma_300K_single']=__sigmas
-                            # data['sigma_300K']=__sigmas
-                            # logger.info(system_name + '_Pm3m' + ' anharmonic score done '+str(__sigmas))
-                            populate_db(db, atoms, kvp, data)
-                        except Exception as e:
-                            print(e)
-                            logger.info(system_name + '_Pm3m' + ' anharmonic score failed')
-                            os.chdir('..')
+                if force_constant_exists:
+                    try:
+                        phonon_tf = tarfile.open('phonon_2_2_2.tar.gz')
+                        phonon_tf.extractall()
+                    except:
+                        pass
+
+                if os.path.isdir('./phonon_2_2_2'):
+
+                    unitcell, _ = read_crystal_structure('./CONTCAR', interface_mode='vasp')
+                    supercell_matrix = [[2, 0, 0], [0, 2, 0], [0, 0, 2]]
+                    phonon = Phonopy(unitcell, supercell_matrix=supercell_matrix)
+                    write_crystal_structure('./SPOSCAR', phonon.supercell, interface_mode='vasp')
+
+                    # Check that individual finite displacement calculation is well converged
+                    phonon_converged = True
+                    os.chdir('phonon_2_2_2')
+                    for sub_f in ['ph-POSCAR-001', 'ph-POSCAR-002', 'ph-POSCAR-003']:
+                        os.chdir(sub_f)
+                        f = open('./OUTCAR', 'r')
+                        for l in f.readlines():
+                            if 'NELM' in l:
+                                nelm = l.split()[2].replace(';', '')
+                                nelm = int(nelm)
+                        f.close()
+
+                        f = open('./vasp.log', 'r')
+                        lines = []
+                        for l in f.readlines():
+                            if ('DAV:' in l) or ("RMM:" in l):
+                                lines.append(l)
+                        if len(lines) >= nelm:
+                            phonon_converged = False
+                        os.chdir('..')  # step out from str_# directory
+                    os.chdir('..')  # step out from phonon directory
+
+                if phonon_converged:
+                    # get the phonon eigen frequencies at high symmetry Q points
+                    # at_phonon = False
+                    # try:
+                    #    os.chdir('phonon_2_2_2')
+                    #    at_phonon = True
+                    # except:
+                    #    pass
+                    try:
+                        try:
+                            os.rename('force_constants.hdf5', 'f.hdf5')
+                        except:
                             pass
 
-                    else:
-                        logger.info(system_name + '_Pm3m' + ' Invalid')
+                        phonon = phonopy.load(supercell_matrix=[2, 2, 2], primitive_matrix='auto',
+                                              unitcell_filename='POSCAR',
+                                              force_constants_filename='force_constants_222.hdf5')
+                        path = [[[0, 0, 0], [0.5, 0.5, 0.5], [0.5, 0.5, 0.0], [0.0, 0.5, 0.0]]]
+                        labels = ["G", "R", "M", "X"]
+                        qpoints, connections = get_band_qpoints_and_path_connections(path, npoints=10)
+                        phonon.run_band_structure(qpoints, path_connections=connections, labels=labels)
+                        phonon_dict = phonon.get_band_structure_dict()
 
-                    os.chdir("..")
-                    try:
-                        shutil.rmtree(system_name + '_Pm3m')
+                        for _pp, p in enumerate(path[0]):
+                            for _i, qset in enumerate(phonon_dict['qpoints']):
+                                for _j, _q in enumerate(qset):
+                                    if (_q[0] == p[0]) and (_q[1] == p[1]) and (_q[2] == p[2]):
+                                        kvp[labels[_pp] + "_min_ph_freq"] = min(phonon_dict['frequencies'][_i][_j])
+
+                        for _pp, p in enumerate(path[0]):
+                            logger.info(system_name + ' ' + labels[_pp] + "_min_ph_freq:" + str(
+                                kvp[labels[_pp] + "_min_ph_freq"]))
+                        populate_db(db, atoms, kvp, data)
+
+                        try:
+                            os.rename('f.hdf5', 'force_constants.hdf5')
+                        except:
+                            pass
+
                     except:
                         pass
+                    # if at_phonon:
+                    #    os.chdir("..")  # step out of phonon directory
+
+                md_done = False
+                if md_calculations_exists:
                     try:
-                        os.rmtree(system_name + '_Pm3m')
+                        md_tf = tarfile.open('MD.tar.gz')
+                        md_tf.extractall()
                     except:
                         pass
+                if os.path.isdir('./MD'):
+                    os.chdir('MD')
+                    t = 0
+                    try:
+                        f = open('./OSZICAR', 'r')
+                        for l in f.readlines():
+                            if 'T=' in l:
+                                t += 1
+                        f.close()
+                    except:
+                        pass
+                    if t == 800:
+                        md_done = True
+                    os.chdir('..')  # step out from MD directory
+
+                if force_constant_exists and phonon_converged and md_done:
+                    logger.info(system_name + '_Pm3m' + ' Valid Phonon and MD Results')
+                    uid = system_name + '_Pm3m'
+                    kvp['uid'] = uid
+                    # calculate the anharmonic score
+                    # os.chdir('./phonon')
+                    logger.info(os.getcwd())
+
+                    try:
+                        # try:
+                        #    os.rename('force_constants.hdf5', 'f.hdf5')
+                        # except:
+                        #    pass
+
+                        scorer = AnharmonicScore(md_frames='vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                 force_constants=None, force_sets_filename='FORCE_SETS_222')
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score done ' + str(__sigmas))
+
+                        kvp['sigma_300K'] = True
+                        kvp['sigma_300K_single'] = __sigmas
+
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=True)
+                        data['sigma_300K'] = __sigmas
+
+                        scorer = AnharmonicScore(md_frames='vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                 atoms=[a], force_constants=None, potim=2,
+                                                 force_sets_filename='FORCE_SETS_222')
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                        kvp['sigma_300K_single_A'] = __sigmas
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score done A ' + str(__sigmas))
+
+                        scorer = AnharmonicScore(md_frames='vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                 atoms=[b], force_constants=None, potim=2,
+                                                 force_sets_filename='FORCE_SETS_222')
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                        kvp['sigma_300K_single_B'] = __sigmas
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score done B ' + str(__sigmas))
+
+                        scorer = AnharmonicScore(md_frames='vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                 atoms=[c], force_constants=None, potim=2,
+                                                 force_sets_filename='FORCE_SETS_222')
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                        kvp['sigma_300K_single_C'] = __sigmas
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score done C ' + str(__sigmas))
+                    except Exception as e:
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score failed')
+                        pass
+
+                    populate_db(db, atoms, kvp, data)
+
+                # Get the third order anharmonic scores
+                phono3py_folder = None
+                if os.path.isfile("phono3py_2.tar.gz"):
+                    phono3py_folder = "phono3py_2"
+                elif os.path.isfile("phono3py.tar.gz"):
+                    phono3py_folder = 'phono3py'
+
+                if a + b + c in ['NaHgBr', 'AuGaBr', 'AuNbBr', 'AuRhBr', 'CuCoCl', 'AuHgCl', 'CsVF', 'CuNiF', 'AuBaF',
+                                 'AuPbF', 'AuScF', 'AuCuF', 'NaCaI', 'CuBaI', 'AgPdI', 'AuMnI', 'BaCrO', 'BaTcO',
+                                 'BaFeO', 'BaCoO', 'BaRhO', 'CaRhO', 'BeCrO', 'CrTiO', 'CrZrO', 'CrHfO', 'CrVO',
+                                 'CrTaO', 'CrReO', 'CrFeO', 'CrRuO', 'CrPdO', 'CrPtO', 'CrPoO', 'CoZrO', 'CoHfO',
+                                 'CoVO', 'CoNbO', 'CoTaO', 'CoCrO', 'CoWO', 'CoMnO', 'CoTcO', 'CoReO', 'CoFeO', 'CoRuO',
+                                 'CoOsO', 'CoIrO', 'CoPtO', 'CoSnO', 'CoTeO', 'CoPoO', 'PdMoO', 'PdWO', 'PdMnO',
+                                 'PtFeO', 'CuHfO', 'CuVO', 'CuNbO', 'CuCoO', 'BaReSe', 'CaVSe', 'BeSnSe', 'CrHfSe',
+                                 'CrVSe', 'CrNbSe', 'CoReSe', 'CoRhSe', 'CoPbSe', 'CoPoSe', 'BaCoS', 'CaVS', 'CrHfS',
+                                 'CrVS', 'CrTaS', 'CrMoS', 'CrWS', 'CrMnS', 'CrTcS', 'CrReS', 'CrFeS', 'CrRuS', 'CrOsS',
+                                 'CrCoS', 'CrRhS', 'CrIrS', 'CrPdS', 'CrTeS', 'CrPoS', 'FeIrS', 'CoTiS', 'CoHfS',
+                                 'CoVS', 'CoMoS', 'CoWS', 'CoReS', 'CoRhS', 'CoPoS', 'NiWS']:
+                    # systems that did not have phono3py converged!
+                    phono3py_folder = None
+
+                if phono3py_folder is not None:
+                    try:
+                        tf = tarfile.open(phono3py_folder + '.tar.gz')
+                        for member in tf.getmembers():
+                            if "fc3.hdf5" in member.name:
+                                tf.extract(member, os.getcwd())
+                    except:
+                        pass
+
+                    logger.info(system_name + '_Pm3m' + ' 3rd order fc? ' + str(
+                        os.path.exists('./' + phono3py_folder + '/fc3.hdf5')))
+
+                    if os.path.exists('./' + phono3py_folder + '/fc3.hdf5'):
+                        try:
+                            scorer = AnharmonicScore(md_frames='./vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                     force_constants=None, potim=2,
+                                                     force_sets_filename='FORCE_SETS_222',
+                                                     include_third_order=True,
+                                                     third_order_fc='./' + phono3py_folder + '/fc3.hdf5')
+                            __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                            kvp['sigma_300K_third_order'] = __sigmas
+                            logger.info(system_name + '_Pm3m' + ' third order anharmonic score ' + str(__sigmas))
+                        except:
+                            pass
+                        populate_db(db, atoms, kvp, data)
+
+                #########################################
+
+                # temperature-dependent 2nd order FC
+                tdep_fc2 = None
+                try:
+                    tdep_fc2 = get_temperature_dependent_second_order_fc()
+                    logger.info(system_name + '_Pm3m' + ' got temperature-dependent effective force constants')
+                except:
+                    pass
+
+                if tdep_fc2 is not None:
+                    __sigmas = None
+                    try:
+                        scorer = AnharmonicScore(md_frames='./vasprun_md.xml', ref_frame='./SPOSCAR',
+                                                 force_constants=tdep_fc2,
+                                                 include_third_order=False)
+                        __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
+                    except:
+                        pass
+
+                    if __sigmas is not None:
+                        kvp['sigma_300K_tdep'] = __sigmas
+                        logger.info(system_name + '_Pm3m' + ' anharmonic score from TDEP ' + str(__sigmas))
+
+                populate_db(db, atoms, kvp, data)
+
+                ########################################
+
+                if os.path.isfile('./sigmas.dat'):
+                    f = open('./sigmas.dat', 'r')
+                    for h, l in enumerate(f.readlines()):
+                        sp = l.split()
+                        if sp[-1] != 'None':
+                            if h == 0:
+                                kvp['sigma_300K_4th_tdep_2'] = float(sp[-1])
+                            if h == 1:
+                                kvp['sigma_300K_4th_tdep_3'] = float(sp[-1])
+                            if h == 2:
+                                kvp['sigma_300K_4th_tdep_4'] = float(sp[-1])
+                    try:
+                        logger.info(system_name + '_Pm3m SIGMA ' + str(kvp['sigma_300K_4th_tdep_2']) + ' ' + str(
+                            kvp['sigma_300K_4th_tdep_3']) + ' ' + str(kvp['sigma_300K_4th_tdep_4']))
+                    except:
+                        pass
+
+                    populate_db(db, atoms, kvp, data)
+                else:
+                    logger.info(system_name + '_Pm3m' + ' Invalid')
+
+                os.chdir("..")
+                try:
+                    shutil.rmtree(system_name + '_Pm3m')
+                except:
+                    pass
+                try:
+                    os.rmtree(system_name + '_Pm3m')
+                except:
+                    pass
 
 
 def lattice_thermal_conductivities(db):
@@ -609,6 +727,7 @@ def lattice_thermal_conductivities(db):
                     except:
                         pass
 
+
 def high_order_anharmonicity(db):
     cwd = os.getcwd()
     system_counter = 0
@@ -656,18 +775,19 @@ def high_order_anharmonicity(db):
                         continue
 
                     if os.path.isfile('./sigmas.dat'):
-                        f=open('./sigmas.dat','r')
-                        for h,l in enumerate(f.readlines()):
+                        f = open('./sigmas.dat', 'r')
+                        for h, l in enumerate(f.readlines()):
                             sp = l.split()
-                            if sp[-1]!='None':
-                                if h==0:
+                            if sp[-1] != 'None':
+                                if h == 0:
                                     kvp['sigma_300K_4th_tdep_2'] = float(sp[-1])
-                                if h==1:
+                                if h == 1:
                                     kvp['sigma_300K_4th_tdep_3'] = float(sp[-1])
-                                if h==2:
+                                if h == 2:
                                     kvp['sigma_300K_4th_tdep_4'] = float(sp[-1])
                         try:
-                            logger.info(system_name + '_Pm3m SIGMA ' + str(kvp['sigma_300K_4th_tdep_2'])+' '+str(kvp['sigma_300K_4th_tdep_3'])+' '+str(kvp['sigma_300K_4th_tdep_4']))
+                            logger.info(system_name + '_Pm3m SIGMA ' + str(kvp['sigma_300K_4th_tdep_2']) + ' ' + str(
+                                kvp['sigma_300K_4th_tdep_3']) + ' ' + str(kvp['sigma_300K_4th_tdep_4']))
                         except:
                             pass
                         populate_db(db, atoms, kvp, data)
@@ -696,13 +816,14 @@ def high_order_anharmonicity_old(db):
                     uid = system_name + '_Pm3m'
                     logger.info(system_name + '_Pm3m')
 
-                    row=None
+                    row = None
                     try:
                         row = db.get(selection=[('uid', '=', uid)])
                     except:
                         pass
                     if row is not None:
-                        if ('sigma_300K_tdep' in row.key_value_pairs.keys()) or ('sigma_300K_third_order' in row.key_value_pairs.keys()):
+                        if ('sigma_300K_tdep' in row.key_value_pairs.keys()) or (
+                                'sigma_300K_third_order' in row.key_value_pairs.keys()):
                             logger.info(system_name + '_Pm3m' + ' data already collected ')
                             continue
 
@@ -739,8 +860,8 @@ def high_order_anharmonicity_old(db):
                             pass
                         continue
 
-
-                    if (not os.path.isfile('./kappa-m111111.hdf5')) or (not os.path.isfile('./vasprun_md.xml')) or (not os.path.isfile('./phonon.tar.gz')):
+                    if (not os.path.isfile('./kappa-m111111.hdf5')) or (not os.path.isfile('./vasprun_md.xml')) or (
+                    not os.path.isfile('./phonon.tar.gz')):
                         logger.info(system_name + '_Pm3m' + ' no available higher order phonon info ')
                         os.chdir("..")
                         try:
@@ -763,7 +884,7 @@ def high_order_anharmonicity_old(db):
                             continue
 
                         tf = tarfile.open(phono3py_folder + '.tar.gz')
-                        #tf.extractall()
+                        # tf.extractall()
                         for member in tf.getmembers():
                             if "fc3.hdf5" in member.name:
                                 tf.extract(member, os.getcwd())
@@ -785,9 +906,9 @@ def high_order_anharmonicity_old(db):
                         if os.path.exists('../' + phono3py_folder + '/fc3.hdf5'):
                             try:
                                 scorer = AnharmonicScore(md_frames='../vasprun_md.xml', ref_frame='./SPOSCAR',
-                                                        force_constants=None,
-                                                        include_third_order=True,
-                                                        path_to_third_order_fc='../'+phono3py_folder+'/fc3.hdf5')
+                                                         force_constants=None,
+                                                         include_third_order=True,
+                                                         path_to_third_order_fc='../' + phono3py_folder + '/fc3.hdf5')
                                 __sigmas, _ = scorer.structural_sigma(return_trajectory=False)
                                 kvp['sigma_300K_third_order'] = __sigmas
                                 logger.info(system_name + '_Pm3m' + ' third order anharmonic score ' + str(__sigmas))
@@ -804,7 +925,7 @@ def high_order_anharmonicity_old(db):
                             pass
 
                         if tdep_fc2 is not None:
-                            __sigmas=None
+                            __sigmas = None
                             try:
                                 scorer = AnharmonicScore(md_frames='./vasprun_md.xml', ref_frame='./POSCAR-md',
                                                          force_constants=tdep_fc2,
@@ -839,8 +960,8 @@ def get_temperature_dependent_second_order_fc():
     from hiphive.fitting import Optimizer
     from hiphive.calculators import ForceConstantCalculator
 
-    if os.path.exists('POSCAR-md'):
-        reference_structure = read('POSCAR-md')
+    if os.path.exists('./POSCAR-md'):
+        reference_structure = read('./POSCAR-md')
     else:
         return None
     if not os.path.exists('./vasprun_md.xml'):
@@ -870,21 +991,28 @@ def get_temperature_dependent_second_order_fc():
                 logger.info(ii, e)
                 pass
 
-    opt = Optimizer(sc.get_fit_data(), fit_method="ardr", train_size=0.9)
-    opt.train()
-    fcp = ForceConstantPotential(cs, opt.parameters)
-    fcs = fcp.get_force_constants(reference_structure)
+    logger.info("Start the optimizer")
+    try:
+        opt = Optimizer(sc.get_fit_data(), fit_method="ardr", train_size=0.9)
+        opt.train()
+        fcp = ForceConstantPotential(cs, opt.parameters)
+        fcs = fcp.get_force_constants(reference_structure)
+        logger.info("successfully created the TDEP second order F.C.")
+    except Exception as e:
+        logger.info(e)
+        raise Exception()
+
     return fcs.get_fc_array(2)
 
 
-def collect(db):
+def collect(db,C):
     errors = []
-    steps = [element_energy, full_relax_data]  # all_data]
-    #steps = [high_order_anharmonicity]
+    steps = [element_energy, all_data]
+    # steps = [high_order_anharmonicity]
 
     for step in steps:
         try:
-            step(db)
+            step(db,C=C)
         except Exception as x:
             print(x)
             error = '{}: {}'.format(x.__class__.__name__, x)
@@ -894,8 +1022,15 @@ def collect(db):
 
 if __name__ == "__main__":
     # We use absolute path because of chdir below!
-    dbname = os.path.join(os.getcwd(), 'perovskites.db')
+
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument("--C", type=str,
+                        help="Anion in ABCs.")
+    args = parser.parse_args()
+
+    dbname = os.path.join(os.getcwd(), 'perovskites_updated_' + args.C + '.db')
+    logger = setup_logger(output_filename='data_collector_' + args.C + '.log')
     db = connect(dbname)
 
-    logger.info('Established a sqlite3 database object ' + str(db))
-    collect(db)
+    collect(db,args.C)
