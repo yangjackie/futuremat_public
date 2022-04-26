@@ -1,0 +1,3231 @@
+{
+  "oxides": [
+    {
+      "material_id": "mp-190",
+      "formula": "ReO3",
+      "formation_energy": -2.13538576,
+      "volume_per_atom": 13.678227419563173,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-216",
+      "formula": "Sc2O3",
+      "formation_energy": -3.9687326407500008,
+      "volume_per_atom": 12.211038182647181,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-218",
+      "formula": "Sm2O3",
+      "formation_energy": -3.861952467249999,
+      "volume_per_atom": 16.635440060021683,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-230",
+      "formula": "SbO2",
+      "formation_energy": -1.8374915029166665,
+      "volume_per_atom": 13.549528150788369,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-306",
+      "formula": "B2O3",
+      "formation_energy": -2.79805631,
+      "volume_per_atom": 9.864805829317463,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-352",
+      "formula": "HfO2",
+      "formation_energy": -4.019811100833333,
+      "volume_per_atom": 11.688512161236297,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-353",
+      "formula": "Ag2O",
+      "formation_energy": -0.3225549744444442,
+      "volume_per_atom": 18.90645597574137,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-361",
+      "formula": "Cu2O",
+      "formation_energy": -0.644491993333333,
+      "volume_per_atom": 13.138816874375111,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-368",
+      "formula": "P2O3",
+      "formation_energy": -1.960505652333333,
+      "volume_per_atom": 19.27516438786903,
+      "e_above_hull": 0.08813669926666634
+    },
+    {
+      "material_id": "mp-458",
+      "formula": "Ti2O3",
+      "formation_energy": -3.3034396343333325,
+      "volume_per_atom": 10.552395262697846,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-499",
+      "formula": "AgO",
+      "formation_energy": -0.445126380833333,
+      "volume_per_atom": 15.230493350490688,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-510",
+      "formula": "TaO2",
+      "formation_energy": -3.0577185214583325,
+      "volume_per_atom": 11.98862985901905,
+      "e_above_hull": 0.05548197587499892
+    },
+    {
+      "material_id": "mp-679",
+      "formula": "Er2O3",
+      "formation_energy": -4.057094096999999,
+      "volume_per_atom": 14.680045769008975,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-725",
+      "formula": "RhO2",
+      "formation_energy": -1.2189547283333322,
+      "volume_per_atom": 10.842969963853614,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-726",
+      "formula": "SeO2",
+      "formation_energy": -1.1541435741145836,
+      "volume_per_atom": 16.457872245824376,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-733",
+      "formula": "GeO2",
+      "formation_energy": -2.0770728672222223,
+      "volume_per_atom": 14.349395786615494,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-748",
+      "formula": "Ti5O9",
+      "formation_energy": -3.4253200408333333,
+      "volume_per_atom": 10.799495892325591,
+      "e_above_hull": 0.006774242499998806
+    },
+    {
+      "material_id": "mp-812",
+      "formula": "Ho2O3",
+      "formation_energy": -4.03366768275,
+      "volume_per_atom": 14.932340227190144,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-825",
+      "formula": "RuO2",
+      "formation_energy": -1.4576657566666664,
+      "volume_per_atom": 10.801565464070114,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-841",
+      "formula": "Li2O2",
+      "formation_energy": -1.6501702366666664,
+      "volume_per_atom": 8.434960212197105,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-856",
+      "formula": "SnO2",
+      "formation_energy": -2.1074815433333334,
+      "volume_per_atom": 12.622330305255444,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-886",
+      "formula": "Ga2O3",
+      "formation_energy": -2.268996668999999,
+      "volume_per_atom": 10.959276319577343,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-971",
+      "formula": "K2O",
+      "formation_energy": -1.247857583666666,
+      "volume_per_atom": 22.75631183096637,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-996",
+      "formula": "OsO2",
+      "formation_energy": -1.343401261666667,
+      "volume_per_atom": 10.955361760643589,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1045",
+      "formula": "Nd2O3",
+      "formation_energy": -3.7815490305,
+      "volume_per_atom": 17.472741204989372,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1056",
+      "formula": "Tb2O3",
+      "formation_energy": -3.983580082750001,
+      "volume_per_atom": 15.503208710705191,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1105",
+      "formula": "BaO2",
+      "formation_energy": -2.1701940333333334,
+      "volume_per_atom": 17.38229064886419,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1132",
+      "formula": "CdO",
+      "formation_energy": -1.3647115625000001,
+      "volume_per_atom": 13.683645700656621,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1143",
+      "formula": "Al2O3",
+      "formation_energy": -3.4265510080000006,
+      "volume_per_atom": 8.742003699644115,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1147",
+      "formula": "Ti3O5",
+      "formation_energy": -3.3799429918750006,
+      "volume_per_atom": 11.084047154428598,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1215",
+      "formula": "Ti2O",
+      "formation_energy": -2.0355361072222222,
+      "volume_per_atom": 12.337281656172037,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1216",
+      "formula": "YbO",
+      "formation_energy": -3.6297129975,
+      "volume_per_atom": 13.388532667558676,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1224",
+      "formula": "HgO",
+      "formation_energy": -0.6380533187500004,
+      "volume_per_atom": 18.258337501939454,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1265",
+      "formula": "MgO",
+      "formation_energy": -3.0533666124999996,
+      "volume_per_atom": 9.63968913267075,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1285",
+      "formula": "PtO2",
+      "formation_energy": -0.9266780216666662,
+      "volume_per_atom": 11.17301852456742,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1302",
+      "formula": "PrO2",
+      "formation_energy": -3.0256765216666666,
+      "volume_per_atom": 15.63721245477258,
+      "e_above_hull": 0.08690622395833358
+    },
+    {
+      "material_id": "mp-1336",
+      "formula": "PdO",
+      "formation_energy": -0.7898176574999995,
+      "volume_per_atom": 13.040990056898991,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1342",
+      "formula": "BaO",
+      "formation_energy": -2.8236447624999994,
+      "volume_per_atom": 22.127501472420594,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1346",
+      "formula": "B6O",
+      "formation_energy": -0.805272605,
+      "volume_per_atom": 7.389205002093763,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1427",
+      "formula": "Lu2O3",
+      "formation_energy": -4.124078344249999,
+      "volume_per_atom": 13.9183100518709,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1441",
+      "formula": "CsO2",
+      "formation_energy": -0.9798474259770114,
+      "volume_per_atom": 24.456489626552653,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1478",
+      "formula": "Cu4O3",
+      "formation_energy": -0.8074406257142854,
+      "volume_per_atom": 12.26903710630555,
+      "e_above_hull": 0.007510195714286461
+    },
+    {
+      "material_id": "mp-1581",
+      "formula": "As2O3",
+      "formation_energy": -1.6290845505000007,
+      "volume_per_atom": 18.94837908406939,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1604",
+      "formula": "Pt3O4",
+      "formation_energy": -0.8268794257142856,
+      "volume_per_atom": 12.990593987302336,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1605",
+      "formula": "Ag3O4",
+      "formation_energy": -0.4058954607142863,
+      "volume_per_atom": 14.027326399571661,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1611",
+      "formula": "SmO",
+      "formation_energy": -3.1071651250000007,
+      "volume_per_atom": 15.312537535783415,
+      "e_above_hull": 0.1111285977083325
+    },
+    {
+      "material_id": "mp-1658",
+      "formula": "Tl2O3",
+      "formation_energy": -1.1039688953333333,
+      "volume_per_atom": 15.634055239565186,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1692",
+      "formula": "CuO",
+      "formation_energy": -0.9427949424999991,
+      "volume_per_atom": 11.042094878053966,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1705",
+      "formula": "Sb2O5",
+      "formation_energy": -1.7480340900000004,
+      "volume_per_atom": 12.055771528019108,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1716",
+      "formula": "Rh2O3",
+      "formation_energy": -1.0714212435000008,
+      "volume_per_atom": 10.578056413774691,
+      "e_above_hull": 0.025638011999994603
+    },
+    {
+      "material_id": "mp-1767",
+      "formula": "Tm2O3",
+      "formation_energy": -4.092739326166667,
+      "volume_per_atom": 14.368532231017562,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1806",
+      "formula": "RbO3",
+      "formation_energy": -0.6464353800000007,
+      "volume_per_atom": 19.235944430956817,
+      "e_above_hull": 0.0827598418749993
+    },
+    {
+      "material_id": "mp-1866",
+      "formula": "KO2",
+      "formation_energy": -0.9871571409999996,
+      "volume_per_atom": 17.747009904130785,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1895",
+      "formula": "TaO",
+      "formation_energy": -1.230473712500002,
+      "volume_per_atom": 11.44598174635556,
+      "e_above_hull": 1.1044266604999962
+    },
+    {
+      "material_id": "mp-1901",
+      "formula": "NaO2",
+      "formation_energy": -0.9140585888505743,
+      "volume_per_atom": 13.897150254610274,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1960",
+      "formula": "Li2O",
+      "formation_energy": -2.0615979138888885,
+      "volume_per_atom": 8.42660622922699,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2097",
+      "formula": "SnO",
+      "formation_energy": -1.6297024024999995,
+      "volume_per_atom": 18.821362932938356,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2125",
+      "formula": "TeO2",
+      "formation_energy": -1.4947043037499999,
+      "volume_per_atom": 16.472984737049163,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2133",
+      "formula": "ZnO",
+      "formation_energy": -1.7908960925000001,
+      "volume_per_atom": 12.429679562090667,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2136",
+      "formula": "Sb2O3",
+      "formation_energy": -1.7517375020000003,
+      "volume_per_atom": 18.076583502541663,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2292",
+      "formula": "La2O3",
+      "formation_energy": -3.8741430962500005,
+      "volume_per_atom": 18.52835643888029,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2310",
+      "formula": "CdO2",
+      "formation_energy": -0.8535735183333332,
+      "volume_per_atom": 13.156416976366287,
+      "e_above_hull": 0.05623419000000052
+    },
+    {
+      "material_id": "mp-2311",
+      "formula": "NbO",
+      "formation_energy": -2.2876549474999996,
+      "volume_per_atom": 12.898021048783868,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2340",
+      "formula": "Na2O2",
+      "formation_energy": -1.3076940424425285,
+      "volume_per_atom": 12.825468975559142,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2345",
+      "formula": "Dy2O3",
+      "formation_energy": -4.009681254999999,
+      "volume_per_atom": 15.210116319919035,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2352",
+      "formula": "Na2O",
+      "formation_energy": -1.4385102293678156,
+      "volume_per_atom": 14.596190355631975,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2414",
+      "formula": "SO3",
+      "formation_energy": -1.5774541236979183,
+      "volume_per_atom": 16.84789856915224,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2452",
+      "formula": "P2O5",
+      "formation_energy": -2.438859942380953,
+      "volume_per_atom": 13.425206637891408,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2458",
+      "formula": "TbO2",
+      "formation_energy": -3.188228366666666,
+      "volume_per_atom": 13.653535222619986,
+      "e_above_hull": 0.13142170229166794
+    },
+    {
+      "material_id": "mp-2472",
+      "formula": "SrO",
+      "formation_energy": -3.077090665833333,
+      "volume_per_atom": 17.638455110957224,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2542",
+      "formula": "BeO",
+      "formation_energy": -3.1028558024999997,
+      "volume_per_atom": 6.997931986082857,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2571",
+      "formula": "Rb2O3",
+      "formation_energy": -1.0238412645000003,
+      "volume_per_atom": 20.653187921907538,
+      "e_above_hull": 0.052709308499999
+    },
+    {
+      "material_id": "mp-2589",
+      "formula": "MgO2",
+      "formation_energy": -2.0207075074999996,
+      "volume_per_atom": 9.793036882182586,
+      "e_above_hull": 0.014870234166666663
+    },
+    {
+      "material_id": "mp-2591",
+      "formula": "Ti3O",
+      "formation_energy": -1.5699139624999994,
+      "volume_per_atom": 13.689481568419222,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2605",
+      "formula": "CaO",
+      "formation_energy": -3.3060156124999995,
+      "volume_per_atom": 14.166041081392711,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2629",
+      "formula": "Ce7O12",
+      "formation_energy": -3.9190146339473677,
+      "volume_per_atom": 15.685325081543953,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2652",
+      "formula": "Y2O3",
+      "formation_energy": -3.9709200774166673,
+      "volume_per_atom": 15.32974480124092,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2672",
+      "formula": "K2O2",
+      "formation_energy": -1.2954442415000003,
+      "volume_per_atom": 19.78517265877178,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2697",
+      "formula": "SrO2",
+      "formation_energy": -2.2054394455555553,
+      "volume_per_atom": 14.514764300002236,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2723",
+      "formula": "IrO2",
+      "formation_energy": -1.2608940949999987,
+      "volume_per_atom": 10.980659549801123,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-2814",
+      "formula": "Yb2O3",
+      "formation_energy": -2.6994215262500005,
+      "volume_per_atom": 15.361535052082923,
+      "e_above_hull": 0.20434887174999972
+    },
+    {
+      "material_id": "mp-2858",
+      "formula": "ZrO2",
+      "formation_energy": -3.8136169366666657,
+      "volume_per_atom": 12.25920010424293,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-7228",
+      "formula": "ReO2",
+      "formation_energy": -1.8964214408333337,
+      "volume_per_atom": 10.745725493493845,
+      "e_above_hull": 0.0016992347222188897
+    },
+    {
+      "material_id": "mp-7870",
+      "formula": "GdO",
+      "formation_energy": -3.035084167500001,
+      "volume_per_atom": 19.59857158446253,
+      "e_above_hull": 0.2110923258333326
+    },
+    {
+      "material_id": "mp-7895",
+      "formula": "Rb2O2",
+      "formation_energy": -1.2329859887499999,
+      "volume_per_atom": 23.29381099098826,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-7896",
+      "formula": "Cs2O2",
+      "formation_energy": -1.2305101689655173,
+      "volume_per_atom": 27.616334417289977,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-7947",
+      "formula": "PtO",
+      "formation_energy": -0.5844203575,
+      "volume_per_atom": 13.366125587156672,
+      "e_above_hull": 0.1390991399999999
+    },
+    {
+      "material_id": "mp-7988",
+      "formula": "Cs2O",
+      "formation_energy": -1.1884128869540227,
+      "volume_per_atom": 38.53431037315962,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-8023",
+      "formula": "AlO",
+      "formation_energy": -1.5521156375,
+      "volume_per_atom": 11.213327615489263,
+      "e_above_hull": 1.3033435358333332
+    },
+    {
+      "material_id": "mp-8484",
+      "formula": "ZnO2",
+      "formation_energy": -1.058444209166667,
+      "volume_per_atom": 10.152230172253761,
+      "e_above_hull": 0.13548651916666454
+    },
+    {
+      "material_id": "mp-10197",
+      "formula": "ZrO",
+      "formation_energy": -2.5599047675000017,
+      "volume_per_atom": 12.36953558387608,
+      "e_above_hull": 0.3463698349999973
+    },
+    {
+      "material_id": "mp-10688",
+      "formula": "CeO",
+      "formation_energy": -3.2341618499999996,
+      "volume_per_atom": 15.492252717089,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-10729",
+      "formula": "Pd2O",
+      "formation_energy": -0.3864687933333328,
+      "volume_per_atom": 15.620310885509804,
+      "e_above_hull": 0.14007631166666457
+    },
+    {
+      "material_id": "mp-10734",
+      "formula": "Ti4O5",
+      "formation_energy": -3.091059832037038,
+      "volume_per_atom": 10.251537612011713,
+      "e_above_hull": 0.03660942222222019
+    },
+    {
+      "material_id": "mp-11344",
+      "formula": "PrO",
+      "formation_energy": -3.04630025,
+      "volume_per_atom": 16.603779693478554,
+      "e_above_hull": 0.06628249562500077
+    },
+    {
+      "material_id": "mp-12105",
+      "formula": "RbO2",
+      "formation_energy": -0.9722602958333333,
+      "volume_per_atom": 20.679543730850586,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-12177",
+      "formula": "Te2O5",
+      "formation_energy": -1.4178695207142857,
+      "volume_per_atom": 15.025379930088521,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-12205",
+      "formula": "Ti4O7",
+      "formation_energy": -3.4085186912121217,
+      "volume_per_atom": 10.805729803187445,
+      "e_above_hull": 0.004611486136361975
+    },
+    {
+      "material_id": "mp-16302",
+      "formula": "Tb6O11",
+      "formation_energy": -3.421909679558822,
+      "volume_per_atom": 14.279667733321848,
+      "e_above_hull": 0.09301392286764987
+    },
+    {
+      "material_id": "mp-16705",
+      "formula": "Pr2O3",
+      "formation_energy": -3.7350992947500004,
+      "volume_per_atom": 17.987023213310696,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-18759",
+      "formula": "Mn3O4",
+      "formation_energy": -2.0504092405418723,
+      "volume_per_atom": 11.81815343996794,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-18856",
+      "formula": "MoO3",
+      "formation_energy": -1.9245737215624992,
+      "volume_per_atom": 14.508795771506264,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-18922",
+      "formula": "Mn5O8",
+      "formation_energy": -1.9565608430503982,
+      "volume_per_atom": 10.915202076573363,
+      "e_above_hull": 0.009338253557698906
+    },
+    {
+      "material_id": "mp-19006",
+      "formula": "MnO",
+      "formation_energy": -1.979201203965518,
+      "volume_per_atom": 11.346659546629724,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19009",
+      "formula": "NiO",
+      "formation_energy": -1.2180853000000003,
+      "volume_per_atom": 9.371359717498269,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19094",
+      "formula": "VO2",
+      "formation_energy": -2.4802756983333345,
+      "volume_per_atom": 10.323615471131943,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19177",
+      "formula": "CrO2",
+      "formation_energy": -2.047700861666667,
+      "volume_per_atom": 10.041657075578417,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19184",
+      "formula": "VO",
+      "formation_energy": -2.09028776,
+      "volume_per_atom": 10.69625490109447,
+      "e_above_hull": 0.02183531770833369
+    },
+    {
+      "material_id": "mp-19306",
+      "formula": "Fe3O4",
+      "formation_energy": -1.629588437142857,
+      "volume_per_atom": 11.095799922723982,
+      "e_above_hull": 0.013059251428558127
+    },
+    {
+      "material_id": "mp-19372",
+      "formula": "WO2",
+      "formation_energy": -2.036442338333334,
+      "volume_per_atom": 12.442862921916193,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19395",
+      "formula": "MnO2",
+      "formation_energy": -1.8058299401436788,
+      "volume_per_atom": 11.99390084323708,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19399",
+      "formula": "Cr2O3",
+      "formation_energy": -2.366587769,
+      "volume_per_atom": 10.292373273461687,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19443",
+      "formula": "WO3",
+      "formation_energy": -2.1849477787500007,
+      "volume_per_atom": 14.45859331354985,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-19770",
+      "formula": "Fe2O3",
+      "formation_energy": -1.707096457,
+      "volume_per_atom": 10.466803233171898,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-20078",
+      "formula": "Pb2O3",
+      "formation_energy": -1.3933452089999996,
+      "volume_per_atom": 16.294439340500873,
+      "e_above_hull": 0.009435708500005191
+    },
+    {
+      "material_id": "mp-20194",
+      "formula": "CeO2",
+      "formation_energy": -3.9284631016666665,
+      "volume_per_atom": 13.619877900370305,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-20725",
+      "formula": "PbO2",
+      "formation_energy": -1.299647031666667,
+      "volume_per_atom": 14.844895593952357,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-21149",
+      "formula": "GdO2",
+      "formation_energy": -3.099129880000001,
+      "volume_per_atom": 12.262460900045205,
+      "e_above_hull": 0.1470466133333339
+    },
+    {
+      "material_id": "mp-21369",
+      "formula": "W3O",
+      "formation_energy": 2.3417538562499995,
+      "volume_per_atom": 15.439560358278117,
+      "e_above_hull": 3.1054197331249984
+    },
+    {
+      "material_id": "mp-21394",
+      "formula": "EuO",
+      "formation_energy": -3.1214567650000014,
+      "volume_per_atom": 16.417411686273933,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-21579",
+      "formula": "V2O3",
+      "formation_energy": -2.5345476932500004,
+      "volume_per_atom": 10.969965248232716,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-22083",
+      "formula": "Tb7O12",
+      "formation_energy": -3.6107815326315795,
+      "volume_per_atom": 14.714129613199317,
+      "e_above_hull": 0.058305385690790246
+    },
+    {
+      "material_id": "mp-22408",
+      "formula": "CoO",
+      "formation_energy": -1.2843806087500012,
+      "volume_per_atom": 12.155937181328834,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-22464",
+      "formula": "NaO3",
+      "formation_energy": -0.600778702887931,
+      "volume_per_atom": 13.918075859902508,
+      "e_above_hull": 0.0847652387500002
+    },
+    {
+      "material_id": "mp-22598",
+      "formula": "In2O3",
+      "formation_energy": -1.997063393,
+      "volume_per_atom": 13.657345045848695,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-22633",
+      "formula": "Pb3O4",
+      "formation_energy": -1.4469811542857138,
+      "volume_per_atom": 19.77618189741477,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-22671",
+      "formula": "Pr7O12",
+      "formation_energy": -3.405883248157895,
+      "volume_per_atom": 16.94569133467857,
+      "e_above_hull": 0.03433978648026326
+    },
+    {
+      "material_id": "mp-23262",
+      "formula": "Bi2O3",
+      "formation_energy": -1.6417272150000002,
+      "volume_per_atom": 17.07979487124197,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-25279",
+      "formula": "V2O5",
+      "formation_energy": -2.289021817142858,
+      "volume_per_atom": 14.323674115993674,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-25378",
+      "formula": "CuO2",
+      "formation_energy": -0.5297775633333336,
+      "volume_per_atom": 11.418439549483919,
+      "e_above_hull": 0.1644966102083334
+    },
+    {
+      "material_id": "mp-27127",
+      "formula": "Te4O9",
+      "formation_energy": -1.4522833134615392,
+      "volume_per_atom": 15.307430732158094,
+      "e_above_hull": 0.001048414807693021
+    },
+    {
+      "material_id": "mp-27151",
+      "formula": "V7O13",
+      "formation_energy": -2.4800389505000004,
+      "volume_per_atom": 10.653778137689322,
+      "e_above_hull": 0.01706475875001523
+    },
+    {
+      "material_id": "mp-27253",
+      "formula": "Au2O3",
+      "formation_energy": -0.45785357900000034,
+      "volume_per_atom": 14.10330904790057,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27356",
+      "formula": "AsO2",
+      "formation_energy": -1.588233991666666,
+      "volume_per_atom": 14.967575696153068,
+      "e_above_hull": 0.0008766008333402908
+    },
+    {
+      "material_id": "mp-27358",
+      "formula": "Se2O5",
+      "formation_energy": -1.0220626499553573,
+      "volume_per_atom": 17.285888232389215,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27412",
+      "formula": "V4O9",
+      "formation_energy": -2.3520254315384626,
+      "volume_per_atom": 12.38334399327694,
+      "e_above_hull": 0.025267407692291854
+    },
+    {
+      "material_id": "mp-27465",
+      "formula": "S8O",
+      "formation_energy": -0.19670006472222135,
+      "volume_per_atom": 29.390268889019524,
+      "e_above_hull": 0.05699932850694456
+    },
+    {
+      "material_id": "mp-27484",
+      "formula": "Tl2O",
+      "formation_energy": -0.8199783955555553,
+      "volume_per_atom": 24.97685788081553,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27485",
+      "formula": "Tc2O7",
+      "formation_energy": -1.7992827913888878,
+      "volume_per_atom": 18.260041599228437,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27519",
+      "formula": "SeO3",
+      "formation_energy": -0.8740176677734377,
+      "volume_per_atom": 17.681762962732016,
+      "e_above_hull": 0.020287150937497778
+    },
+    {
+      "material_id": "mp-27561",
+      "formula": "Rb9O2",
+      "formation_energy": -0.6578798943181816,
+      "volume_per_atom": 61.40214499296003,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27684",
+      "formula": "Tl4O3",
+      "formation_energy": -0.9376015804761906,
+      "volume_per_atom": 21.59352041573594,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27726",
+      "formula": "SO2",
+      "formation_energy": -1.5221963593749994,
+      "volume_per_atom": 25.321531978830674,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27819",
+      "formula": "Ag3O",
+      "formation_energy": -0.22434990999999993,
+      "volume_per_atom": 15.97801581021981,
+      "e_above_hull": 0.01756632083333365
+    },
+    {
+      "material_id": "mp-27873",
+      "formula": "Ta2O",
+      "formation_energy": 0.21850060166666552,
+      "volume_per_atom": 17.75808880847608,
+      "e_above_hull": 1.7751008503333292
+    },
+    {
+      "material_id": "mp-27945",
+      "formula": "BiO",
+      "formation_energy": -0.8826218974999991,
+      "volume_per_atom": 21.629929104745344,
+      "e_above_hull": 0.4854841149999993
+    },
+    {
+      "material_id": "mp-28212",
+      "formula": "Nb4O5",
+      "formation_energy": -2.467337063333334,
+      "volume_per_atom": 12.27475591732259,
+      "e_above_hull": 0.02364229972222276
+    },
+    {
+      "material_id": "mp-28338",
+      "formula": "Mn2O7",
+      "formation_energy": -0.8804072191235627,
+      "volume_per_atom": 17.314166521855075,
+      "e_above_hull": 0.32347940763889316
+    },
+    {
+      "material_id": "mp-29727",
+      "formula": "Ta4O",
+      "formation_energy": -0.7145370090000001,
+      "volume_per_atom": 15.724528329235616,
+      "e_above_hull": 0.21942314020000175
+    },
+    {
+      "material_id": "mp-30064",
+      "formula": "V16O3",
+      "formation_energy": 0.7290848549999994,
+      "volume_per_atom": 16.876366242404668,
+      "e_above_hull": 1.3960710900657896
+    },
+    {
+      "material_id": "mp-30303",
+      "formula": "Bi4O7",
+      "formation_energy": -1.5692018181818177,
+      "volume_per_atom": 16.06339536493545,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-30518",
+      "formula": "V6O11",
+      "formation_energy": -2.486746045,
+      "volume_per_atom": 10.683639569264074,
+      "e_above_hull": 0.013327313235278027
+    },
+    {
+      "material_id": "mp-30544",
+      "formula": "Mo5O14",
+      "formation_energy": -1.9353726664473678,
+      "volume_per_atom": 15.82603470002176,
+      "e_above_hull": 0.005687239060151228
+    },
+    {
+      "material_id": "mp-31049",
+      "formula": "NdO2",
+      "formation_energy": -3.1596593316666666,
+      "volume_per_atom": 14.812730720712274,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-31217",
+      "formula": "Cu8O",
+      "formation_energy": -0.09724633944444368,
+      "volume_per_atom": 11.786655574685897,
+      "e_above_hull": 0.11758432500000016
+    },
+    {
+      "material_id": "mp-32544",
+      "formula": "Ti9O8",
+      "formation_energy": -2.591554100882353,
+      "volume_per_atom": 10.26878977677173,
+      "e_above_hull": 0.16244567735294346
+    },
+    {
+      "material_id": "mp-32761",
+      "formula": "SiO",
+      "formation_energy": -2.047151387500001,
+      "volume_per_atom": 14.185857741956708,
+      "e_above_hull": 0.40323300749999813
+    },
+    {
+      "material_id": "mp-32795",
+      "formula": "Re3O8",
+      "formation_energy": -1.8812946040909098,
+      "volume_per_atom": 11.65881884837644,
+      "e_above_hull": 0.18938249651515093
+    },
+    {
+      "material_id": "mp-32813",
+      "formula": "Ti9O10",
+      "formation_energy": -2.815676357368421,
+      "volume_per_atom": 10.745170727940613,
+      "e_above_hull": 0.1963544889473603
+    },
+    {
+      "material_id": "mp-32881",
+      "formula": "Si3O",
+      "formation_energy": -0.7824168106250005,
+      "volume_per_atom": 19.405135828562397,
+      "e_above_hull": 0.44277538687499973
+    },
+    {
+      "material_id": "mp-33104",
+      "formula": "Sm2O",
+      "formation_energy": -2.074061101666668,
+      "volume_per_atom": 21.981248591716323,
+      "e_above_hull": 0.07146804680555352
+    },
+    {
+      "material_id": "mp-33137",
+      "formula": "TcO2",
+      "formation_energy": -1.883370416666666,
+      "volume_per_atom": 10.934990007873628,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-35925",
+      "formula": "NiO2",
+      "formation_energy": -0.6874090666666669,
+      "volume_per_atom": 15.832355225774789,
+      "e_above_hull": 0.12672987611110909
+    },
+    {
+      "material_id": "mp-504886",
+      "formula": "Gd2O3",
+      "formation_energy": -3.895411792,
+      "volume_per_atom": 16.020386652996557,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-510262",
+      "formula": "Cs3O",
+      "formation_energy": -0.9281786846982758,
+      "volume_per_atom": 63.369816652895,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-510421",
+      "formula": "CrO3",
+      "formation_energy": -1.5112073775,
+      "volume_per_atom": 17.310431638868355,
+      "e_above_hull": 0.04616918450000096
+    },
+    {
+      "material_id": "mp-510536",
+      "formula": "MoO2",
+      "formation_energy": -2.0215011791666675,
+      "volume_per_atom": 12.204511989690104,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-510746",
+      "formula": "Fe5O8",
+      "formation_energy": -1.4779871336538462,
+      "volume_per_atom": 11.478397165866678,
+      "e_above_hull": 0.16345176730768962
+    },
+    {
+      "material_id": "mp-540783",
+      "formula": "OsO4",
+      "formation_energy": -1.5283950019999992,
+      "volume_per_atom": 18.72476946931993,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-540855",
+      "formula": "Rb6O",
+      "formation_energy": -0.5158545964285715,
+      "volume_per_atom": 68.26788888470458,
+      "e_above_hull": 0.0010510348214283205
+    },
+    {
+      "material_id": "mp-541846",
+      "formula": "P4O9",
+      "formation_energy": -2.3579066160256414,
+      "volume_per_atom": 14.740126832344853,
+      "e_above_hull": 0.0059114819743602
+    },
+    {
+      "material_id": "mp-542313",
+      "formula": "Ce2O3",
+      "formation_energy": -3.769795566250001,
+      "volume_per_atom": 17.121413407315295,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-542334",
+      "formula": "V5O9",
+      "formation_energy": -2.4968336391071437,
+      "volume_per_atom": 10.679720366262346,
+      "e_above_hull": 0.007482074821428597
+    },
+    {
+      "material_id": "mp-542622",
+      "formula": "P4O7",
+      "formation_energy": -2.1314993807575746,
+      "volume_per_atom": 17.548346066236466,
+      "e_above_hull": 0.04130311336363501
+    },
+    {
+      "material_id": "mp-543061",
+      "formula": "Mo4O5",
+      "formation_energy": -1.0034924177777782,
+      "volume_per_atom": 13.502626591017302,
+      "e_above_hull": 0.6810918981944454
+    },
+    {
+      "material_id": "mp-545796",
+      "formula": "Cr3O8",
+      "formation_energy": -1.6496238999999997,
+      "volume_per_atom": 15.327999147593543,
+      "e_above_hull": 0.0493323494545459
+    },
+    {
+      "material_id": "mp-546190",
+      "formula": "Ag2O3",
+      "formation_energy": -0.3593772956666669,
+      "volume_per_atom": 13.292833059137674,
+      "e_above_hull": 0.019458467666668255
+    },
+    {
+      "material_id": "mp-546794",
+      "formula": "SiO2",
+      "formation_energy": -3.2671791933333334,
+      "volume_per_atom": 15.710309009826242,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-551685",
+      "formula": "Pb2O",
+      "formation_energy": -0.6236601049999996,
+      "volume_per_atom": 27.313119223639973,
+      "e_above_hull": 0.35572421635416607
+    },
+    {
+      "material_id": "mp-554098",
+      "formula": "Ti6O",
+      "formation_energy": -0.9166954207142847,
+      "volume_per_atom": 15.364629269149273,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-554278",
+      "formula": "TiO2",
+      "formation_energy": -3.5016293386111115,
+      "volume_per_atom": 12.225523537192634,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-554791",
+      "formula": "RuO4",
+      "formation_energy": -1.1819762587499993,
+      "volume_per_atom": 18.768734576760725,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-555434",
+      "formula": "As2O5",
+      "formation_energy": -1.5605577653571439,
+      "volume_per_atom": 12.92795865419692,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-555597",
+      "formula": "V4O7",
+      "formation_energy": -2.490850337272727,
+      "volume_per_atom": 10.686408409194463,
+      "e_above_hull": 0.020021744545456244
+    },
+    {
+      "material_id": "mp-556724",
+      "formula": "Ti7O13",
+      "formation_energy": -3.4410717961666677,
+      "volume_per_atom": 10.803967634368222,
+      "e_above_hull": 0.011883003750016385
+    },
+    {
+      "material_id": "mp-557057",
+      "formula": "NbO2",
+      "formation_energy": -2.8976281941666664,
+      "volume_per_atom": 12.182125199531896,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-557266",
+      "formula": "HgO2",
+      "formation_energy": -0.06608010916666629,
+      "volume_per_atom": 15.99449368161133,
+      "e_above_hull": 0.3592887699999996
+    },
+    {
+      "material_id": "mp-557993",
+      "formula": "BiO2",
+      "formation_energy": -1.4597641266666663,
+      "volume_per_atom": 14.909889045204023,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-558247",
+      "formula": "Mo4O11",
+      "formation_energy": -1.9400485943333328,
+      "volume_per_atom": 16.18466438968498,
+      "e_above_hull": 0.005033374857143613
+    },
+    {
+      "material_id": "mp-559771",
+      "formula": "Pr6O11",
+      "formation_energy": -3.2417628789705875,
+      "volume_per_atom": 16.44189195346384,
+      "e_above_hull": 0.05391296933823675
+    },
+    {
+      "material_id": "mp-559956",
+      "formula": "Pr5O9",
+      "formation_energy": -3.2594889944642866,
+      "volume_per_atom": 16.582600248976966,
+      "e_above_hull": 0.07542109013392917
+    },
+    {
+      "material_id": "mp-559964",
+      "formula": "Ti6O11",
+      "formation_energy": -3.438300099411763,
+      "volume_per_atom": 11.721419826697407,
+      "e_above_hull": 0.006065076029395655
+    },
+    {
+      "material_id": "mp-561418",
+      "formula": "Zr3O",
+      "formation_energy": -1.5452611012499995,
+      "volume_per_atom": 18.222654426533257,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-561735",
+      "formula": "Cs7O",
+      "formation_energy": -0.45990913673132167,
+      "volume_per_atom": 91.77961079395074,
+      "e_above_hull": 0.0041802056178161795
+    },
+    {
+      "material_id": "mp-562001",
+      "formula": "Cs11O3",
+      "formation_energy": -0.7917592749815269,
+      "volume_per_atom": 71.2812655814669,
+      "e_above_hull": 0.00382245475985199
+    },
+    {
+      "material_id": "mp-562065",
+      "formula": "PO2",
+      "formation_energy": -2.264827865277777,
+      "volume_per_atom": 15.761127041089367,
+      "e_above_hull": 0.011441414277766349
+    },
+    {
+      "material_id": "mp-581967",
+      "formula": "Nb2O5",
+      "formation_energy": -3.0342052746938792,
+      "volume_per_atom": 14.662601818801999,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-614006",
+      "formula": "B2O",
+      "formation_energy": -0.7110137211111116,
+      "volume_per_atom": 9.670543849599689,
+      "e_above_hull": 0.9245854276388883
+    },
+    {
+      "material_id": "mp-622640",
+      "formula": "V3O7",
+      "formation_energy": -2.338437482666667,
+      "volume_per_atom": 12.875011227977728,
+      "e_above_hull": 0.007960498833318397
+    },
+    {
+      "material_id": "mp-634859",
+      "formula": "CaO2",
+      "formation_energy": -2.2065522466666674,
+      "volume_per_atom": 12.661927031721603,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-644481",
+      "formula": "ScO",
+      "formation_energy": -3.2404897350000006,
+      "volume_per_atom": 11.23817466389351,
+      "e_above_hull": 0.0667874656249996
+    },
+    {
+      "material_id": "mp-651870",
+      "formula": "Pb3O5",
+      "formation_energy": -1.3218286846874996,
+      "volume_per_atom": 15.949113758758047,
+      "e_above_hull": 0.042277025624999354
+    },
+    {
+      "material_id": "mp-656850",
+      "formula": "Ti2O7",
+      "formation_energy": -1.839757052407407,
+      "volume_per_atom": 19.212025840591487,
+      "e_above_hull": 0.4946625066666668
+    },
+    {
+      "material_id": "mp-656884",
+      "formula": "Ni9O10",
+      "formation_energy": -1.1083094205263162,
+      "volume_per_atom": 9.568118253202364,
+      "e_above_hull": 0.04665237342105222
+    },
+    {
+      "material_id": "mp-656887",
+      "formula": "Ni3O4",
+      "formation_energy": -1.0467500692857143,
+      "volume_per_atom": 10.16863456305135,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-672237",
+      "formula": "PbO",
+      "formation_energy": -1.4690764820312499,
+      "volume_per_atom": 22.29135782835714,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-673681",
+      "formula": "Ta11O2",
+      "formation_energy": -0.5010490123076925,
+      "volume_per_atom": 17.014941983613706,
+      "e_above_hull": 0.21738187169230905
+    },
+    {
+      "material_id": "mp-684589",
+      "formula": "Bi4O5",
+      "formation_energy": -1.3700545205555557,
+      "volume_per_atom": 19.06731023382015,
+      "e_above_hull": 0.15006327111110984
+    },
+    {
+      "material_id": "mp-684657",
+      "formula": "Pd7O8",
+      "formation_energy": -0.729964483777778,
+      "volume_per_atom": 12.704687566205962,
+      "e_above_hull": 0.047394989222216743
+    },
+    {
+      "material_id": "mp-684679",
+      "formula": "Sb6O13",
+      "formation_energy": -1.781462497368421,
+      "volume_per_atom": 14.984924028249216,
+      "e_above_hull": 0.023071011315778378
+    },
+    {
+      "material_id": "mp-684958",
+      "formula": "TaO10",
+      "formation_energy": -0.6041819481818187,
+      "volume_per_atom": 15.80547761109019,
+      "e_above_hull": 0.45713640318181703
+    },
+    {
+      "material_id": "mp-685006",
+      "formula": "Ta10O9",
+      "formation_energy": -1.5589049697368431,
+      "volume_per_atom": 12.165963609268479,
+      "e_above_hull": 0.6531059099473655
+    },
+    {
+      "material_id": "mp-685105",
+      "formula": "SiO4",
+      "formation_energy": -1.160774460000001,
+      "volume_per_atom": 15.42834909751333,
+      "e_above_hull": 0.7995330560000005
+    },
+    {
+      "material_id": "mp-705284",
+      "formula": "W5O14",
+      "formation_energy": -1.3954684060526306,
+      "volume_per_atom": 18.94147748733771,
+      "e_above_hull": 0.7671396568947362
+    },
+    {
+      "material_id": "mp-705541",
+      "formula": "V10O9",
+      "formation_energy": -1.7885979828947367,
+      "volume_per_atom": 11.055584625701652,
+      "e_above_hull": 0.2123607223026287
+    },
+    {
+      "material_id": "mp-705558",
+      "formula": "Fe7O9",
+      "formation_energy": -1.4047765984375005,
+      "volume_per_atom": 13.528887566003759,
+      "e_above_hull": 0.2177308499999997
+    },
+    {
+      "material_id": "mp-705588",
+      "formula": "Fe8O9",
+      "formation_energy": -1.4993191852941175,
+      "volume_per_atom": 10.893622630451967,
+      "e_above_hull": 0.04855090264705275
+    },
+    {
+      "material_id": "mp-714896",
+      "formula": "Cr3O",
+      "formation_energy": 0.08211364749999994,
+      "volume_per_atom": 15.34047704301927,
+      "e_above_hull": 1.0681918845833334
+    },
+    {
+      "material_id": "mp-714972",
+      "formula": "V8O",
+      "formation_energy": 0.9087327894444428,
+      "volume_per_atom": 13.26919644031893,
+      "e_above_hull": 1.3780934733796277
+    },
+    {
+      "material_id": "mp-715333",
+      "formula": "Fe7O8",
+      "formation_energy": -1.4938590990000005,
+      "volume_per_atom": 11.063853373429067,
+      "e_above_hull": 0.06285689833332597
+    },
+    {
+      "material_id": "mp-715557",
+      "formula": "W3O8",
+      "formation_energy": -2.13950372,
+      "volume_per_atom": 12.233858721002578,
+      "e_above_hull": 0.00641542262237671
+    },
+    {
+      "material_id": "mp-720472",
+      "formula": "PrO3",
+      "formation_energy": -1.9420307625,
+      "volume_per_atom": 15.134740813877759,
+      "e_above_hull": 0.39240629671875116
+    },
+    {
+      "material_id": "mp-723463",
+      "formula": "LaO3",
+      "formation_energy": -2.0302205200000003,
+      "volume_per_atom": 15.738452522953464,
+      "e_above_hull": 0.39111891515624997
+    },
+    {
+      "material_id": "mp-726074",
+      "formula": "Ta2O7",
+      "formation_energy": -2.105663728888888,
+      "volume_per_atom": 16.87668944081274,
+      "e_above_hull": 0.4886700188888895
+    },
+    {
+      "material_id": "mp-726080",
+      "formula": "SO4",
+      "formation_energy": -1.122510571625,
+      "volume_per_atom": 17.922148671478578,
+      "e_above_hull": 0.13945272733333614
+    },
+    {
+      "material_id": "mp-726085",
+      "formula": "SbO3",
+      "formation_energy": -1.3315254799999998,
+      "volume_per_atom": 17.85110155483726,
+      "e_above_hull": 0.19800434874999784
+    },
+    {
+      "material_id": "mp-726666",
+      "formula": "PO4",
+      "formation_energy": -1.3255805181666667,
+      "volume_per_atom": 18.990577518418704,
+      "e_above_hull": 0.3816214415000081
+    },
+    {
+      "material_id": "mp-727194",
+      "formula": "Ta3O8",
+      "formation_energy": -3.1573210097727284,
+      "volume_per_atom": 13.824350693756275,
+      "e_above_hull": 0.026634044318180727
+    },
+    {
+      "material_id": "mp-731864",
+      "formula": "Si6O13",
+      "formation_energy": -2.9008859055263163,
+      "volume_per_atom": 24.877623089427136,
+      "e_above_hull": 0.1943364881578944
+    },
+    {
+      "material_id": "mp-753629",
+      "formula": "Zr2O",
+      "formation_energy": -1.9908461322222228,
+      "volume_per_atom": 16.353486879570838,
+      "e_above_hull": 0.008086136111108644
+    },
+    {
+      "material_id": "mp-753707",
+      "formula": "Bi3O5",
+      "formation_energy": -1.5324326750000008,
+      "volume_per_atom": 16.928306696894474,
+      "e_above_hull": 0.059433329687499814
+    },
+    {
+      "material_id": "mp-753746",
+      "formula": "Rb2O",
+      "formation_energy": -1.1331683733333329,
+      "volume_per_atom": 32.06927640269519,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-754430",
+      "formula": "Mn7O12",
+      "formation_energy": -1.8674783881851182,
+      "volume_per_atom": 10.5447778964771,
+      "e_above_hull": 0.04787255374999333
+    },
+    {
+      "material_id": "mp-754545",
+      "formula": "NdO",
+      "formation_energy": -3.0733350024999995,
+      "volume_per_atom": 16.114084838649514,
+      "e_above_hull": 0.07795585625000001
+    },
+    {
+      "material_id": "mp-754806",
+      "formula": "Ni5O6",
+      "formation_energy": -1.0683391100000004,
+      "volume_per_atom": 10.071163723902247,
+      "e_above_hull": 0.04071467954546648
+    },
+    {
+      "material_id": "mp-755073",
+      "formula": "CrO",
+      "formation_energy": -1.9670889799999998,
+      "volume_per_atom": 12.544738392640797,
+      "e_above_hull": 0.005067494166667075
+    },
+    {
+      "material_id": "mp-756253",
+      "formula": "Cr3O4",
+      "formation_energy": -2.1709183342857137,
+      "volume_per_atom": 11.163373758842084,
+      "e_above_hull": 0.0829747790476194
+    },
+    {
+      "material_id": "mp-756900",
+      "formula": "Co7O12",
+      "formation_energy": -1.039599347105264,
+      "volume_per_atom": 10.473720267811823,
+      "e_above_hull": 0.12498535548871548
+    },
+    {
+      "material_id": "mp-759037",
+      "formula": "Fe9O10",
+      "formation_energy": -1.502101875263158,
+      "volume_per_atom": 10.822816738251221,
+      "e_above_hull": 0.03878459999999251
+    },
+    {
+      "material_id": "mp-759920",
+      "formula": "Ti5O8",
+      "formation_energy": -3.338724498205128,
+      "volume_per_atom": 10.766839577396578,
+      "e_above_hull": 0.0117941253846503
+    },
+    {
+      "material_id": "mp-760084",
+      "formula": "Cu8O7",
+      "formation_energy": -0.8315388423333322,
+      "volume_per_atom": 11.502885355705496,
+      "e_above_hull": 0.05159551033333365
+    },
+    {
+      "material_id": "mp-760323",
+      "formula": "Ce5O9",
+      "formation_energy": -3.942782369285715,
+      "volume_per_atom": 15.060902449334057,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-761151",
+      "formula": "Zr6O11",
+      "formation_energy": -3.6230431202941173,
+      "volume_per_atom": 12.266869571666216,
+      "e_above_hull": 0.08382765941176373
+    },
+    {
+      "material_id": "mp-761471",
+      "formula": "Co5O8",
+      "formation_energy": -1.1792680126923079,
+      "volume_per_atom": 10.14860068278543,
+      "e_above_hull": 0.02398702879120318
+    },
+    {
+      "material_id": "mp-766450",
+      "formula": "Ni6O7",
+      "formation_energy": -1.0689109738461526,
+      "volume_per_atom": 9.642162420983063,
+      "e_above_hull": 0.05691689423078117
+    },
+    {
+      "material_id": "mp-768247",
+      "formula": "PtO3",
+      "formation_energy": -0.6081819050000004,
+      "volume_per_atom": 11.082742547760773,
+      "e_above_hull": 0.08682661124999935
+    },
+    {
+      "material_id": "mp-771359",
+      "formula": "Cu2O3",
+      "formation_energy": -0.8331290082500005,
+      "volume_per_atom": 10.185390952172101,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-773920",
+      "formula": "Cr5O12",
+      "formation_energy": -1.8322077199999995,
+      "volume_per_atom": 15.005508054842755,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-776160",
+      "formula": "Cr2O5",
+      "formation_energy": -1.7224604260714276,
+      "volume_per_atom": 14.964638450855755,
+      "e_above_hull": 0.05739850192857254
+    },
+    {
+      "material_id": "mp-778252",
+      "formula": "V5O12",
+      "formation_energy": -2.320203241176472,
+      "volume_per_atom": 15.328278955682382,
+      "e_above_hull": 0.002569260882337332
+    },
+    {
+      "material_id": "mp-779692",
+      "formula": "Ti7O8",
+      "formation_energy": -2.9240007255555556,
+      "volume_per_atom": 11.037623514566876,
+      "e_above_hull": 0.1157833386666578
+    },
+    {
+      "material_id": "mp-780625",
+      "formula": "Tb5O9",
+      "formation_energy": -3.4689556982142866,
+      "volume_per_atom": 14.530134452666832,
+      "e_above_hull": 0.08781223281250128
+    },
+    {
+      "material_id": "mp-796331",
+      "formula": "MoO5",
+      "formation_energy": -0.6139049033333327,
+      "volume_per_atom": 15.469457157038393,
+      "e_above_hull": 0.6691442443749995
+    },
+    {
+      "material_id": "mp-796383",
+      "formula": "V3O8",
+      "formation_energy": -2.0568583890909093,
+      "volume_per_atom": 13.804726452507621,
+      "e_above_hull": 0.12811698181818088
+    },
+    {
+      "material_id": "mp-818205",
+      "formula": "V3O10",
+      "formation_energy": -1.432554382692308,
+      "volume_per_atom": 16.732176509152467,
+      "e_above_hull": 0.4162709311538455
+    },
+    {
+      "material_id": "mp-826017",
+      "formula": "W3O10",
+      "formation_energy": -1.8390725492307682,
+      "volume_per_atom": 14.485752034732737,
+      "e_above_hull": 0.17780232346153824
+    },
+    {
+      "material_id": "mp-850222",
+      "formula": "FeO2",
+      "formation_energy": -1.2774018099999995,
+      "volume_per_atom": 10.542280904554667,
+      "e_above_hull": 0.14517857083332952
+    },
+    {
+      "material_id": "mp-862998",
+      "formula": "Si2O5",
+      "formation_energy": -2.227386509285714,
+      "volume_per_atom": 15.142331491097744,
+      "e_above_hull": 0.5730527992857137
+    },
+    {
+      "material_id": "mp-863316",
+      "formula": "FeO3",
+      "formation_energy": -0.526563695000001,
+      "volume_per_atom": 15.367331449749583,
+      "e_above_hull": 0.5403715906249991
+    },
+    {
+      "material_id": "mp-864801",
+      "formula": "YbO2",
+      "formation_energy": -2.2384838650000005,
+      "volume_per_atom": 12.44832361959118,
+      "e_above_hull": 0.1813248000000005
+    },
+    {
+      "material_id": "mp-870306",
+      "formula": "V6O13",
+      "formation_energy": -2.3934524597368427,
+      "volume_per_atom": 12.11729892462008,
+      "e_above_hull": 0.016361282368407615
+    },
+    {
+      "material_id": "mp-973457",
+      "formula": "LuO3",
+      "formation_energy": -2.0119461800000007,
+      "volume_per_atom": 10.266271993901563,
+      "e_above_hull": 0.5656027851562486
+    },
+    {
+      "material_id": "mp-974336",
+      "formula": "HoO",
+      "formation_energy": -3.1244088999999997,
+      "volume_per_atom": 16.45391952899909,
+      "e_above_hull": 0.23698083562500116
+    },
+    {
+      "material_id": "mp-978114",
+      "formula": "Sn5O6",
+      "formation_energy": -1.7621987818181823,
+      "volume_per_atom": 18.272900727874852,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-978968",
+      "formula": "Ti3O2",
+      "formation_energy": -2.3526132520000003,
+      "volume_per_atom": 11.336615949718448,
+      "e_above_hull": 0.03189092399999538
+    },
+    {
+      "material_id": "mp-982048",
+      "formula": "Ge2O3",
+      "formation_energy": -1.4868969710000002,
+      "volume_per_atom": 10.751930053035256,
+      "e_above_hull": 0.3824686095000027
+    },
+    {
+      "material_id": "mp-984358",
+      "formula": "Au3O",
+      "formation_energy": 0.1965355187500002,
+      "volume_per_atom": 17.674189583368545,
+      "e_above_hull": 0.38730784333333457
+    },
+    {
+      "material_id": "mp-984359",
+      "formula": "DyO3",
+      "formation_energy": -1.9966513262499994,
+      "volume_per_atom": 10.921477029242167,
+      "e_above_hull": 0.5093994581250012
+    },
+    {
+      "material_id": "mp-985608",
+      "formula": "Nd2O5",
+      "formation_energy": -2.680035810714286,
+      "volume_per_atom": 14.40529612720857,
+      "e_above_hull": 0.028243616428569318
+    },
+    {
+      "material_id": "mp-998913",
+      "formula": "KO3",
+      "formation_energy": -0.6600712020000001,
+      "volume_per_atom": 19.553509110549324,
+      "e_above_hull": 0.08029665374999961
+    },
+    {
+      "material_id": "mp-1001011",
+      "formula": "TaO3",
+      "formation_energy": -2.781038432500001,
+      "volume_per_atom": 15.464609286819682,
+      "e_above_hull": 0.13758703375000003
+    },
+    {
+      "material_id": "mp-1001790",
+      "formula": "LiO3",
+      "formation_energy": -0.6248585295833333,
+      "volume_per_atom": 10.706907763048175,
+      "e_above_hull": 0.23903239732142811
+    },
+    {
+      "material_id": "mp-1016092",
+      "formula": "Re2O7",
+      "formation_energy": -2.026665480694444,
+      "volume_per_atom": 15.310331680087184,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1018789",
+      "formula": "LiO2",
+      "formation_energy": -1.042903046111111,
+      "volume_per_atom": 9.630583294167229,
+      "e_above_hull": 0.08308098404761921
+    },
+    {
+      "material_id": "mp-1018886",
+      "formula": "PdO2",
+      "formation_energy": -0.7275267349999991,
+      "volume_per_atom": 11.295030407782134,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1022722",
+      "formula": "Bi3O2",
+      "formation_energy": -0.967914948,
+      "volume_per_atom": 22.25858668908512,
+      "e_above_hull": 0.12656986199999753
+    },
+    {
+      "material_id": "mp-1022728",
+      "formula": "Cu3O2",
+      "formation_energy": -0.6034587459999997,
+      "volume_per_atom": 12.0272932531235,
+      "e_above_hull": 0.16035442700000058
+    },
+    {
+      "material_id": "mp-1025387",
+      "formula": "TbO3",
+      "formation_energy": -2.0458884525,
+      "volume_per_atom": 16.028577902381798,
+      "e_above_hull": 0.4438490992187498
+    },
+    {
+      "material_id": "mp-1025421",
+      "formula": "SmO3",
+      "formation_energy": -1.9860441237500002,
+      "volume_per_atom": 17.193125134439914,
+      "e_above_hull": 0.4276761682812502
+    },
+    {
+      "material_id": "mp-1025483",
+      "formula": "ErO3",
+      "formation_energy": -2.07711739375,
+      "volume_per_atom": 15.15522932106896,
+      "e_above_hull": 0.45856641687500055
+    },
+    {
+      "material_id": "mp-1025565",
+      "formula": "HoO3",
+      "formation_energy": -2.066555847500001,
+      "volume_per_atom": 15.50395245495208,
+      "e_above_hull": 0.4544864542187499
+    },
+    {
+      "material_id": "mp-1041270",
+      "formula": "Sb4O9",
+      "formation_energy": -1.564208818076924,
+      "volume_per_atom": 14.874677710442208,
+      "e_above_hull": 0.2251133086538344
+    },
+    {
+      "material_id": "mp-1041273",
+      "formula": "Bi4O9",
+      "formation_energy": -1.1284400738461544,
+      "volume_per_atom": 17.366054552289643,
+      "e_above_hull": 0.21903450461538387
+    },
+    {
+      "material_id": "mp-1041443",
+      "formula": "Cr4O9",
+      "formation_energy": -1.6949272780769233,
+      "volume_per_atom": 14.688712804347771,
+      "e_above_hull": 0.21187422173076875
+    },
+    {
+      "material_id": "mp-1043373",
+      "formula": "Bi2O5",
+      "formation_energy": -1.1053070828571439,
+      "volume_per_atom": 17.236525913908817,
+      "e_above_hull": 0.14591931142857373
+    },
+    {
+      "material_id": "mp-1043418",
+      "formula": "Co2O3",
+      "formation_energy": -0.9393898199999995,
+      "volume_per_atom": 11.309306897942479,
+      "e_above_hull": 0.3006020434285661
+    },
+    {
+      "material_id": "mp-1043875",
+      "formula": "Ni2O3",
+      "formation_energy": -0.7631587530000005,
+      "volume_per_atom": 10.267684331177067,
+      "e_above_hull": 0.21380797833333443
+    },
+    {
+      "material_id": "mp-1044088",
+      "formula": "Bi3O7",
+      "formation_energy": -1.1711849754999997,
+      "volume_per_atom": 16.56847748829411,
+      "e_above_hull": 0.14260273849999017
+    },
+    {
+      "material_id": "mp-1044452",
+      "formula": "Mo3O7",
+      "formation_energy": -1.768805460499999,
+      "volume_per_atom": 18.105194295841084,
+      "e_above_hull": 0.21448611367857318
+    },
+    {
+      "material_id": "mp-1044455",
+      "formula": "Cr3O7",
+      "formation_energy": -1.7189968397499995,
+      "volume_per_atom": 15.691903728172074,
+      "e_above_hull": 0.14553485150000078
+    },
+    {
+      "material_id": "mp-1044534",
+      "formula": "W3O7",
+      "formation_energy": -1.9994798799999998,
+      "volume_per_atom": 14.284426479943733,
+      "e_above_hull": 0.09717470069230849
+    },
+    {
+      "material_id": "mp-1045759",
+      "formula": "Ti5O7",
+      "formation_energy": -3.0825180684722207,
+      "volume_per_atom": 11.548470061026372,
+      "e_above_hull": 0.1550076733333423
+    },
+    {
+      "material_id": "mp-1045856",
+      "formula": "Sn5O7",
+      "formation_energy": -1.6179721891666663,
+      "volume_per_atom": 17.421640426548656,
+      "e_above_hull": 0.2521274556250006
+    },
+    {
+      "material_id": "mp-1045868",
+      "formula": "Cu5O7",
+      "formation_energy": -0.6796509970833325,
+      "volume_per_atom": 10.680028703264519,
+      "e_above_hull": 0.17175566687500066
+    },
+    {
+      "material_id": "mp-1046039",
+      "formula": "V5O7",
+      "formation_energy": -2.282689676666666,
+      "volume_per_atom": 12.181985321789908,
+      "e_above_hull": 0.18145391399305666
+    },
+    {
+      "material_id": "mp-1046050",
+      "formula": "Cr5O7",
+      "formation_energy": -1.8828188749999992,
+      "volume_per_atom": 11.662993171675254,
+      "e_above_hull": 0.41803034486111024
+    },
+    {
+      "material_id": "mp-1046066",
+      "formula": "Mn5O7",
+      "formation_energy": -1.800770882054599,
+      "volume_per_atom": 12.289907415141633,
+      "e_above_hull": 0.2344344430729155
+    },
+    {
+      "material_id": "mp-1046082",
+      "formula": "Co5O7",
+      "formation_energy": -0.8721521629166666,
+      "volume_per_atom": 11.39916044732687,
+      "e_above_hull": 0.407637924285714
+    },
+    {
+      "material_id": "mp-1046095",
+      "formula": "Ni5O7",
+      "formation_energy": -0.825448413333333,
+      "volume_per_atom": 10.11131834752623,
+      "e_above_hull": 0.19222526513889004
+    },
+    {
+      "material_id": "mp-1046850",
+      "formula": "Sn2O3",
+      "formation_energy": -1.6507640185000008,
+      "volume_per_atom": 17.747217331197934,
+      "e_above_hull": 0.2668120060000003
+    },
+    {
+      "material_id": "mp-1047895",
+      "formula": "Mo4O9",
+      "formation_energy": -1.8638091188461554,
+      "volume_per_atom": 13.715914254292036,
+      "e_above_hull": 0.12830005648351595
+    },
+    {
+      "material_id": "mp-1048022",
+      "formula": "W4O9",
+      "formation_energy": -1.9218640826923081,
+      "volume_per_atom": 13.986210351734352,
+      "e_above_hull": 0.1608953651479279
+    },
+    {
+      "material_id": "mp-1063118",
+      "formula": "Si2O",
+      "formation_energy": -0.8379546016666666,
+      "volume_per_atom": 14.745145988503387,
+      "e_above_hull": 0.7956349949999995
+    },
+    {
+      "material_id": "mp-1071163",
+      "formula": "TiO",
+      "formation_energy": -2.9079562791666667,
+      "volume_per_atom": 10.476765081521808,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1077235",
+      "formula": "SmO2",
+      "formation_energy": -3.0622391766666666,
+      "volume_per_atom": 16.467877900158214,
+      "e_above_hull": 0.15605454604166535
+    },
+    {
+      "material_id": "mp-1079159",
+      "formula": "Ta2O3",
+      "formation_energy": -2.5986112560000008,
+      "volume_per_atom": 11.7531009213496,
+      "e_above_hull": 0.20326919160000223
+    },
+    {
+      "material_id": "mp-1079523",
+      "formula": "CoO4",
+      "formation_energy": -0.04937096600000075,
+      "volume_per_atom": 19.64895648742055,
+      "e_above_hull": 0.5991084150000026
+    },
+    {
+      "material_id": "mp-1086672",
+      "formula": "MnO3",
+      "formation_energy": -0.8742364844827586,
+      "volume_per_atom": 11.633233789648504,
+      "e_above_hull": 0.480135970625005
+    },
+    {
+      "material_id": "mp-1094082",
+      "formula": "Ni4O",
+      "formation_energy": 0.9027302010000007,
+      "volume_per_atom": 11.52598298423053,
+      "e_above_hull": 1.3899643210000008
+    },
+    {
+      "material_id": "mp-1094096",
+      "formula": "Ni4O3",
+      "formation_energy": -0.6130807392857146,
+      "volume_per_atom": 10.314455944833197,
+      "e_above_hull": 0.4309923749999989
+    },
+    {
+      "material_id": "mp-1094139",
+      "formula": "Ni2O5",
+      "formation_energy": -0.18489941428571452,
+      "volume_per_atom": 10.176476069143446,
+      "e_above_hull": 0.5129339652380951
+    },
+    {
+      "material_id": "mp-1095187",
+      "formula": "Nb2O3",
+      "formation_energy": -2.5725724889999997,
+      "volume_per_atom": 11.920386858387614,
+      "e_above_hull": 0.08106640650000152
+    },
+    {
+      "material_id": "mp-1095382",
+      "formula": "Fe5O7",
+      "formation_energy": -1.499976592916666,
+      "volume_per_atom": 10.143834620389997,
+      "e_above_hull": 0.1695247491666736
+    },
+    {
+      "material_id": "mp-1096920",
+      "formula": "Cr3O5",
+      "formation_energy": -1.8868032293750003,
+      "volume_per_atom": 13.67841875993436,
+      "e_above_hull": 0.36020194937499816
+    },
+    {
+      "material_id": "mp-1097041",
+      "formula": "IrO3",
+      "formation_energy": -0.9821985075000006,
+      "volume_per_atom": 11.93944071458026,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1100921",
+      "formula": "V7O3",
+      "formation_energy": -0.44357122349999967,
+      "volume_per_atom": 14.70339768293617,
+      "e_above_hull": 0.8237026231249942
+    },
+    {
+      "material_id": "mp-1101301",
+      "formula": "TeO3",
+      "formation_energy": -1.3416823850000004,
+      "volume_per_atom": 15.446462752869998,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1104282",
+      "formula": "Mn2O5",
+      "formation_energy": -1.1510750658374391,
+      "volume_per_atom": 13.56727573463042,
+      "e_above_hull": 0.3967791685714346
+    },
+    {
+      "material_id": "mp-1104544",
+      "formula": "Sn3O4",
+      "formation_energy": -1.5793956507142854,
+      "volume_per_atom": 18.35314740939336,
+      "e_above_hull": 0.2567922942857148
+    },
+    {
+      "material_id": "mp-1105918",
+      "formula": "Cs4O3",
+      "formation_energy": -1.0767460495320198,
+      "volume_per_atom": 28.882199297560515,
+      "e_above_hull": 0.13572242714285654
+    },
+    {
+      "material_id": "mp-1120811",
+      "formula": "Ca2O3",
+      "formation_energy": -2.4321373745000003,
+      "volume_per_atom": 16.212402505233378,
+      "e_above_hull": 0.21420021850000026
+    },
+    {
+      "material_id": "mp-1147691",
+      "formula": "Fe2O5",
+      "formation_energy": -0.8447843621428573,
+      "volume_per_atom": 10.260226075810445,
+      "e_above_hull": 0.3745702499999979
+    },
+    {
+      "material_id": "mp-1172875",
+      "formula": "Mn2O3",
+      "formation_energy": -2.013919843547413,
+      "volume_per_atom": 11.113758759654797,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1173004",
+      "formula": "Mo3O8",
+      "formation_energy": -1.698088876818182,
+      "volume_per_atom": 14.838912698388913,
+      "e_above_hull": 0.2539402932792214
+    },
+    {
+      "material_id": "mp-1173028",
+      "formula": "NdO3",
+      "formation_energy": -2.1945072787499997,
+      "volume_per_atom": 19.7087470030165,
+      "e_above_hull": 0.17523721999999964
+    },
+    {
+      "material_id": "mp-1173333",
+      "formula": "Re3O10",
+      "formation_energy": -1.0731513388461538,
+      "volume_per_atom": 16.71497456112025,
+      "e_above_hull": 0.9869665354808008
+    },
+    {
+      "material_id": "mp-1173794",
+      "formula": "Na6O",
+      "formation_energy": -0.47205251775862067,
+      "volume_per_atom": 35.44579616189608,
+      "e_above_hull": 0.14445186625615714
+    },
+    {
+      "material_id": "mp-1178476",
+      "formula": "Cu3O4",
+      "formation_energy": -0.836459377857142,
+      "volume_per_atom": 11.364764366300367,
+      "e_above_hull": 0.02800275446428646
+    },
+    {
+      "material_id": "mp-1178760",
+      "formula": "W2O7",
+      "formation_energy": -1.6430478105555555,
+      "volume_per_atom": 15.631576159519504,
+      "e_above_hull": 0.2991279927777768
+    },
+    {
+      "material_id": "mp-1178865",
+      "formula": "WO5",
+      "formation_energy": -1.0262226383333335,
+      "volume_per_atom": 20.379704874955845,
+      "e_above_hull": 0.4304092141666658
+    },
+    {
+      "material_id": "mp-1178951",
+      "formula": "TeO4",
+      "formation_energy": -0.6362928110000006,
+      "volume_per_atom": 13.676989907153924,
+      "e_above_hull": 0.4370530969999997
+    },
+    {
+      "material_id": "mp-1178953",
+      "formula": "TmO3",
+      "formation_energy": -2.0963753641666667,
+      "volume_per_atom": 14.86948959508017,
+      "e_above_hull": 0.4615867146875008
+    },
+    {
+      "material_id": "mp-1179114",
+      "formula": "ScO2",
+      "formation_energy": -3.035004163333332,
+      "volume_per_atom": 14.712831532349547,
+      "e_above_hull": 0.27227303729166863
+    },
+    {
+      "material_id": "mp-1179143",
+      "formula": "SrO6",
+      "formation_energy": -0.8681659016666673,
+      "volume_per_atom": 15.542952222040649,
+      "e_above_hull": 0.07702243214285698
+    },
+    {
+      "material_id": "mp-1179144",
+      "formula": "SeO4",
+      "formation_energy": -0.3772983464687506,
+      "volume_per_atom": 17.57579278465895,
+      "e_above_hull": 0.33814550850000025
+    },
+    {
+      "material_id": "mp-1179154",
+      "formula": "TlO",
+      "formation_energy": -0.9129993291666665,
+      "volume_per_atom": 17.48932572041325,
+      "e_above_hull": 0.09392196583333856
+    },
+    {
+      "material_id": "mp-1179195",
+      "formula": "Si2O3",
+      "formation_energy": -2.1653521380000007,
+      "volume_per_atom": 19.890465541845895,
+      "e_above_hull": 0.7751091359999975
+    },
+    {
+      "material_id": "mp-1179224",
+      "formula": "SrO10",
+      "formation_energy": -0.5384670487878787,
+      "volume_per_atom": 13.745757444410959,
+      "e_above_hull": 0.06301643636363607
+    },
+    {
+      "material_id": "mp-1179275",
+      "formula": "Si4O9",
+      "formation_energy": -2.772621129038462,
+      "volume_per_atom": 16.319715672586632,
+      "e_above_hull": 0.24323658788461522
+    },
+    {
+      "material_id": "mp-1179307",
+      "formula": "ReO5",
+      "formation_energy": -1.062864323333334,
+      "volume_per_atom": 15.011718288413372,
+      "e_above_hull": 0.4571347871874982
+    },
+    {
+      "material_id": "mp-1179358",
+      "formula": "Ti3O7",
+      "formation_energy": -2.913736122499999,
+      "volume_per_atom": 30.310414187424858,
+      "e_above_hull": 0.23773028225000026
+    },
+    {
+      "material_id": "mp-1179595",
+      "formula": "Sb3O14",
+      "formation_energy": -0.21786538558823518,
+      "volume_per_atom": 14.331369184113298,
+      "e_above_hull": 0.8618027288235295
+    },
+    {
+      "material_id": "mp-1179626",
+      "formula": "SO5",
+      "formation_energy": -0.8087114096875005,
+      "volume_per_atom": 20.454925812188694,
+      "e_above_hull": 0.24292467277777696
+    },
+    {
+      "material_id": "mp-1179651",
+      "formula": "Si5O8",
+      "formation_energy": -2.717713873846153,
+      "volume_per_atom": 19.311129535333883,
+      "e_above_hull": 0.29814384307692343
+    },
+    {
+      "material_id": "mp-1179674",
+      "formula": "Re2O9",
+      "formation_energy": -1.3178140559090925,
+      "volume_per_atom": 17.516341763522934,
+      "e_above_hull": 0.3403667919318156
+    },
+    {
+      "material_id": "mp-1179845",
+      "formula": "PtO6",
+      "formation_energy": -0.14002481357142926,
+      "volume_per_atom": 13.317340605853897,
+      "e_above_hull": 0.25712290999999876
+    },
+    {
+      "material_id": "mp-1180203",
+      "formula": "MoO4",
+      "formation_energy": -1.0703267970000012,
+      "volume_per_atom": 16.99138080370062,
+      "e_above_hull": 0.4693321802499977
+    },
+    {
+      "material_id": "mp-1180210",
+      "formula": "NaO5",
+      "formation_energy": -0.10165072525862051,
+      "volume_per_atom": 14.120459012629388,
+      "e_above_hull": 0.35537856916666666
+    },
+    {
+      "material_id": "mp-1180296",
+      "formula": "Mo2O7",
+      "formation_energy": -1.3716047522222223,
+      "volume_per_atom": 14.991031107224432,
+      "e_above_hull": 0.3391274447222212
+    },
+    {
+      "material_id": "mp-1180348",
+      "formula": "Mo3O10",
+      "formation_energy": -1.6241294842307694,
+      "volume_per_atom": 15.203239102542693,
+      "e_above_hull": 0.1524001049038457
+    },
+    {
+      "material_id": "mp-1181008",
+      "formula": "InO2",
+      "formation_energy": -1.4339978916666662,
+      "volume_per_atom": 12.989507965929599,
+      "e_above_hull": 0.23022160249999946
+    },
+    {
+      "material_id": "mp-1181272",
+      "formula": "InO3",
+      "formation_energy": -0.6498293706250005,
+      "volume_per_atom": 14.919384791484529,
+      "e_above_hull": 0.598335249999999
+    },
+    {
+      "material_id": "mp-1181293",
+      "formula": "GaO3",
+      "formation_energy": -0.8046011237499995,
+      "volume_per_atom": 10.879018845422562,
+      "e_above_hull": 0.613521794375
+    },
+    {
+      "material_id": "mp-1181411",
+      "formula": "Fe4O13",
+      "formation_energy": -0.4242886950000005,
+      "volume_per_atom": 10.204524450863019,
+      "e_above_hull": 0.5798856914705883
+    },
+    {
+      "material_id": "mp-1182169",
+      "formula": "BaO6",
+      "formation_energy": -0.8982266271428573,
+      "volume_per_atom": 17.185407770702128,
+      "e_above_hull": 0.03947721214285771
+    },
+    {
+      "material_id": "mp-1182269",
+      "formula": "BeO2",
+      "formation_energy": -1.5807699358333327,
+      "volume_per_atom": 9.407022418296789,
+      "e_above_hull": 0.4878005991666674
+    },
+    {
+      "material_id": "mp-1182327",
+      "formula": "BaO4",
+      "formation_energy": -1.2030766655,
+      "volume_per_atom": 17.427635836425036,
+      "e_above_hull": 0.10437423200000051
+    },
+    {
+      "material_id": "mp-1182382",
+      "formula": "CaO10",
+      "formation_energy": -0.5515857118181823,
+      "volume_per_atom": 12.01887805029026,
+      "e_above_hull": 0.05020126454545437
+    },
+    {
+      "material_id": "mp-1182469",
+      "formula": "Eu2O3",
+      "formation_energy": -3.170390426749999,
+      "volume_per_atom": 16.520417824159196,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1182576",
+      "formula": "BaO10",
+      "formation_energy": -0.6015701499999999,
+      "volume_per_atom": 15.251232518767209,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1182590",
+      "formula": "As2O9",
+      "formation_energy": -0.2855370515909092,
+      "volume_per_atom": 18.76408555160503,
+      "e_above_hull": 0.7075451627272713
+    },
+    {
+      "material_id": "mp-1182716",
+      "formula": "Eu3O4",
+      "formation_energy": -3.217397807142857,
+      "volume_per_atom": 15.521763765123273,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1182858",
+      "formula": "AlO2",
+      "formation_energy": -2.6712326983333328,
+      "volume_per_atom": 9.00858758028539,
+      "e_above_hull": 0.1842264750000009
+    },
+    {
+      "material_id": "mp-1182893",
+      "formula": "Al5O8",
+      "formation_energy": -3.2314998423076924,
+      "volume_per_atom": 9.3888565757642,
+      "e_above_hull": 0.0632607423076923
+    },
+    {
+      "material_id": "mp-1183990",
+      "formula": "GaO",
+      "formation_energy": -1.3847719462499999,
+      "volume_per_atom": 14.195476821246606,
+      "e_above_hull": 0.5060586112499976
+    },
+    {
+      "material_id": "mp-1184211",
+      "formula": "ErO",
+      "formation_energy": -3.1275463975000006,
+      "volume_per_atom": 16.19028043241643,
+      "e_above_hull": 0.25336535000000016
+    },
+    {
+      "material_id": "mp-1184320",
+      "formula": "Fe3O",
+      "formation_energy": 0.7701840349999998,
+      "volume_per_atom": 12.955398786331898,
+      "e_above_hull": 1.5109469187500002
+    },
+    {
+      "material_id": "mp-1184665",
+      "formula": "Ge3O",
+      "formation_energy": 0.08172090999999959,
+      "volume_per_atom": 16.55396865027306,
+      "e_above_hull": 0.8606232352083394
+    },
+    {
+      "material_id": "mp-1184809",
+      "formula": "InO",
+      "formation_energy": -1.3548207249999997,
+      "volume_per_atom": 17.939902525717667,
+      "e_above_hull": 0.3093987691666662
+    },
+    {
+      "material_id": "mp-1186352",
+      "formula": "Os3O",
+      "formation_energy": 0.6567907250000005,
+      "volume_per_atom": 13.245467641601742,
+      "e_above_hull": 1.1605661981250002
+    },
+    {
+      "material_id": "mp-1186421",
+      "formula": "Pb3O",
+      "formation_energy": 0.00024462125000024315,
+      "volume_per_atom": 25.4899691192209,
+      "e_above_hull": 0.7347828622656252
+    },
+    {
+      "material_id": "mp-1186987",
+      "formula": "ScO3",
+      "formation_energy": -1.7875201362499995,
+      "volume_per_atom": 9.400226214671756,
+      "e_above_hull": 0.6929377642187511
+    },
+    {
+      "material_id": "mp-1187089",
+      "formula": "Sr2O3",
+      "formation_energy": -1.9490576956666672,
+      "volume_per_atom": 19.18485856804228,
+      "e_above_hull": 0.6050422380000002
+    },
+    {
+      "material_id": "mp-1187855",
+      "formula": "YO",
+      "formation_energy": -3.095103660833333,
+      "volume_per_atom": 16.883886835313273,
+      "e_above_hull": 0.2139964036805555
+    },
+    {
+      "material_id": "mp-1188665",
+      "formula": "TlO2",
+      "formation_energy": -0.5710224333333329,
+      "volume_per_atom": 16.40841304566988,
+      "e_above_hull": 0.34895164611110996
+    },
+    {
+      "material_id": "mp-1188678",
+      "formula": "Fe4O5",
+      "formation_energy": -1.519242835555556,
+      "volume_per_atom": 10.514846240692727,
+      "e_above_hull": 0.08759998166666527
+    },
+    {
+      "material_id": "mp-1189507",
+      "formula": "CsO3",
+      "formation_energy": -0.652118618232759,
+      "volume_per_atom": 22.072652776080815,
+      "e_above_hull": 0.08276695125
+    },
+    {
+      "material_id": "mp-1194011",
+      "formula": "SO12",
+      "formation_energy": -0.2140282102403848,
+      "volume_per_atom": 22.220901182999015,
+      "e_above_hull": 0.27134228935897653
+    },
+    {
+      "material_id": "mp-1194318",
+      "formula": "Yb3O4",
+      "formation_energy": -3.0123539939285706,
+      "volume_per_atom": 12.951095711137432,
+      "e_above_hull": 0.0988285753571434
+    },
+    {
+      "material_id": "mp-1196265",
+      "formula": "SO6",
+      "formation_energy": -0.30298951639880944,
+      "volume_per_atom": 14.471030764529292,
+      "e_above_hull": 0.5984128399999991
+    },
+    {
+      "material_id": "mp-1197211",
+      "formula": "Sb3O8",
+      "formation_energy": -1.6157146778787879,
+      "volume_per_atom": 13.058891231693968,
+      "e_above_hull": 0.05286331712121228
+    },
+    {
+      "material_id": "mp-1198417",
+      "formula": "Cr4O15",
+      "formation_energy": -0.8370257747368419,
+      "volume_per_atom": 17.536671787599296,
+      "e_above_hull": 0.47444922484210483
+    },
+    {
+      "material_id": "mp-1201116",
+      "formula": "TeO6",
+      "formation_energy": -0.006474582142857344,
+      "volume_per_atom": 13.377118647399554,
+      "e_above_hull": 0.7602010664285705
+    },
+    {
+      "material_id": "mp-1201299",
+      "formula": "P2O9",
+      "formation_energy": -1.0150621931060613,
+      "volume_per_atom": 19.133529720041228,
+      "e_above_hull": 0.5369395884090933
+    },
+    {
+      "material_id": "mp-1201934",
+      "formula": "WO4",
+      "formation_energy": -1.2280834987500016,
+      "volume_per_atom": 16.31645170406272,
+      "e_above_hull": 0.5198747242500001
+    },
+    {
+      "material_id": "mp-1201981",
+      "formula": "NaO8",
+      "formation_energy": -0.12013294850574772,
+      "volume_per_atom": 17.253705386458268,
+      "e_above_hull": 0.18455324777777715
+    },
+    {
+      "material_id": "mp-1204051",
+      "formula": "Na2O9",
+      "formation_energy": -0.485329382554859,
+      "volume_per_atom": 16.159378642394778,
+      "e_above_hull": 0.01324802954545401
+    },
+    {
+      "material_id": "mp-1204545",
+      "formula": "V5O14",
+      "formation_energy": -1.9043866693421052,
+      "volume_per_atom": 24.12499373895836,
+      "e_above_hull": 0.20392289907894767
+    },
+    {
+      "material_id": "mp-1205504",
+      "formula": "V7O4",
+      "formation_energy": -0.888017006363636,
+      "volume_per_atom": 12.843050365542018,
+      "e_above_hull": 0.6480725046969731
+    },
+    {
+      "material_id": "mp-1205900",
+      "formula": "CeO3",
+      "formation_energy": -2.43516050625,
+      "volume_per_atom": 14.498817840789615,
+      "e_above_hull": 0.5111868200000007
+    },
+    {
+      "material_id": "mp-1206099",
+      "formula": "YO3",
+      "formation_energy": -2.0210922591666662,
+      "volume_per_atom": 15.647397198009639,
+      "e_above_hull": 0.46073278921875005
+    },
+    {
+      "material_id": "mp-1206160",
+      "formula": "YbO3",
+      "formation_energy": -1.4141495800000001,
+      "volume_per_atom": 11.407896475903755,
+      "e_above_hull": 0.4007069187500001
+    },
+    {
+      "material_id": "mp-1206243",
+      "formula": "HoO2",
+      "formation_energy": -3.1836631816666663,
+      "volume_per_atom": 14.972097303923478,
+      "e_above_hull": 0.17772655395833326
+    },
+    {
+      "material_id": "mp-1206244",
+      "formula": "LuO2",
+      "formation_energy": -3.2443176933333326,
+      "volume_per_atom": 13.953271487625534,
+      "e_above_hull": 0.19241426020833252
+    },
+    {
+      "material_id": "mp-1206311",
+      "formula": "SrO3",
+      "formation_energy": -1.2939574316666667,
+      "volume_per_atom": 13.71254269588721,
+      "e_above_hull": 0.3601221524999998
+    },
+    {
+      "material_id": "mp-1206313",
+      "formula": "TmO2",
+      "formation_energy": -3.2267339105555557,
+      "volume_per_atom": 14.311063156788576,
+      "e_above_hull": 0.18388219458333133
+    },
+    {
+      "material_id": "mp-1206338",
+      "formula": "ErO2",
+      "formation_energy": -3.199738946666667,
+      "volume_per_atom": 14.571116498814563,
+      "e_above_hull": 0.18117280083333043
+    },
+    {
+      "material_id": "mp-1206505",
+      "formula": "GdO3",
+      "formation_energy": -1.7663960524999993,
+      "volume_per_atom": 14.468155675834598,
+      "e_above_hull": 0.6682363175000017
+    },
+    {
+      "material_id": "mp-1206506",
+      "formula": "EuO2",
+      "formation_energy": -2.6408766183333334,
+      "volume_per_atom": 13.87672941671211,
+      "e_above_hull": 0.0011154039583338715
+    },
+    {
+      "material_id": "mp-1206559",
+      "formula": "LaO2",
+      "formation_energy": -3.089907305,
+      "volume_per_atom": 17.702199586166497,
+      "e_above_hull": 0.13854527520833315
+    },
+    {
+      "material_id": "mp-1206587",
+      "formula": "EuO3",
+      "formation_energy": -1.7056096099999998,
+      "volume_per_atom": 12.920868333125519,
+      "e_above_hull": 0.2758844067187498
+    },
+    {
+      "material_id": "mp-1206610",
+      "formula": "YO2",
+      "formation_energy": -3.126742405555555,
+      "volume_per_atom": 15.333864518628289,
+      "e_above_hull": 0.18235765895833467
+    },
+    {
+      "material_id": "mp-1206655",
+      "formula": "BaO3",
+      "formation_energy": -1.2031107325,
+      "volume_per_atom": 16.8461955629247,
+      "e_above_hull": 0.4278688409375002
+    },
+    {
+      "material_id": "mp-1206688",
+      "formula": "Sn2O",
+      "formation_energy": -0.683528508333333,
+      "volume_per_atom": 29.019676516460866,
+      "e_above_hull": 0.40293976000000065
+    },
+    {
+      "material_id": "mp-1206710",
+      "formula": "LaO",
+      "formation_energy": -3.2043296450000005,
+      "volume_per_atom": 17.145490497644253,
+      "e_above_hull": 0.024122935208334084
+    },
+    {
+      "material_id": "mp-1206731",
+      "formula": "DyO2",
+      "formation_energy": -3.1680633133333327,
+      "volume_per_atom": 15.099416252915164,
+      "e_above_hull": 0.17333773250000206
+    },
+    {
+      "material_id": "mp-1206821",
+      "formula": "Cr2O",
+      "formation_energy": 0.007078628333333133,
+      "volume_per_atom": 15.653376754401604,
+      "e_above_hull": 1.3218496111111104
+    },
+    {
+      "material_id": "mp-1206845",
+      "formula": "Pt2O",
+      "formation_energy": -0.04685239833333318,
+      "volume_per_atom": 15.65787222730809,
+      "e_above_hull": 0.43549393333333164
+    },
+    {
+      "material_id": "mp-1207322",
+      "formula": "Cu6O",
+      "formation_energy": 1.1862097992857141,
+      "volume_per_atom": 104.98517261547363,
+      "e_above_hull": 1.4624206535714284
+    },
+    {
+      "material_id": "mp-1207792",
+      "formula": "VO3",
+      "formation_energy": -1.6920081724999996,
+      "volume_per_atom": 12.03754775812695,
+      "e_above_hull": 0.3108859174999985
+    },
+    {
+      "material_id": "mp-1208665",
+      "formula": "SrO4",
+      "formation_energy": -0.4400774333333331,
+      "volume_per_atom": 206.86358427872364,
+      "e_above_hull": 0.8831862340000001
+    },
+    {
+      "material_id": "mp-1209326",
+      "formula": "SeO5",
+      "formation_energy": -0.09404610268229223,
+      "volume_per_atom": 16.135433069019935,
+      "e_above_hull": 0.5021571097916651
+    },
+    {
+      "material_id": "mp-1209592",
+      "formula": "PO3",
+      "formation_energy": -1.9397846370833332,
+      "volume_per_atom": 24.523716350502472,
+      "e_above_hull": 0.1942178125000007
+    },
+    {
+      "material_id": "mp-1209929",
+      "formula": "NiO3",
+      "formation_energy": 0.4403650237500001,
+      "volume_per_atom": 25.430114910439844,
+      "e_above_hull": 1.0509692308333305
+    },
+    {
+      "material_id": "mp-1212646",
+      "formula": "GaO2",
+      "formation_energy": -1.6125074008333329,
+      "volume_per_atom": 10.688354279971541,
+      "e_above_hull": 0.27832315666666396
+    },
+    {
+      "material_id": "mp-1212686",
+      "formula": "Ga3O5",
+      "formation_energy": -2.0074046115625004,
+      "volume_per_atom": 13.24227229137853,
+      "e_above_hull": 0.1197797656249957
+    },
+    {
+      "material_id": "mp-1212799",
+      "formula": "Ga4O5",
+      "formation_energy": -1.5780867294444443,
+      "volume_per_atom": 11.995536571566769,
+      "e_above_hull": 0.5228361122222198
+    },
+    {
+      "material_id": "mp-1213655",
+      "formula": "GaO5",
+      "formation_energy": 0.14341344062500028,
+      "volume_per_atom": 13.319586532070716,
+      "e_above_hull": 1.088828719374999
+    },
+    {
+      "material_id": "mp-1213719",
+      "formula": "Cs2O3",
+      "formation_energy": -1.0282565486724144,
+      "volume_per_atom": 24.15207126659876,
+      "e_above_hull": 0.05185597449999868
+    },
+    {
+      "material_id": "mp-1213798",
+      "formula": "Cr6O11",
+      "formation_energy": -2.123403061470588,
+      "volume_per_atom": 10.283491803192836,
+      "e_above_hull": 0.018088067058821267
+    },
+    {
+      "material_id": "mp-1214539",
+      "formula": "BaO5",
+      "formation_energy": -0.8134380520833334,
+      "volume_per_atom": 16.182121108952327,
+      "e_above_hull": 0.2783270614583335
+    },
+    {
+      "material_id": "mp-1214764",
+      "formula": "BO3",
+      "formation_energy": -0.9147295235416664,
+      "volume_per_atom": 14.212843851930156,
+      "e_above_hull": 0.8340556702083335
+    },
+    {
+      "material_id": "mp-1214946",
+      "formula": "AgO2",
+      "formation_energy": -0.009732373055555263,
+      "volume_per_atom": 14.355636981578357,
+      "e_above_hull": 0.30596409638888833
+    },
+    {
+      "material_id": "mp-1215144",
+      "formula": "AsO3",
+      "formation_energy": 1.802351511875,
+      "volume_per_atom": 442.59987520286944,
+      "e_above_hull": 3.167839556562498
+    },
+    {
+      "material_id": "mp-1215377",
+      "formula": "Zr4O",
+      "formation_energy": -1.2407292990000003,
+      "volume_per_atom": 19.33101191059487,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1215902",
+      "formula": "Yb3O7",
+      "formation_energy": -1.632152760999999,
+      "volume_per_atom": 26.585176558930623,
+      "e_above_hull": 0.5456750375000006
+    },
+    {
+      "material_id": "mp-1217105",
+      "formula": "Ti3O8",
+      "formation_energy": -2.492625366363636,
+      "volume_per_atom": 12.509811238016967,
+      "e_above_hull": 0.37234409250000233
+    },
+    {
+      "material_id": "mp-1217135",
+      "formula": "Ti4O3",
+      "formation_energy": -2.435004672619048,
+      "volume_per_atom": 10.880512414637176,
+      "e_above_hull": 0.09905724714285569
+    },
+    {
+      "material_id": "mp-1217157",
+      "formula": "Ti3O4",
+      "formation_energy": -3.1638218171428583,
+      "volume_per_atom": 10.114088366844667,
+      "e_above_hull": 0.026622572857124993
+    },
+    {
+      "material_id": "mp-1218065",
+      "formula": "Ta6O",
+      "formation_energy": -0.6458956542857156,
+      "volume_per_atom": 16.556260001804272,
+      "e_above_hull": 0.021218737999996407
+    },
+    {
+      "material_id": "mp-1219002",
+      "formula": "Sn3O8",
+      "formation_energy": -1.2702314113636364,
+      "volume_per_atom": 14.242562864824965,
+      "e_above_hull": 0.45407166954545364
+    },
+    {
+      "material_id": "mp-1219421",
+      "formula": "Si3O8",
+      "formation_energy": -2.104963590454546,
+      "volume_per_atom": 14.87098347623829,
+      "e_above_hull": 0.568183022272728
+    },
+    {
+      "material_id": "mp-1219486",
+      "formula": "RhO3",
+      "formation_energy": -0.3571322537499997,
+      "volume_per_atom": 25.997980286043237,
+      "e_above_hull": 0.5570837924999994
+    },
+    {
+      "material_id": "mp-1219511",
+      "formula": "SbO4",
+      "formation_energy": -0.7360438770000002,
+      "volume_per_atom": 14.163767213602029,
+      "e_above_hull": 0.48757998600000096
+    },
+    {
+      "material_id": "mp-1219514",
+      "formula": "Sb3O7",
+      "formation_energy": -1.696427981,
+      "volume_per_atom": 14.089386858972432,
+      "e_above_hull": 0.07844333287498895
+    },
+    {
+      "material_id": "mp-1219528",
+      "formula": "Sb2O7",
+      "formation_energy": -1.0245359466666661,
+      "volume_per_atom": 15.894573157007638,
+      "e_above_hull": 0.3350461233333313
+    },
+    {
+      "material_id": "mp-1219538",
+      "formula": "Sb5O14",
+      "formation_energy": -1.4951265384210526,
+      "volume_per_atom": 13.434293931729037,
+      "e_above_hull": 0.11490486026315772
+    },
+    {
+      "material_id": "mp-1220184",
+      "formula": "Ni5O11",
+      "formation_energy": -0.5572721765624999,
+      "volume_per_atom": 11.72830057803485,
+      "e_above_hull": 0.20598308229166573
+    },
+    {
+      "material_id": "mp-1220234",
+      "formula": "Ni5O4",
+      "formation_energy": -0.7320208500000002,
+      "volume_per_atom": 9.923553266584184,
+      "e_above_hull": 0.3507216388888894
+    },
+    {
+      "material_id": "mp-1220248",
+      "formula": "Rb16O3",
+      "formation_energy": -0.49847131000000006,
+      "volume_per_atom": 70.02914918497342,
+      "e_above_hull": 0.07284544032894713
+    },
+    {
+      "material_id": "mp-1220361",
+      "formula": "NbO3",
+      "formation_energy": -2.4663143087499995,
+      "volume_per_atom": 15.892014378004596,
+      "e_above_hull": 0.18861530660714365
+    },
+    {
+      "material_id": "mp-1221492",
+      "formula": "Mo2O",
+      "formation_energy": 1.4471086083333329,
+      "volume_per_atom": 14.515821830016003,
+      "e_above_hull": 2.457859197916666
+    },
+    {
+      "material_id": "mp-1221594",
+      "formula": "MnO4",
+      "formation_energy": -0.5733175615862074,
+      "volume_per_atom": 16.37800968094913,
+      "e_above_hull": 0.510180402500005
+    },
+    {
+      "material_id": "mp-1224586",
+      "formula": "Ge5O11",
+      "formation_energy": -1.6322906818749994,
+      "volume_per_atom": 13.770338381376686,
+      "e_above_hull": 0.31496513114583635
+    },
+    {
+      "material_id": "mp-1228685",
+      "formula": "B8O",
+      "formation_energy": -0.6042608731481484,
+      "volume_per_atom": 7.434870248913724,
+      "e_above_hull": 0.022062264074073745
+    },
+    {
+      "material_id": "mp-1232391",
+      "formula": "Nb4O9",
+      "formation_energy": -2.785876837307694,
+      "volume_per_atom": 13.769349056324055,
+      "e_above_hull": 0.20098092823076819
+    },
+    {
+      "material_id": "mp-1235059",
+      "formula": "LiO8",
+      "formation_energy": -0.4270690881481482,
+      "volume_per_atom": 11.296489368340296,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1245215",
+      "formula": "Al2O",
+      "formation_energy": -1.7201258077777781,
+      "volume_per_atom": 25.511760606421124,
+      "e_above_hull": 0.18351364111111135
+    },
+    {
+      "material_id": "mp-1245910",
+      "formula": "TeO",
+      "formation_energy": -0.30774812749999914,
+      "volume_per_atom": 15.811895982368016,
+      "e_above_hull": 0.8132801003125003
+    },
+    {
+      "material_id": "mp-1250755",
+      "formula": "Si3O7",
+      "formation_energy": -2.345289379999999,
+      "volume_per_atom": 17.639893219368115,
+      "e_above_hull": 0.5951718939999999
+    },
+    {
+      "material_id": "mp-1253219",
+      "formula": "AlO3",
+      "formation_energy": -1.5877348612500004,
+      "volume_per_atom": 12.722823818546187,
+      "e_above_hull": 0.5538595187499995
+    },
+    {
+      "material_id": "mp-1271793",
+      "formula": "Co3O4",
+      "formation_energy": -1.3010949064285708,
+      "volume_per_atom": 10.339288443796404,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1272338",
+      "formula": "V3O5",
+      "formation_energy": -2.5223457256249997,
+      "volume_per_atom": 10.878081549596027,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1274279",
+      "formula": "FeO",
+      "formation_energy": -1.4815257675,
+      "volume_per_atom": 10.62355960479301,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1345171",
+      "formula": "W5O7",
+      "formation_energy": -0.9274899412499996,
+      "volume_per_atom": 14.95586333980875,
+      "e_above_hull": 0.8543971047916674
+    },
+    {
+      "material_id": "mp-1371699",
+      "formula": "Mo2O3",
+      "formation_energy": -1.4903304925000014,
+      "volume_per_atom": 14.463096062519691,
+      "e_above_hull": 0.32902056874999985
+    },
+    {
+      "material_id": "mp-1372094",
+      "formula": "W2O3",
+      "formation_energy": -0.959682076,
+      "volume_per_atom": 13.440154549072442,
+      "e_above_hull": 0.8731160285000037
+    },
+    {
+      "material_id": "mp-1392923",
+      "formula": "W2O5",
+      "formation_energy": -2.048474485,
+      "volume_per_atom": 14.393203308852213,
+      "e_above_hull": 0.07398534241758092
+    },
+    {
+      "material_id": "mp-1400906",
+      "formula": "CoO2",
+      "formation_energy": -1.0807989683333343,
+      "volume_per_atom": 10.803660781424206,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1412716",
+      "formula": "Mo2O5",
+      "formation_energy": -1.8886828071428567,
+      "volume_per_atom": 15.084588535966388,
+      "e_above_hull": 0.07823322204081684
+    },
+    {
+      "material_id": "mp-1539317",
+      "formula": "Ta2O5",
+      "formation_energy": -3.3355719614285726,
+      "volume_per_atom": 14.173915273369817,
+      "e_above_hull": 0.0
+    }
+  ]
+}
