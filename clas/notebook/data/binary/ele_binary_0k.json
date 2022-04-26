@@ -1,0 +1,360 @@
+{
+  "elements": [
+    {
+      "material_id": "mp-111",
+      "formula": "Ne"
+    },
+    {
+      "material_id": "mp-23155",
+      "formula": "Ar"
+    },
+    {
+      "material_id": "mp-10740",
+      "formula": "Pa"
+    },
+    {
+      "material_id": "mp-862690",
+      "formula": "Ac"
+    },
+    {
+      "material_id": "mp-75",
+      "formula": "Nb"
+    },
+    {
+      "material_id": "mp-11534",
+      "formula": "Np"
+    },
+    {
+      "material_id": "mp-867200",
+      "formula": "Pm"
+    },
+    {
+      "material_id": "mp-131",
+      "formula": "Zr"
+    },
+    {
+      "material_id": "mp-129",
+      "formula": "Mo"
+    },
+    {
+      "material_id": "mp-10658",
+      "formula": "Dy"
+    },
+    {
+      "material_id": "mp-11",
+      "formula": "As"
+    },
+    {
+      "material_id": "mp-101",
+      "formula": "Ir"
+    },
+    {
+      "material_id": "mp-23",
+      "formula": "Ni"
+    },
+    {
+      "material_id": "mp-126",
+      "formula": "Pt"
+    },
+    {
+      "material_id": "mp-20483",
+      "formula": "Pb"
+    },
+    {
+      "material_id": "mp-74",
+      "formula": "Rh"
+    },
+    {
+      "material_id": "mp-90",
+      "formula": "Cr"
+    },
+    {
+      "material_id": "mp-23152",
+      "formula": "Bi"
+    },
+    {
+      "material_id": "mp-26",
+      "formula": "La"
+    },
+    {
+      "material_id": "mp-1008394",
+      "formula": "Cl2"
+    },
+    {
+      "material_id": "mp-38",
+      "formula": "Pr"
+    },
+    {
+      "material_id": "mp-37",
+      "formula": "Th"
+    },
+    {
+      "material_id": "mp-145",
+      "formula": "Lu"
+    },
+    {
+      "material_id": "mp-1184115",
+      "formula": "Er"
+    },
+    {
+      "material_id": "mp-11698",
+      "formula": "Tb"
+    },
+    {
+      "material_id": "mp-104",
+      "formula": "Sb"
+    },
+    {
+      "material_id": "mp-30",
+      "formula": "Cu"
+    },
+    {
+      "material_id": "mp-571261",
+      "formula": "Pu"
+    },
+    {
+      "material_id": "mp-49",
+      "formula": "Os"
+    },
+    {
+      "material_id": "mp-103",
+      "formula": "Hf"
+    },
+    {
+      "material_id": "mp-69",
+      "formula": "Sm"
+    },
+    {
+      "material_id": "mp-122",
+      "formula": "Ba"
+    },
+    {
+      "material_id": "mp-113",
+      "formula": "Tc"
+    },
+    {
+      "material_id": "mp-10659",
+      "formula": "Ho"
+    },
+    {
+      "material_id": "mp-50",
+      "formula": "Ta"
+    },
+    {
+      "material_id": "mp-570481",
+      "formula": "Se"
+    },
+    {
+      "material_id": "mp-19",
+      "formula": "Te"
+    },
+    {
+      "material_id": "mp-87",
+      "formula": "Be"
+    },
+    {
+      "material_id": "mp-1057315",
+      "formula": "Eu"
+    },
+    {
+      "material_id": "mp-1179656",
+      "formula": "Rb"
+    },
+    {
+      "material_id": "mp-67",
+      "formula": "Sc"
+    },
+    {
+      "material_id": "mp-155",
+      "formula": "Gd"
+    },
+    {
+      "material_id": "mp-23154",
+      "formula": "Br"
+    },
+    {
+      "material_id": "mp-561203",
+      "formula": "F2"
+    },
+    {
+      "material_id": "mp-23153",
+      "formula": "I"
+    },
+    {
+      "material_id": "mp-81",
+      "formula": "Au"
+    },
+    {
+      "material_id": "mp-91",
+      "formula": "W"
+    },
+    {
+      "material_id": "mp-1187739",
+      "formula": "Y"
+    },
+    {
+      "material_id": "mp-149",
+      "formula": "Si"
+    },
+    {
+      "material_id": "mp-25",
+      "formula": "N2"
+    },
+    {
+      "material_id": "mp-72",
+      "formula": "Ti"
+    },
+    {
+      "material_id": "mp-1018122",
+      "formula": "Tm"
+    },
+    {
+      "material_id": "mp-1184151",
+      "formula": "Cs"
+    },
+    {
+      "material_id": "mp-24504",
+      "formula": "H2"
+    },
+    {
+      "material_id": "mp-1198724",
+      "formula": "P"
+    },
+    {
+      "material_id": "mp-44",
+      "formula": "U"
+    },
+    {
+      "material_id": "mp-160",
+      "formula": "B"
+    },
+    {
+      "material_id": "mp-1184905",
+      "formula": "K"
+    },
+    {
+      "material_id": "mp-96",
+      "formula": "S"
+    },
+    {
+      "material_id": "mp-1184502",
+      "formula": "In"
+    },
+    {
+      "material_id": "mp-1187073",
+      "formula": "Sr"
+    },
+    {
+      "material_id": "mp-1096861",
+      "formula": "Cd"
+    },
+    {
+      "material_id": "mp-2",
+      "formula": "Pd"
+    },
+    {
+      "material_id": "mp-32",
+      "formula": "Ge"
+    },
+    {
+      "material_id": "mp-8",
+      "formula": "Re"
+    },
+    {
+      "material_id": "mp-972351",
+      "formula": "Tl"
+    },
+    {
+      "material_id": "mp-989737",
+      "formula": "Ag"
+    },
+    {
+      "material_id": "mp-1018134",
+      "formula": "Li"
+    },
+    {
+      "material_id": "mp-1184554",
+      "formula": "Hg"
+    },
+    {
+      "material_id": "mp-54",
+      "formula": "Co"
+    },
+    {
+      "material_id": "mp-569304",
+      "formula": "C"
+    },
+    {
+      "material_id": "mp-142",
+      "formula": "Ga"
+    },
+    {
+      "material_id": "mp-33",
+      "formula": "Ru"
+    },
+    {
+      "material_id": "mp-134",
+      "formula": "Al"
+    },
+    {
+      "material_id": "mp-123",
+      "formula": "Nd"
+    },
+    {
+      "material_id": "mp-79",
+      "formula": "Zn"
+    },
+    {
+      "material_id": "mp-1056702",
+      "formula": "Mg"
+    },
+    {
+      "material_id": "mp-567332",
+      "formula": "Ce"
+    },
+    {
+      "material_id": "mp-972364",
+      "formula": "Yb"
+    },
+    {
+      "material_id": "mp-1186081",
+      "formula": "Na"
+    },
+    {
+      "material_id": "mp-117",
+      "formula": "Sn"
+    },
+    {
+      "material_id": "mp-13",
+      "formula": "Fe"
+    },
+    {
+      "material_id": "mp-45",
+      "formula": "Ca"
+    },
+    {
+      "material_id": "mp-146",
+      "formula": "V"
+    },
+    {
+      "material_id": "mp-12957",
+      "formula": "O2"
+    },
+    {
+      "material_id": "mp-972256",
+      "formula": "Xe"
+    },
+    {
+      "material_id": "mp-612118",
+      "formula": "Kr"
+    },
+    {
+      "material_id": "mp-23158",
+      "formula": "He"
+    },
+    {
+      "material_id": "mp-35",
+      "formula": "Mn"
+    }
+  ]
+}
