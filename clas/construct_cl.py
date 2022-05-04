@@ -9,7 +9,7 @@ from copy import deepcopy
 import json
 
 
-api_key = "j04mrdwGpyW6e2O1GqVvhxDGIDd9DJhV" # Please enter your Materials Project API here. More details see: https://next-gen.materialsproject.org/api
+api_key = "" # Please enter your Materials Project API here. More details see: https://next-gen.materialsproject.org/api
 
 
 def chemical_looping_entries(cl_list, family):
