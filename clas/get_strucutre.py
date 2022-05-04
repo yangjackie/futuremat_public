@@ -9,7 +9,7 @@ import json
 import os
 
 
-api_key = "j04mrdwGpyW6e2O1GqVvhxDGIDd9DJhV" # Please enter your Materials Project API here. More details see: https://next-gen.materialsproject.org/api
+api_key = "" # Please enter your Materials Project API here. More details see: https://next-gen.materialsproject.org/api
 
 def prepare_entries(anion_group, cation_number):
     """
