@@ -127,11 +127,16 @@ def plot_total_density_of_states(xlim=None, ylim=None, filename=None):
         dos = vasprun.tdos.densities[Spin.up] + vasprun.tdos.densities[Spin.down]
 
     xnew = np.linspace(min(vasprun.tdos.energies - vasprun.tdos.efermi),
-                       max(vasprun.tdos.energies - vasprun.tdos.efermi), 10 * len(vasprun.tdos.energies))
+                       max(vasprun.tdos.energies - vasprun.tdos.efermi), 100 * len(vasprun.tdos.energies))
     power_smooth = interp1d(vasprun.tdos.energies - vasprun.tdos.efermi, dos)
 
-    #plt.plot(xnew, power_smooth(xnew), 'b')
-    plt.plot(vasprun.tdos.energies - vasprun.tdos.efermi, dos, 'b')
+    #from scipy import signal
+    #dydx = signal.savgol_filter(power_smooth(xnew), window_length=11, polyorder=2, deriv=1)
+
+    plt.plot(xnew, power_smooth(xnew), 'b')
+    #plt.plot(xnew, dydx, 'r')
+
+    #plt.plot(vasprun.tdos.energies - vasprun.tdos.efermi, dos, 'b')
 
     if xlim is not None:
         plt.xlim(xlim)
@@ -151,6 +156,68 @@ def plot_total_density_of_states(xlim=None, ylim=None, filename=None):
         plt.show()
     else:
         plt.savefig(filename)
+
+def get_dos_gap():
+    vasprun = Vasprun("vasprun.xml")
+    dos = vasprun.tdos.densities[Spin.up]
+    xnew = np.linspace(min(vasprun.tdos.energies),
+                       max(vasprun.tdos.energies), 500 * len(vasprun.tdos.energies))
+    _new_dos = interp1d(vasprun.tdos.energies, dos)
+    from scipy import signal
+    dydx = signal.savgol_filter(_new_dos(xnew), window_length=11, polyorder=2, deriv=1)
+
+    vbm=vasprun.tdos.efermi
+    cbm=vasprun.tdos.efermi
+
+    for i,x in enumerate(xnew):
+        this_dos = _new_dos(x)
+        this_diff = dydx[i]
+        if x<vasprun.tdos.efermi: continue
+        if (abs(this_diff)<0.01):
+            vbm = x
+            break
+
+    for i,x in enumerate(xnew):
+        this_dos = _new_dos(x)
+        this_diff = dydx[i]
+        if x<=vbm: continue
+        if (abs(this_diff)<0.01):
+            cbm = x
+        else:
+            break
+
+    print('vbm is ', vbm)
+    print('cbm is ', cbm)
+    gap = cbm-vbm
+    return gap
+
+def get_cb(dos,fermi=None,tol=0.2):
+    cb = None
+    _dos = dos(fermi)
+    for pp in range(5000):
+        e = fermi+5/5000*pp
+        if dos(e)>_dos:
+            cb = e
+            break
+        _dos=dos(e)
+        #if (dos(e)-dos(fermi))/dos(fermi) > tol:
+        #    cb = e
+        #    break
+    return cb
+
+def get_vb(dos,fermi=None,tol=0.2):
+    vb = None
+    _dos = dos(fermi)
+    for pp in range(5000):
+        e = fermi-5/5000*pp
+        if dos(e)>_dos:
+            vb = e
+            break
+        _dos=dos(e)
+        #if (dos(e)-dos(fermi))/dos(fermi) > tol:
+        #    vb = e
+        #    break
+    return vb
 
 
 def plot_MD_energies_and_temperature_evolution(time_step=0.001):
@@ -471,6 +538,9 @@ if __name__ == "__main__":
     parser.add_argument("--displacement_histograms", action='store_true',
                         help='plot histograms of atom displacement to a given reference frame')
 
+    parser.add_argument("--dos_gap", action='store_true',
+                        help='Extract the density of state gap')
+
     args = parser.parse_args()
 
     if args.simple_band:
@@ -501,3 +571,7 @@ if __name__ == "__main__":
                                                   ref_atomic_label=args.ref_atoms,
                                                   direction=args.direction, potim=args.md_potim, nblock=args.md_nblock,
                                                   filename=args.output)
+
+    if args.dos_gap:
+        gap = get_dos_gap()
+        print('The DOS gap is '+str(gap)+" eV.")

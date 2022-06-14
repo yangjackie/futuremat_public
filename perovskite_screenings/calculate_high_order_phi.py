@@ -16,7 +16,7 @@ def calculate_high_order_phi():
         return None
 
     a=reference_structure.get_cell_lengths_and_angles()[0]
-    cs = ClusterSpace(reference_structure, [0.3*a,0.35*a,0.35*a])
+    cs = ClusterSpace(reference_structure, [0.45*a,0.30*a,0.30*a])
     sc=None
     #try:
     #    sc = StructureContainer.read("./structure_container")
@@ -88,11 +88,20 @@ def calculate_high_order_phi():
            sigmas_4, _ = scorer.structural_sigma(return_trajectory=False)
        except:
            pass
-       f=open('sigmas.dat','w')
+       f=open('sigmas_updated.dat','w')
        f.write('sigma_2'+'\t'+str(sigmas_2)+'\n')
        f.write('sigma_3'+'\t'+str(sigmas_3)+'\n')
        f.write('sigma_4'+'\t'+str(sigmas_4)+'\n')
        f.close()
 
 if __name__=="__main__":
-    calculate_high_order_phi()
+    from core.external.vasp.anharmonic_score import *
+    sigma = None
+    try:
+        scorer = AnharmonicScore(md_frames='vasprun_md.xml', ref_frame='./SPOSCAR',
+                             force_constants=None, force_sets_filename='FORCE_SETS_222')
+        sigma, _ = scorer.structural_sigma(return_trajectory=False)
+    except:
+        pass
+    if (sigma is not None) and (sigma<1.0):
+        calculate_high_order_phi()

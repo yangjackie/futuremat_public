@@ -236,7 +236,7 @@ class VaspReader(FileReader):
         print("Total number of frames " + str(len(all_frames)))
         return all_frames
 
-    def read_POSCAR(self):
+    def read_POSCAR(self) -> Crystal:
         """
         Method to read in a crystal structure from VASP POSCAR or CONTCAR file. The crystal being read in will
         be in the P1 settings.

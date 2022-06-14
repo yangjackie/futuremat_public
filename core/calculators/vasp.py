@@ -89,6 +89,7 @@ int_keys = [
     'istart',  # startjob: 0-new 1-cont 2-samecut
     'isym',  # symmetry: 0-nonsym 1-usesym 2-usePAWsym
     'iwavpr',  # prediction of wf.: 0-non 1-charg 2-wave 3-comb
+    'ivdw', #dispersion correction
     'ldauprint',  # 0-silent, 1-occ. matrix written to OUTCAR, 2-1+pot. matrix written
     'ldautype',  # L(S)DA+U: 1-Liechtenstein 2-Dudarev 4-Liechtenstein(LDAU)
     'lmaxmix',  #
@@ -141,6 +142,8 @@ bool_keys = [
     'lasync',  # overlap communcation with calculations
     'lcharg',  #
     'lcorr',  # Harris-correction to forces
+    'lcalcpol',
+    'lcalceps',
     'ldau',  # L(S)DA+U
     'ldiag',  # algorithm: perform sub space rotation
     'ldipol',  # potential correction mode
@@ -335,6 +338,9 @@ class Vasp(Calculator):
     def run(self):
         logger.info("Start executing VASP")
         cmd = 'mpirun ' + self.executable
+
+        #cmd = 'mpirun -np $PBS_NGPUS --map-by ppr:1:numa vasp_gam-gpu'
+
         exitcode = os.system('%s > %s' % (cmd, 'vasp.log'))
         if exitcode != 0:
             raise RuntimeError('Vasp exited with exit code: %d.  ' % exitcode)

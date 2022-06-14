@@ -27,7 +27,7 @@ params = {'legend.fontsize': '15',
           'ytick.labelsize': 16}
 pylab.rcParams.update(params)
 
-trajectory = Trajectory.from_file("./vasprun_md.xml")
+trajectory = Trajectory.from_file("./MD/vasprun_prod.xml")
 trajectory.write_Xdatcar(filename='XDATCAR_temp')
 images = read_vasp_xdatcar('XDATCAR_temp',index=None)
 print("total number of frames: "+str(len(images)))
@@ -35,11 +35,11 @@ os.remove('./XDATCAR_temp')
 
 
 reference_frame = read_vasp('./SPOSCAR')
-desc = SOAP(species=[55,51,53], rcut=6.0, nmax=9, lmax=9, sigma=0.3, periodic=True, crossover=True, sparse=False)
+desc = SOAP(species=[19,39,47,53], rcut=6.0, nmax=9, lmax=9, sigma=0.3, periodic=True, crossover=True, sparse=False)
 ref_features = desc.create(reference_frame)
 ref_features = normalize(ref_features)
 
-re = REMatchKernel(metric="linear", alpha=1, threshold=1e-6, gamma=1)
+re = REMatchKernel(metric="linear", alpha=2, threshold=1e-6, gamma=1)
 
 similarities = []
 for i,image in enumerate(images):
@@ -49,7 +49,7 @@ for i,image in enumerate(images):
     print(i,re_kernel[0][1])
     similarities.append(re_kernel[0][1])
 
-scorer = AnharmonicScore(md_frames='./vasprun_md.xml', ref_frame='./SPOSCAR',unit_cell_frame='./SPOSCAR')
+scorer = AnharmonicScore(md_frames='./MD/vasprun_prod.xml', ref_frame='./SPOSCAR',unit_cell_frame='./SPOSCAR',force_constants='force_constants.hdf5')
 sigmas, _ = scorer.structural_sigma(return_trajectory=True)
 
 fig, ax1 = plt.subplots(figsize=(7,5))
