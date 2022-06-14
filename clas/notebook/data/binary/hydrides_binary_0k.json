@@ -1,0 +1,1229 @@
+{
+  "hydrides": [
+    {
+      "material_id": "mp-1214891",
+      "formula": "AlH12",
+      "formation_energy": 0.08000052461538423,
+      "volume_per_atom": 12.126839813745526,
+      "e_above_hull": 0.12336965807692613
+    },
+    {
+      "material_id": "mp-1184656",
+      "formula": "HPd3",
+      "formation_energy": 0.4808131662499999,
+      "volume_per_atom": 13.616079807859478,
+      "e_above_hull": 0.5223422512499996
+    },
+    {
+      "material_id": "mp-32565",
+      "formula": "Tb4H9",
+      "formation_energy": -0.7761987442307691,
+      "volume_per_atom": 10.973752767575338,
+      "e_above_hull": 0.0024422356410260804
+    },
+    {
+      "material_id": "mp-23714",
+      "formula": "SrH2",
+      "formation_energy": -0.6526301213888891,
+      "volume_per_atom": 14.954159249076683,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1191571",
+      "formula": "DyH3",
+      "formation_energy": -0.7320232983333336,
+      "volume_per_atom": 9.522092416854665,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-505569",
+      "formula": "CeH2",
+      "formation_energy": -0.6249720416666668,
+      "volume_per_atom": 13.537271727477892,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-23710",
+      "formula": "MgH2",
+      "formation_energy": -0.29437892166666657,
+      "volume_per_atom": 10.231935207835557,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-697915",
+      "formula": "Yb3H8",
+      "formation_energy": -0.5002236363636359,
+      "volume_per_atom": 10.745724751824477,
+      "e_above_hull": 0.0900725452272737
+    },
+    {
+      "material_id": "mp-1095432",
+      "formula": "H2W",
+      "formation_energy": 0.17556900166666622,
+      "volume_per_atom": 7.040900528350821,
+      "e_above_hull": 0.1800530174999997
+    },
+    {
+      "material_id": "mp-1206371",
+      "formula": "NbH",
+      "formation_energy": -0.23402439000000008,
+      "volume_per_atom": 10.611750150352776,
+      "e_above_hull": 0.021132257500000584
+    },
+    {
+      "material_id": "mp-23703",
+      "formula": "LiH",
+      "formation_energy": -0.49553018416666683,
+      "volume_per_atom": 8.001044045414659,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1224413",
+      "formula": "H3Pd4",
+      "formation_energy": -0.06844672642857118,
+      "volume_per_atom": 9.87911978129212,
+      "e_above_hull": 0.002745990714282165
+    },
+    {
+      "material_id": "mp-1187501",
+      "formula": "TlH",
+      "formation_energy": 0.35688652083333317,
+      "volume_per_atom": 21.531417987458124,
+      "e_above_hull": 0.35688652083333317
+    },
+    {
+      "material_id": "mp-1226890",
+      "formula": "Ce4H11",
+      "formation_energy": -0.6245445783333329,
+      "volume_per_atom": 10.683995801635639,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1191179",
+      "formula": "TmH3",
+      "formation_energy": -0.7343535133333331,
+      "volume_per_atom": 8.95097697409296,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-977343",
+      "formula": "H3Pt",
+      "formation_energy": 0.5018969274999998,
+      "volume_per_atom": 7.413565269839183,
+      "e_above_hull": 0.5018969274999998
+    },
+    {
+      "material_id": "mp-505686",
+      "formula": "GdH3",
+      "formation_energy": -0.7140209916666672,
+      "volume_per_atom": 9.973135135570944,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1008376",
+      "formula": "CeH3",
+      "formation_energy": -0.6046415649999997,
+      "volume_per_atom": 10.12008752294691,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24208",
+      "formula": "CrH2",
+      "formation_energy": -0.047714873333333685,
+      "volume_per_atom": 5.769663336763706,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-632656",
+      "formula": "HoH3",
+      "formation_energy": -0.7338439279166664,
+      "volume_per_atom": 9.311668935209488,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24416",
+      "formula": "MnH",
+      "formation_energy": 0.14039171103448211,
+      "volume_per_atom": 7.4784085960762,
+      "e_above_hull": 0.1492095987931048
+    },
+    {
+      "material_id": "mp-1183679",
+      "formula": "CrH3",
+      "formation_energy": 0.0875674037500005,
+      "volume_per_atom": 5.277236720446071,
+      "e_above_hull": 0.12335355875000076
+    },
+    {
+      "material_id": "mp-1183347",
+      "formula": "Ba3H",
+      "formation_energy": 0.4401534212499998,
+      "volume_per_atom": 50.03196459567656,
+      "e_above_hull": 0.6675440696875001
+    },
+    {
+      "material_id": "mp-1208559",
+      "formula": "TaH4",
+      "formation_energy": 0.20676001599999977,
+      "volume_per_atom": 8.08426953517142,
+      "e_above_hull": 0.33314212799999954
+    },
+    {
+      "material_id": "mp-24093",
+      "formula": "CuH",
+      "formation_energy": 0.04857917749999974,
+      "volume_per_atom": 8.03102237116578,
+      "e_above_hull": 0.04857917749999974
+    },
+    {
+      "material_id": "mp-27876",
+      "formula": "B2H3",
+      "formation_energy": -0.15164506829166627,
+      "volume_per_atom": 9.941040074664333,
+      "e_above_hull": 0.03457064714772784
+    },
+    {
+      "material_id": "mp-29654",
+      "formula": "B9H11",
+      "formation_energy": -0.18900603437499938,
+      "volume_per_atom": 9.48311147708651,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24724",
+      "formula": "TbH2",
+      "formation_energy": -0.8008966966666667,
+      "volume_per_atom": 12.03105224466667,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1096804",
+      "formula": "AgH",
+      "formation_energy": 0.12089839666666657,
+      "volume_per_atom": 11.653519632249992,
+      "e_above_hull": 0.12089839666666657
+    },
+    {
+      "material_id": "mp-1222194",
+      "formula": "Mn29H2",
+      "formation_energy": -0.016497983548388658,
+      "volume_per_atom": 10.478544013526701,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1214861",
+      "formula": "AlH6",
+      "formation_energy": 0.9281592221428566,
+      "volume_per_atom": 36.44300398388863,
+      "e_above_hull": 1.0087018985714264
+    },
+    {
+      "material_id": "mp-976578",
+      "formula": "NdH3",
+      "formation_energy": -0.6760209433333332,
+      "volume_per_atom": 11.087915315890953,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-23739",
+      "formula": "SiH4",
+      "formation_energy": -0.1307384929999998,
+      "volume_per_atom": 14.465095173974877,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1220079",
+      "formula": "Ni2H",
+      "formation_energy": -0.06174005500000016,
+      "volume_per_atom": 7.857837238091483,
+      "e_above_hull": 0.02144368333333091
+    },
+    {
+      "material_id": "mp-1187129",
+      "formula": "Sr3H",
+      "formation_energy": 0.4365736687499997,
+      "volume_per_atom": 44.69515795121533,
+      "e_above_hull": 0.6813099642708338
+    },
+    {
+      "material_id": "mp-1103808",
+      "formula": "La4H9",
+      "formation_energy": -0.7398475011538466,
+      "volume_per_atom": 13.712316574663458,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-23715",
+      "formula": "BaH2",
+      "formation_energy": -0.6063750625000003,
+      "volume_per_atom": 18.78269435129282,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1104116",
+      "formula": "La2H5",
+      "formation_energy": -0.7315971114285718,
+      "volume_per_atom": 12.574732636218998,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24154",
+      "formula": "NbH2",
+      "formation_energy": -0.3402088633333342,
+      "volume_per_atom": 7.979968227421204,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1018144",
+      "formula": "LaH3",
+      "formation_energy": -0.70044086,
+      "volume_per_atom": 10.82749919817824,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184767",
+      "formula": "InH",
+      "formation_energy": 0.3778427149999999,
+      "volume_per_atom": 17.18810040642041,
+      "e_above_hull": 0.3778427149999999
+    },
+    {
+      "material_id": "mp-569405",
+      "formula": "B3H5",
+      "formation_energy": -0.17308471020833358,
+      "volume_per_atom": 9.58368690896735,
+      "e_above_hull": 0.01161272750471909
+    },
+    {
+      "material_id": "mp-1104418",
+      "formula": "H6W",
+      "formation_energy": 0.06473146642857179,
+      "volume_per_atom": 7.378195775595566,
+      "e_above_hull": 0.06857490857142778
+    },
+    {
+      "material_id": "mp-1184731",
+      "formula": "HPb",
+      "formation_energy": 0.48312080999999996,
+      "volume_per_atom": 20.033334600942442,
+      "e_above_hull": 0.48312080999999996
+    },
+    {
+      "material_id": "mp-1201949",
+      "formula": "B5H4",
+      "formation_energy": 0.17270899886574081,
+      "volume_per_atom": 19.824528609186636,
+      "e_above_hull": 0.3254411478556394
+    },
+    {
+      "material_id": "mp-24288",
+      "formula": "LuH2",
+      "formation_energy": -0.7953379400000001,
+      "volume_per_atom": 10.55271721798063,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-33112",
+      "formula": "Sc2H5",
+      "formation_energy": -0.6078605971428581,
+      "volume_per_atom": 8.385832420793037,
+      "e_above_hull": 0.06420239285714224
+    },
+    {
+      "material_id": "mp-1209856",
+      "formula": "NbH4",
+      "formation_energy": 0.24382608799999944,
+      "volume_per_atom": 8.312252198823842,
+      "e_above_hull": 0.4479514059999996
+    },
+    {
+      "material_id": "mp-1183138",
+      "formula": "Al3H",
+      "formation_energy": 0.36609302374999997,
+      "volume_per_atom": 14.677107733323995,
+      "e_above_hull": 0.4130762516666624
+    },
+    {
+      "material_id": "mp-976948",
+      "formula": "Ni3H",
+      "formation_energy": 0.45288930750000045,
+      "volume_per_atom": 9.506132860797951,
+      "e_above_hull": 0.5152771112500005
+    },
+    {
+      "material_id": "mp-972087",
+      "formula": "ZrH3",
+      "formation_energy": -0.3869948287500007,
+      "volume_per_atom": 7.636999595851471,
+      "e_above_hull": 0.11531261375000046
+    },
+    {
+      "material_id": "mp-1195198",
+      "formula": "H3S",
+      "formation_energy": -0.22038973828124986,
+      "volume_per_atom": 14.070842796437535,
+      "e_above_hull": 0.01694135499999927
+    },
+    {
+      "material_id": "mp-24719",
+      "formula": "NiH",
+      "formation_energy": -0.12477560750000016,
+      "volume_per_atom": 6.394535840005257,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24192",
+      "formula": "ErH2",
+      "formation_energy": -0.8055761933333342,
+      "volume_per_atom": 11.207645824519462,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1079127",
+      "formula": "Ti2H3",
+      "formation_energy": -0.5334523323333329,
+      "volume_per_atom": 8.35963691899626,
+      "e_above_hull": 0.009192516666666428
+    },
+    {
+      "material_id": "mp-1185871",
+      "formula": "MgH",
+      "formation_energy": 0.10757376749999992,
+      "volume_per_atom": 12.711647320278736,
+      "e_above_hull": 0.33138047845123575
+    },
+    {
+      "material_id": "mp-23713",
+      "formula": "CaH2",
+      "formation_energy": -0.6740133266666669,
+      "volume_per_atom": 11.893110022744443,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24092",
+      "formula": "GdH2",
+      "formation_energy": -0.7797756100000003,
+      "volume_per_atom": 12.50030457410327,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1009077",
+      "formula": "FeH",
+      "formation_energy": -0.06848167750000034,
+      "volume_per_atom": 6.649688575537385,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24095",
+      "formula": "PrH2",
+      "formation_energy": -0.7249307083333338,
+      "volume_per_atom": 14.329763247247463,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24727",
+      "formula": "TmH2",
+      "formation_energy": -0.8041063322222227,
+      "volume_per_atom": 10.962947331550888,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1147730",
+      "formula": "H4Pt",
+      "formation_energy": 0.34029610266666643,
+      "volume_per_atom": 10.053749628862853,
+      "e_above_hull": 0.34029610266666666
+    },
+    {
+      "material_id": "mp-1205301",
+      "formula": "Y3H",
+      "formation_energy": -0.2934311606249995,
+      "volume_per_atom": 25.406596975257088,
+      "e_above_hull": 0.01266287895833429
+    },
+    {
+      "material_id": "mp-1226072",
+      "formula": "Co4H",
+      "formation_energy": -0.029057169000000015,
+      "volume_per_atom": 9.062664269145866,
+      "e_above_hull": 0.003881027000000259
+    },
+    {
+      "material_id": "mp-697179",
+      "formula": "ZrH",
+      "formation_energy": -0.5020580025000001,
+      "volume_per_atom": 13.209141840632206,
+      "e_above_hull": 0.0002494400000001562
+    },
+    {
+      "material_id": "mp-24161",
+      "formula": "TiH2",
+      "formation_energy": -0.6029387211111121,
+      "volume_per_atom": 7.217125147483542,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-971820",
+      "formula": "ZnH",
+      "formation_energy": 0.32673315000000014,
+      "volume_per_atom": 10.33893871344549,
+      "e_above_hull": 0.32673315000000014
+    },
+    {
+      "material_id": "mp-29803",
+      "formula": "SiH",
+      "formation_energy": -0.053896364999999946,
+      "volume_per_atom": 18.914885607427646,
+      "e_above_hull": 0.027815193124999915
+    },
+    {
+      "material_id": "mp-1185872",
+      "formula": "MgH3",
+      "formation_energy": 0.1980035762500001,
+      "volume_per_atom": 6.510432671292729,
+      "e_above_hull": 0.4187877675
+    },
+    {
+      "material_id": "mp-24658",
+      "formula": "SmH2",
+      "formation_energy": -0.7676084516666671,
+      "volume_per_atom": 13.05081832015612,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-690760",
+      "formula": "TiH",
+      "formation_energy": -0.45054142666666763,
+      "volume_per_atom": 9.984130469622974,
+      "e_above_hull": 0.0016626141666664651
+    },
+    {
+      "material_id": "mp-1186360",
+      "formula": "P3H",
+      "formation_energy": 0.7824608037500003,
+      "volume_per_atom": 11.809069777681206,
+      "e_above_hull": 0.7824608037500003
+    },
+    {
+      "material_id": "mp-1206874",
+      "formula": "CoH",
+      "formation_energy": -0.06571240000000067,
+      "volume_per_atom": 6.349918740259752,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-706664",
+      "formula": "B10H13",
+      "formation_energy": -0.18270515007246316,
+      "volume_per_atom": 9.412508155188586,
+      "e_above_hull": 0.005489127574728414
+    },
+    {
+      "material_id": "mp-768203",
+      "formula": "BeH2",
+      "formation_energy": -0.16649827277777776,
+      "volume_per_atom": 7.559028574994291,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-974464",
+      "formula": "ReH3",
+      "formation_energy": 0.3738191212500004,
+      "volume_per_atom": 6.085656733133243,
+      "e_above_hull": 0.3738191212500004
+    },
+    {
+      "material_id": "mp-27721",
+      "formula": "AsH3",
+      "formation_energy": 0.7269218237500006,
+      "volume_per_atom": 13.06462547246964,
+      "e_above_hull": 0.7269218237500006
+    },
+    {
+      "material_id": "mp-1079923",
+      "formula": "H3W",
+      "formation_energy": 0.07301911625000024,
+      "volume_per_atom": 8.628073289530908,
+      "e_above_hull": 0.0780636340625005
+    },
+    {
+      "material_id": "mp-706630",
+      "formula": "B5H7",
+      "formation_energy": -0.18722790059027794,
+      "volume_per_atom": 8.580470705709969,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184598",
+      "formula": "HOs3",
+      "formation_energy": 0.9381640824999984,
+      "volume_per_atom": 12.921879546568187,
+      "e_above_hull": 0.9381640824999984
+    },
+    {
+      "material_id": "mp-24722",
+      "formula": "HRh",
+      "formation_energy": -0.030642932499999276,
+      "volume_per_atom": 8.358493441774332,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-981547",
+      "formula": "PrH3",
+      "formation_energy": -0.6254213675000004,
+      "volume_per_atom": 10.289526217616048,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1191245",
+      "formula": "LuH3",
+      "formation_energy": -0.7269115529166665,
+      "volume_per_atom": 8.620063612002623,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27820",
+      "formula": "B7H10",
+      "formation_energy": -0.15493867105392248,
+      "volume_per_atom": 9.399050347689931,
+      "e_above_hull": 0.031991528021365845
+    },
+    {
+      "material_id": "mp-1101754",
+      "formula": "Ti4H7",
+      "formation_energy": -0.5729567643939394,
+      "volume_per_atom": 7.775013790297089,
+      "e_above_hull": 0.002575651212122665
+    },
+    {
+      "material_id": "mp-24287",
+      "formula": "CrH",
+      "formation_energy": -0.057986077499999844,
+      "volume_per_atom": 6.74609434973595,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1079939",
+      "formula": "FeH4",
+      "formation_energy": 0.2145582949999998,
+      "volume_per_atom": 4.361886055627156,
+      "e_above_hull": 0.2419509660000001
+    },
+    {
+      "material_id": "mp-24152",
+      "formula": "HoH2",
+      "formation_energy": -0.8066559233333338,
+      "volume_per_atom": 11.456331601010918,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-32697",
+      "formula": "Y10H21",
+      "formation_energy": -0.8018095610215049,
+      "volume_per_atom": 11.395252890617897,
+      "e_above_hull": 0.003323546612905126
+    },
+    {
+      "material_id": "mp-24237",
+      "formula": "ScH2",
+      "formation_energy": -0.7840734883333335,
+      "volume_per_atom": 9.101279333333334,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1106356",
+      "formula": "AlH3",
+      "formation_energy": -0.14094968374999972,
+      "volume_per_atom": 11.577195335684223,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24151",
+      "formula": "DyH2",
+      "formation_energy": -0.8047211100000004,
+      "volume_per_atom": 11.72577183825051,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-975657",
+      "formula": "PrH",
+      "formation_energy": -0.46163966750000096,
+      "volume_per_atom": 20.244111806224634,
+      "e_above_hull": 0.08205836374999986
+    },
+    {
+      "material_id": "mp-973963",
+      "formula": "NiH3",
+      "formation_energy": 0.15692678750000022,
+      "volume_per_atom": 6.610842115769237,
+      "e_above_hull": 0.21931459124999986
+    },
+    {
+      "material_id": "mp-984102",
+      "formula": "Fe3H",
+      "formation_energy": 0.5661311174999994,
+      "volume_per_atom": 10.384682487756889,
+      "e_above_hull": 0.6003719562500001
+    },
+    {
+      "material_id": "mp-1187975",
+      "formula": "Yb3H",
+      "formation_energy": 0.3822015125,
+      "volume_per_atom": 32.54314889246623,
+      "e_above_hull": 0.6527539290625
+    },
+    {
+      "material_id": "mp-696805",
+      "formula": "H2S",
+      "formation_energy": -0.3164414577083334,
+      "volume_per_atom": 15.861235390710656,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184680",
+      "formula": "HIr",
+      "formation_energy": 0.4242268649999996,
+      "volume_per_atom": 9.323888142664657,
+      "e_above_hull": 0.4242268649999996
+    },
+    {
+      "material_id": "mp-1183578",
+      "formula": "CaH3",
+      "formation_energy": -0.2008186312500002,
+      "volume_per_atom": 9.180273479027784,
+      "e_above_hull": 0.30469136374999994
+    },
+    {
+      "material_id": "mp-27990",
+      "formula": "B2H5",
+      "formation_energy": -0.17927501726190442,
+      "volume_per_atom": 9.604914587182622,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184938",
+      "formula": "KH3",
+      "formation_energy": 0.831584433,
+      "volume_per_atom": 13.579611358104142,
+      "e_above_hull": 0.9705568175000001
+    },
+    {
+      "material_id": "mp-642644",
+      "formula": "V2H",
+      "formation_energy": -0.19821702500000052,
+      "volume_per_atom": 9.632203805153324,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1095646",
+      "formula": "H5W",
+      "formation_energy": 0.201330820833333,
+      "volume_per_atom": 5.649742282304165,
+      "e_above_hull": 0.20581483666666767
+    },
+    {
+      "material_id": "mp-24286",
+      "formula": "ZrH2",
+      "formation_energy": -0.6697432566666676,
+      "volume_per_atom": 9.309705601185389,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24153",
+      "formula": "LaH2",
+      "formation_energy": -0.7445459283333337,
+      "volume_per_atom": 15.071282795798256,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1057286",
+      "formula": "CsH",
+      "formation_energy": -0.22258801146551743,
+      "volume_per_atom": 33.46971049424165,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-29446",
+      "formula": "B3H4",
+      "formation_energy": -0.020089804017857205,
+      "volume_per_atom": 14.492082950455655,
+      "e_above_hull": 0.16777314435267865
+    },
+    {
+      "material_id": "mp-1183723",
+      "formula": "Cr3H",
+      "formation_energy": 0.7289529362500007,
+      "volume_per_atom": 10.144112842890246,
+      "e_above_hull": 0.757945975000001
+    },
+    {
+      "material_id": "mp-864603",
+      "formula": "YbH2",
+      "formation_energy": -0.7214731108333338,
+      "volume_per_atom": 11.435165697839809,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1185556",
+      "formula": "Mg149H",
+      "formation_energy": -0.014912967233333347,
+      "volume_per_atom": 22.97123699083935,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1094064",
+      "formula": "SbH3",
+      "formation_energy": 0.6801850412500006,
+      "volume_per_atom": 8.907510032331313,
+      "e_above_hull": 0.6801850412500006
+    },
+    {
+      "material_id": "mp-1184548",
+      "formula": "HPd",
+      "formation_energy": -0.08305816999999927,
+      "volume_per_atom": 9.614740863758543,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-24420",
+      "formula": "H2Se",
+      "formation_energy": 0.6452507258854165,
+      "volume_per_atom": 9.821404734215898,
+      "e_above_hull": 0.6452507258854165
+    },
+    {
+      "material_id": "mp-978856",
+      "formula": "SrH3",
+      "formation_energy": -0.14890435041666628,
+      "volume_per_atom": 11.508190862444835,
+      "e_above_hull": 0.3405682406250006
+    },
+    {
+      "material_id": "mp-995193",
+      "formula": "Si3H",
+      "formation_energy": -0.009135944999999701,
+      "volume_per_atom": 18.246808344852912,
+      "e_above_hull": 0.031719834062500674
+    },
+    {
+      "material_id": "mp-569037",
+      "formula": "Y3H2",
+      "formation_energy": -0.47433885800000014,
+      "volume_per_atom": 20.701083415676397,
+      "e_above_hull": 0.015411605333333966
+    },
+    {
+      "material_id": "mp-1102496",
+      "formula": "EuH2",
+      "formation_energy": -0.6742589833333336,
+      "volume_per_atom": 13.40109481349826,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-634930",
+      "formula": "YbH3",
+      "formation_energy": -0.2591951912499999,
+      "volume_per_atom": 8.838502373698695,
+      "e_above_hull": 0.28190964187500045
+    },
+    {
+      "material_id": "mp-634117",
+      "formula": "BH3",
+      "formation_energy": -0.16425767166666638,
+      "volume_per_atom": 9.989852332909143,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184386",
+      "formula": "Eu3H",
+      "formation_energy": 0.44621447125000024,
+      "volume_per_atom": 33.99273591294758,
+      "e_above_hull": 0.6990615899999995
+    },
+    {
+      "material_id": "mp-1184653",
+      "formula": "HW3",
+      "formation_energy": 1.0876032900000023,
+      "volume_per_atom": 14.40058613815086,
+      "e_above_hull": 1.0892847959375018
+    },
+    {
+      "material_id": "mp-1187619",
+      "formula": "Tl3H",
+      "formation_energy": 0.3786827162499997,
+      "volume_per_atom": 26.157825711826515,
+      "e_above_hull": 0.3786827162499997
+    },
+    {
+      "material_id": "mp-24417",
+      "formula": "MoH",
+      "formation_energy": 0.39395278749999996,
+      "volume_per_atom": 9.546561858410767,
+      "e_above_hull": 0.39395278749999996
+    },
+    {
+      "material_id": "mp-1079902",
+      "formula": "SnH4",
+      "formation_energy": 0.05027479099999965,
+      "volume_per_atom": 13.07659205283978,
+      "e_above_hull": 0.050274791000000096
+    },
+    {
+      "material_id": "mp-1007761",
+      "formula": "HW",
+      "formation_energy": 0.15777285249999906,
+      "volume_per_atom": 8.972002589800308,
+      "e_above_hull": 0.1611358643750016
+    },
+    {
+      "material_id": "mp-24096",
+      "formula": "NdH2",
+      "formation_energy": -0.7411560433333335,
+      "volume_per_atom": 13.8480885040131,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-30529",
+      "formula": "B5H11",
+      "formation_energy": -0.158707534739583,
+      "volume_per_atom": 10.266317533326568,
+      "e_above_hull": 0.022194208657679404
+    },
+    {
+      "material_id": "mp-1238837",
+      "formula": "BH",
+      "formation_energy": -0.07468610395833271,
+      "volume_per_atom": 10.103461294551499,
+      "e_above_hull": 0.09713756365530557
+    },
+    {
+      "material_id": "mp-1007906",
+      "formula": "ErH",
+      "formation_energy": -0.4355395225000005,
+      "volume_per_atom": 15.078799985130914,
+      "e_above_hull": 0.16864262250000017
+    },
+    {
+      "material_id": "mp-1184606",
+      "formula": "HPt3",
+      "formation_energy": 0.5186894837500002,
+      "volume_per_atom": 13.923559835909623,
+      "e_above_hull": 0.5186894837500002
+    },
+    {
+      "material_id": "mp-1078123",
+      "formula": "Ti4H3",
+      "formation_energy": -0.3465327811904767,
+      "volume_per_atom": 11.259819572314711,
+      "e_above_hull": 0.04107068238095124
+    },
+    {
+      "material_id": "mp-29611",
+      "formula": "B5H8",
+      "formation_energy": -0.15257701804487203,
+      "volume_per_atom": 10.098909554807163,
+      "e_above_hull": 0.03270437263986725
+    },
+    {
+      "material_id": "mp-1190750",
+      "formula": "ErH3",
+      "formation_energy": -0.73502894375,
+      "volume_per_atom": 9.20093734157145,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1002114",
+      "formula": "VH",
+      "formation_energy": -0.24221479250000044,
+      "volume_per_atom": 7.65830368007863,
+      "e_above_hull": 0.018185038333332848
+    },
+    {
+      "material_id": "mp-1183656",
+      "formula": "CdH",
+      "formation_energy": 0.3771130775000002,
+      "volume_per_atom": 14.682818523832625,
+      "e_above_hull": 0.3771130775000002
+    },
+    {
+      "material_id": "mp-972237",
+      "formula": "Tc3H",
+      "formation_energy": 0.6696272662500009,
+      "volume_per_atom": 12.911786103720274,
+      "e_above_hull": 0.6696272662499991
+    },
+    {
+      "material_id": "mp-1077045",
+      "formula": "Ti2H",
+      "formation_energy": -0.256282318888888,
+      "volume_per_atom": 12.67754648395425,
+      "e_above_hull": 0.04518704166666687
+    },
+    {
+      "material_id": "mp-1095024",
+      "formula": "Ti4H5",
+      "formation_energy": -0.4916875287037041,
+      "volume_per_atom": 9.118309212427453,
+      "e_above_hull": 0.010761405555555825
+    },
+    {
+      "material_id": "mp-24728",
+      "formula": "VH2",
+      "formation_energy": -0.32258263666666726,
+      "volume_per_atom": 6.239862442284778,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1183400",
+      "formula": "BeH",
+      "formation_energy": 0.4102254974999999,
+      "volume_per_atom": 6.130732255908657,
+      "e_above_hull": 0.535099202083333
+    },
+    {
+      "material_id": "mp-1006815",
+      "formula": "CsH3",
+      "formation_energy": 0.6604473042672412,
+      "volume_per_atom": 17.17460817750875,
+      "e_above_hull": 0.7717413100000003
+    },
+    {
+      "material_id": "mp-973786",
+      "formula": "H3Pb",
+      "formation_energy": 0.7781139387499998,
+      "volume_per_atom": 10.255058650508795,
+      "e_above_hull": 0.7781139387499998
+    },
+    {
+      "material_id": "mp-696588",
+      "formula": "PH3",
+      "formation_energy": 0.02929875354166711,
+      "volume_per_atom": 24.729487714361042,
+      "e_above_hull": 0.029298753541666667
+    },
+    {
+      "material_id": "mp-1338697",
+      "formula": "B5H9",
+      "formation_energy": -0.16437817470238109,
+      "volume_per_atom": 10.299896712160233,
+      "e_above_hull": 0.019234778920446338
+    },
+    {
+      "material_id": "mp-1183678",
+      "formula": "CoH3",
+      "formation_energy": 0.11922251250000038,
+      "volume_per_atom": 4.451719354425254,
+      "e_above_hull": 0.15207871249999982
+    },
+    {
+      "material_id": "mp-975814",
+      "formula": "Mo3H",
+      "formation_energy": 0.845822601250001,
+      "volume_per_atom": 14.041327445091905,
+      "e_above_hull": 0.845822601250001
+    },
+    {
+      "material_id": "mp-1183993",
+      "formula": "GaH3",
+      "formation_energy": 0.6014839318749998,
+      "volume_per_atom": 6.656195361889803,
+      "e_above_hull": 0.6014839318749998
+    },
+    {
+      "material_id": "mp-24082",
+      "formula": "Ta2H",
+      "formation_energy": -0.20813805500000035,
+      "volume_per_atom": 13.10740565958517,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1183988",
+      "formula": "GaH",
+      "formation_energy": 0.35665897374999966,
+      "volume_per_atom": 12.713862936135591,
+      "e_above_hull": 0.35665897374999966
+    },
+    {
+      "material_id": "mp-24650",
+      "formula": "YH2",
+      "formation_energy": -0.8162507722222223,
+      "volume_per_atom": 11.806520264540211,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1224352",
+      "formula": "H4Pd3",
+      "formation_energy": 0.05354983999999975,
+      "volume_per_atom": 9.182624719886821,
+      "e_above_hull": 0.12474255714285487
+    },
+    {
+      "material_id": "mp-1192532",
+      "formula": "SiH2",
+      "formation_energy": -0.06869822966666655,
+      "volume_per_atom": 17.960897267300915,
+      "e_above_hull": 0.04025051450000028
+    },
+    {
+      "material_id": "mp-1181222",
+      "formula": "GeH4",
+      "formation_energy": -0.037556635500000365,
+      "volume_per_atom": 16.72858291161544,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-982384",
+      "formula": "TbH3",
+      "formation_energy": -0.7285656170833334,
+      "volume_per_atom": 9.722566131037512,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1207466",
+      "formula": "ZnH6",
+      "formation_energy": 0.028948922857142838,
+      "volume_per_atom": 19.98381458485225,
+      "e_above_hull": 0.028948922857142456
+    },
+    {
+      "material_id": "mp-972825",
+      "formula": "SiH8",
+      "formation_energy": -0.1428300266666661,
+      "volume_per_atom": 13.156399844876354,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1178678",
+      "formula": "YH3",
+      "formation_energy": -0.7300888716666668,
+      "volume_per_atom": 9.609786975203741,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-23870",
+      "formula": "NaH",
+      "formation_energy": -0.2745800357758621,
+      "volume_per_atom": 14.05929366982986,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1192065",
+      "formula": "SmH3",
+      "formation_energy": -0.6987162154166663,
+      "volume_per_atom": 10.450530859913467,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1104060",
+      "formula": "Nd2H5",
+      "formation_energy": -0.7038657042857146,
+      "volume_per_atom": 11.623365753941679,
+      "e_above_hull": 7.028190476177087e-05
+    },
+    {
+      "material_id": "mp-24084",
+      "formula": "KH",
+      "formation_energy": -0.2779447690000003,
+      "volume_per_atom": 23.1045854381921,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1184556",
+      "formula": "Ge3H",
+      "formation_energy": 0.5393788575,
+      "volume_per_atom": 15.704788862012677,
+      "e_above_hull": 0.5511153060937497
+    },
+    {
+      "material_id": "mp-977573",
+      "formula": "HfH3",
+      "formation_energy": -0.3537522662500008,
+      "volume_per_atom": 7.336976729707214,
+      "e_above_hull": 0.09424659624999965
+    },
+    {
+      "material_id": "mp-984050",
+      "formula": "BiH3",
+      "formation_energy": 0.6360044012500001,
+      "volume_per_atom": 9.991314819267805,
+      "e_above_hull": 0.6360044012500001
+    },
+    {
+      "material_id": "mp-973053",
+      "formula": "ScH3",
+      "formation_energy": -0.5501436424999993,
+      "volume_per_atom": 6.765084728026763,
+      "e_above_hull": 0.03791147375000037
+    },
+    {
+      "material_id": "mp-24721",
+      "formula": "RbH",
+      "formation_energy": -0.2366790462499999,
+      "volume_per_atom": 27.502586581625,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27200",
+      "formula": "B13H19",
+      "formation_energy": -0.15998214989583381,
+      "volume_per_atom": 9.77736591085276,
+      "e_above_hull": 0.026613134975142394
+    },
+    {
+      "material_id": "mp-27798",
+      "formula": "B4H5",
+      "formation_energy": -0.17635582831018504,
+      "volume_per_atom": 10.098698222246417,
+      "e_above_hull": 0.012353850434028146
+    },
+    {
+      "material_id": "mp-1018061",
+      "formula": "FeH3",
+      "formation_energy": 0.14716203374999992,
+      "volume_per_atom": 4.452859941360488,
+      "e_above_hull": 0.18140287250000053
+    },
+    {
+      "material_id": "mp-24723",
+      "formula": "TaH2",
+      "formation_energy": -0.21063685333333382,
+      "volume_per_atom": 7.801662919511917,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1104579",
+      "formula": "Ce2H5",
+      "formation_energy": -0.6397263350000009,
+      "volume_per_atom": 11.582904195231436,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1025425",
+      "formula": "Co3H",
+      "formation_energy": -0.0411727449999999,
+      "volume_per_atom": 8.61741856400596,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-27731",
+      "formula": "HfH2",
+      "formation_energy": -0.597331816666666,
+      "volume_per_atom": 8.714061070582572,
+      "e_above_hull": 0.0
+    },
+    {
+      "material_id": "mp-1186895",
+      "formula": "Re3H",
+      "formation_energy": 0.7774243624999997,
+      "volume_per_atom": 13.44406592819364,
+      "e_above_hull": 0.7774243624999997
+    },
+    {
+      "material_id": "mp-1078595",
+      "formula": "H4W",
+      "formation_energy": -0.005380819000000514,
+      "volume_per_atom": 7.240384797126215,
+      "e_above_hull": 0.0
+    }
+  ]
+}
