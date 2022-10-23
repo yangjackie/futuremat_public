@@ -74,6 +74,56 @@ def structural_optimization_with_initial_magmom(retried=None, gamma_only=False):
     #    retried+=1
     #    structural_optimization_with_initial_magmom(retried=retried)
 
+def static_calculation_with_SOC():
+    logger = setup_logger(output_filename='soc.log')
+
+    structure = load_structure(logger)
+    structure.gamma_only = False
+
+    _default_bulk_optimisation_set = {'ADDGRID': True,
+                                      'AMIN': 0.01,
+                                      'IALGO': 38,
+                                      'ISMEAR': 0,
+                                      'ISPIN': 2,
+                                      'ISTART': 1,
+                                      'ISIF': 0,
+                                      'IBRION': -1,
+                                      'NSW': -1,
+                                      'ISYM': 0,
+                                      'LCHARG': False,
+                                      'LREAL': 'Auto',
+                                      'LVTOT': False,
+                                      'LWAVE': False,
+                                      # 'NPAR': 48,
+                                      'PREC': 'Normal',
+                                      'SIGMA': 0.05,
+                                      'ENCUT': 500,
+                                      'EDIFF': '1e-04',
+                                      'executable': 'vasp_ncl',
+                                      'LSORBIT': True}
+
+    default_bulk_optimisation_set = {key.lower(): value for key, value in _default_bulk_optimisation_set.items()}
+    default_bulk_optimisation_set.update(
+        {'Gamma_centered': True, 'NCORE': 28, 'ENCUT': 520, 'PREC': "ACCURATE", 'ispin': 2, 'IALGO': 38,'use_gw': True})
+
+    if not os.path.exists('./SOC'):
+        os.mkdir('./SOC')
+
+    os.chdir('./SOC')
+
+
+    logger.info("start equilibrium run ...")
+    vasp = Vasp(**default_bulk_optimisation_set)
+    vasp.set_crystal(structure)
+
+    try:
+        vasp.execute()
+    except:
+        pass
+
+    os.chdir('../')
+
+    logger.info("VASP terminated?: " + str(vasp.completed))
 
 def magmom_string_builder(structure):
     from core.internal.builders.crystal import map_to_pymatgen_Structure
@@ -655,6 +705,53 @@ def load_supercell_structure(supercell_matrix=[[2, 0, 0], [0, 2, 0], [0, 0, 2]])
     os.remove('./POSCAR_super')
     return supercell
 
+def rapid_quench_from_MD(part=0,batch_size=50):
+    from pymatgen.io.vasp.outputs import Vasprun
+    from core.utils.zipdir import ZipDir
+
+    vasprun = Vasprun('vasprun_prod.xml')
+    trajectory = vasprun.get_trajectory()
+    all_structures = [trajectory.get_structure(i) for i in range(len(trajectory.frac_coords))]
+
+    if (part + 1) * batch_size > len(all_structures):
+        raise Exception("over the length of the trajectory, quit")
+
+    for i in range(batch_size * part, batch_size * (part + 1)):
+        pwd = os.getcwd()
+        folder = 'frame_' + str(i)
+
+        if os.path.exists(pwd + '/' + folder + '.zip'): continue
+
+        try:
+            os.mkdir(folder)
+        except:
+            pass
+        os.chdir(pwd + '/' + folder)
+
+        this_structure = map_pymatgen_IStructure_to_crystal(all_structures[i])
+        this_structure.gamma_only = True  # DO NOT DELETE THIS!!!
+
+        optimisation_set = {'ISPIN': 1, 'PREC': "Normal", 'IALGO': 38, 'NPAR': 28, 'ENCUT': 300,  'ISIF':0, 'ibrion':2,
+                         'LCHARG': False, 'LWAVE': False, 'use_gw': True, 'Gamma_centered': True, 'MP_points': [1, 1, 1],
+                         'clean_after_success': True, 'LREAL': 'False', 'executable': 'vasp_gam', 'NSW':500}
+
+        vasp = Vasp(**optimisation_set)
+        vasp.set_crystal(this_structure)
+        vasp.execute()
+
+        files = ['CHG', 'CHGCAR', 'LOCPOT', 'EIGENVAL', 'IBZKPT', 'PCDAT', 'POTCAR', 'WAVECAR', 'DOSCAR',
+                 'OUTCAR', 'PROCAR', 'KPOINTS']
+        for f in files:
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+
+        os.chdir(pwd)
+
+        ZipDir(folder, folder + '.zip')
+        shutil.rmtree(folder, ignore_errors=True)
+
 
 def run_electronic_dos_for_md_trajectory(part=0, batch_size=20):
     # load all the production run xml file
@@ -766,6 +863,8 @@ if __name__ == "__main__":
     parser.add_argument("--electdyn", action='store_true')
     parser.add_argument("--part", type=int, default=0)
     parser.add_argument("--get_gap", action='store_true', default=0)
+    parser.add_argument("--quench", action='store_true')
+    parser.add_argument("--soc", action='store_true')
     args = parser.parse_args()
 
     if args.opt:
@@ -783,5 +882,11 @@ if __name__ == "__main__":
     if args.electdyn:
         run_electronic_dos_for_md_trajectory(part=args.part)
 
+    if args.quench:
+        rapid_quench_from_MD(part=args.part)
+
     if args.get_gap:
         get_dos_gap()
+
+    if args.soc:
+        static_calculation_with_SOC()

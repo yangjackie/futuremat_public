@@ -250,6 +250,56 @@ def all_data_parallel(db):
                 except:
                     pass
 
+def soc_energies(db):
+    s = SystemIterator()
+    systemIterator = iter(s)
+    for s in systemIterator:
+        cwd = os.getcwd()
+        row = None
+        try:
+            row = db.get(selection=[('uid', '=', s)])
+        except:
+            pass
+
+        try:
+            system = System(s)
+            __open_system_tar(system.name)
+        except:
+            logger.error(system.name + ' - tar ball not working, skip')
+            os.chdir(cwd)
+            continue
+
+        if row is not None:
+            system.kvp = copy.deepcopy(row.key_value_pairs)
+            system.data = copy.deepcopy(row.data)
+
+            if os.path.exists('./SOC'):
+                os.chdir('./SOC')
+                try:
+                    calculator = Vasp()
+                    calculator.check_convergence()
+                    if calculator.completed:
+                        system.atoms = [a for a in read_vasp_xml(index=-1)][-1]
+                        system.kvp['total_energy_soc'] = system.atoms.get_calculator().get_potential_energy()
+                        system.kvp['formation_energy_soc'] = formation_energy(system.atoms)
+                        logger.info(system.name + ' total energy: ' + str(system.kvp['total_energy_soc']) + ' eV/atom')
+                        logger.info(
+                            system.name + ' formation energy: ' + str(system.kvp['formation_energy_soc']) + ' eV/atom')
+                    else:
+                        logger.error(system.name + ' NOT CONVERGED!')
+                except Exception as e:
+                    logger.info(e)
+                    logger.info(system.name + ' formation energy: ' + str('NaN'))
+                os.chdir('../')
+
+                try:
+                    populate_db(db, system.atoms, system.kvp, system.data)
+                except:
+                    pass
+
+        os.chdir(cwd)
+        clear_system(system.name)
+
 
 def all_data(db):
     s = SystemIterator()
@@ -379,7 +429,7 @@ class DataCollector():
 
 def collect(db):
     errors = []
-    steps = [element_energy, all_data_parallel]
+    steps = [element_energy,soc_energies]
 
     for step in steps:
         try:

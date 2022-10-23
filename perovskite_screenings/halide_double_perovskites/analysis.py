@@ -39,8 +39,7 @@ A_site = ['Li', 'Na', 'K', 'Rb', 'Cs']
 X_site = ['F', 'Cl', 'Br', 'I']
 M_site_mono = ['Pd', 'Li', 'Na', 'K', 'Rb', 'Cs', 'Cu', 'Ag', 'Au', 'Hg', 'In', 'Tl']
 M_site_tri = ['Pd', 'Ir', 'Pr', 'Rh', 'Ru', 'La', 'Mo', 'Nd', 'Ni', 'Nb', 'Lu', 'Ce', 'Mn', 'Co', 'Cr', 'Dy', 'Er',
-              'Sc',
-              'Ta', "Tb", 'Eu', 'Y', 'Al', 'Gd', 'Ga', 'In', 'As', 'Sb', 'Bi', 'Fe', "Sb", "Sc", "Sm", "Ti",
+              'Sc', 'Ta', "Tb", 'Eu', 'Y', 'Al', 'Gd', 'Ga', 'In', 'As', 'Sb', 'Bi', 'Fe', "Sb", "Sc", "Sm", "Ti",
               "Tl", "Tm", "V", "Y", 'Au']
 
 M_site_mono_exclusive = [x for x in M_site_mono if x not in M_site_tri]
@@ -121,7 +120,6 @@ def geometric_fingerprint(crystal: Crystal):
     r_m = shannon_radii[chemistry['M_cation_mono']]["1"]["VI"]['r_ionic']
     r_mp = shannon_radii[chemistry['M_cation_tri']]["3"]["VI"]['r_ionic']
     r_x = shannon_radii[chemistry['X_anion']]["-1"]["VI"]['r_ionic']
-    print(chemistry['X_anion'], r_x)
     return chemistry, octahedral_factor(r_m, r_mp, r_x), octahedral_mismatch(r_m, r_mp,
                                                                              r_x), generalised_tolerance_factor(r_a,
                                                                                                                 r_m,
@@ -145,10 +143,23 @@ def generalised_tolerance_factor(r_a, r_m, r_mp, r_x):
     return nominator / denominator
 
 
-def formation_energy_landscape(db, uids, switch='sigma'):
-    data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [], 'tolerance_factors': [],
-                 'A_site_cation': [], 'sigma': []}
-    all_data_dict = {x: data_dict for x in X_site}
+def formation_energy_landscape(db, uids, switch='sigma', plot_anion='F'):
+    F_data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [],
+                   'tolerance_factors': [],
+                   'A_site_cation': [], 'sigma': [], 'system': []}
+    Cl_data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [],
+                    'tolerance_factors': [],
+                    'A_site_cation': [], 'sigma': [], 'system': []}
+    Br_data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [],
+                    'tolerance_factors': [],
+                    'A_site_cation': [], 'sigma': [], 'system': []}
+    I_data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [],
+                   'tolerance_factors': [],
+                   'A_site_cation': [], 'sigma': [], 'system': []}
+
+    all_data_dict = {'formation_energies': [], 'octahedral_factors': [], 'octahedral_mismatch': [],
+                   'tolerance_factors': [],
+                   'A_site_cation': [], 'sigma': [], 'system': []}
 
     if switch in ['A-site']:
         from perovskite_screenings.analysis import halide_C, halide_B, halide_A, tolerance_factor
@@ -202,18 +213,53 @@ def formation_energy_landscape(db, uids, switch='sigma'):
         if (formation_energy is not None) and (sigma is not None):
             chemistry, octahedral_factor, octahedral_mismatch, generalised_tolerance_factor = geometric_fingerprint(
                 crystal)
-            print(octahedral_factor, octahedral_mismatch, generalised_tolerance_factor)
-            all_data_dict[chemistry['X_anion']]['formation_energies'].append(formation_energy)
-            all_data_dict[chemistry['X_anion']]['sigma'].append(sigma)
-            all_data_dict[chemistry['X_anion']]['octahedral_factors'].append(octahedral_factor)
             if octahedral_factor >= octahedral_mismatch + 1 - math.sqrt(2):
                 __octahedral_mismatch = octahedral_mismatch
             else:
                 __octahedral_mismatch = -1
 
-            all_data_dict[chemistry['X_anion']]['octahedral_mismatch'].append(__octahedral_mismatch)
-            all_data_dict[chemistry['X_anion']]['tolerance_factors'].append(generalised_tolerance_factor)
-            all_data_dict[chemistry['X_anion']]["A_site_cation"].append(chemistry['A_cation'])
+            print(octahedral_factor, octahedral_mismatch, generalised_tolerance_factor)
+
+            all_data_dict['system'].append(uid.replace('dpv_', ''))
+            all_data_dict['formation_energies'].append(formation_energy)
+            all_data_dict['sigma'].append(sigma)
+            all_data_dict['octahedral_factors'].append(octahedral_factor)
+            all_data_dict['octahedral_mismatch'].append(__octahedral_mismatch)
+            all_data_dict['tolerance_factors'].append(generalised_tolerance_factor)
+            all_data_dict["A_site_cation"].append(chemistry['A_cation'])
+
+            if chemistry['X_anion'] == 'F':
+                F_data_dict['system'].append(uid.replace('dpv_', ''))
+                F_data_dict['formation_energies'].append(formation_energy)
+                F_data_dict['sigma'].append(sigma)
+                F_data_dict['octahedral_factors'].append(octahedral_factor)
+                F_data_dict['octahedral_mismatch'].append(__octahedral_mismatch)
+                F_data_dict['tolerance_factors'].append(generalised_tolerance_factor)
+                F_data_dict["A_site_cation"].append(chemistry['A_cation'])
+            elif chemistry['X_anion'] == 'Cl':
+                Cl_data_dict['system'].append(uid.replace('dpv_', ''))
+                Cl_data_dict['formation_energies'].append(formation_energy)
+                Cl_data_dict['sigma'].append(sigma)
+                Cl_data_dict['octahedral_factors'].append(octahedral_factor)
+                Cl_data_dict['octahedral_mismatch'].append(__octahedral_mismatch)
+                Cl_data_dict['tolerance_factors'].append(generalised_tolerance_factor)
+                Cl_data_dict["A_site_cation"].append(chemistry['A_cation'])
+            elif chemistry['X_anion'] == 'Br':
+                Br_data_dict['system'].append(uid.replace('dpv_', ''))
+                Br_data_dict['formation_energies'].append(formation_energy)
+                Br_data_dict['sigma'].append(sigma)
+                Br_data_dict['octahedral_factors'].append(octahedral_factor)
+                Br_data_dict['octahedral_mismatch'].append(__octahedral_mismatch)
+                Br_data_dict['tolerance_factors'].append(generalised_tolerance_factor)
+                Br_data_dict["A_site_cation"].append(chemistry['A_cation'])
+            elif chemistry['X_anion'] == 'I':
+                I_data_dict['system'].append(uid.replace('dpv_', ''))
+                I_data_dict['formation_energies'].append(formation_energy)
+                I_data_dict['sigma'].append(sigma)
+                I_data_dict['octahedral_factors'].append(octahedral_factor)
+                I_data_dict['octahedral_mismatch'].append(__octahedral_mismatch)
+                I_data_dict['tolerance_factors'].append(generalised_tolerance_factor)
+                I_data_dict["A_site_cation"].append(chemistry['A_cation'])
 
             if formation_energy < min_energy:
                 min_energy = formation_energy
@@ -228,33 +274,96 @@ def formation_energy_landscape(db, uids, switch='sigma'):
             if sigma < min_sigma:
                 sigma = min_sigma
 
-    for i, x in enumerate(X_site):
-        if i == 0:
-            marker = '^'
-        if i == 1:
-            marker = 's'
-        if i == 2:
-            marker = 'd'
-        if i == 3:
-            marker = 'p'
-        if switch == 'formation_energy':
-            plt.scatter(all_data_dict[x]['octahedral_factors'], all_data_dict[x]['tolerance_factors'], marker=marker,
-                        norm=mpl.colors.Normalize(vmin=min_energy * 1.1, vmax=max_energy * 1.1),
-                        c=all_data_dict[x]['formation_energies'], edgecolor=None, alpha=0.45, s=25,
-                        cmap=plt.get_cmap('RdYlGn'), label='X=' + x)
-        elif switch == 'octahedral_mismatch':
-            plt.scatter(all_data_dict[x]['octahedral_factors'], all_data_dict[x]['tolerance_factors'], marker=marker,
-                        norm=mpl.colors.Normalize(vmin=min_oct_mismatch * 1.1, vmax=max_oct_mismatch * 1.1),
-                        c=all_data_dict[x]['octahedral_mismatch'], edgecolor=None, alpha=0.45, s=25,
-                        cmap=plt.get_cmap('RdYlGn'), label='X=' + x)
-        elif switch == 'sigma':
-            plt.scatter(all_data_dict[x]['octahedral_factors'], all_data_dict[x]['tolerance_factors'], marker=marker,
-                        norm=mpl.colors.Normalize(vmin=0.0, vmax=max_sigma * 1.1),
-                        c=all_data_dict[x]['sigma'], edgecolor=None, alpha=0.6, s=45,
-                        cmap=plt.get_cmap('RdBu'), label='X=' + x)
-        elif switch == 'A-site':
+    #for i, x in enumerate(X_site):
+    #    if i == 0:
+    #        marker = '^'
+    #    if i == 1:
+    #        marker = 's'
+    #    if i == 2:
+    #        marker = 'd'
+    #    if i == 3:
+    #        marker = 'p'
+    if switch == 'formation_energy':
+        plt.scatter(F_data_dict['octahedral_factors'], F_data_dict['tolerance_factors'], marker='^',
+                    norm=mpl.colors.Normalize(vmin=min_energy * 1.1, vmax=max_energy * 1.1),
+                    c=F_data_dict['formation_energies'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=F')
+        plt.scatter(Cl_data_dict['octahedral_factors'], Cl_data_dict['tolerance_factors'], marker='s',
+                    norm=mpl.colors.Normalize(vmin=min_energy * 1.1, vmax=max_energy * 1.1),
+                    c=Cl_data_dict['formation_energies'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=Cl')
+        plt.scatter(Br_data_dict['octahedral_factors'], Br_data_dict['tolerance_factors'], marker='d',
+                    norm=mpl.colors.Normalize(vmin=min_energy * 1.1, vmax=max_energy * 1.1),
+                    c=Br_data_dict['formation_energies'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=Br')
+        plt.scatter(I_data_dict['octahedral_factors'], I_data_dict['tolerance_factors'], marker='p',
+                    norm=mpl.colors.Normalize(vmin=min_energy * 1.1, vmax=max_energy * 1.1),
+                    c=I_data_dict['formation_energies'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=I')
+    elif switch == 'octahedral_mismatch':
+        plt.scatter(F_data_dict['octahedral_factors'], F_data_dict['tolerance_factors'], marker='^',
+                    norm=mpl.colors.Normalize(vmin=0.0, vmax=0.5),
+                    c=F_data_dict['octahedral_mismatch'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=F')
+        plt.scatter(Cl_data_dict['octahedral_factors'], Cl_data_dict['tolerance_factors'], marker='s',
+                    norm=mpl.colors.Normalize(vmin=0.0, vmax=0.5),
+                    c=Cl_data_dict['octahedral_mismatch'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=Cl')
+        plt.scatter(Br_data_dict['octahedral_factors'], Br_data_dict['tolerance_factors'], marker='d',
+                    norm=mpl.colors.Normalize(vmin=0.0, vmax=0.5),
+                    c=Br_data_dict['octahedral_mismatch'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=Br')
+        plt.scatter(I_data_dict['octahedral_factors'], I_data_dict['tolerance_factors'], marker='p',
+                    norm=mpl.colors.Normalize(vmin=0.0, vmax=0.5),
+                    c=I_data_dict['octahedral_mismatch'], edgecolor=None, alpha=0.45, s=45,
+                    cmap=plt.get_cmap('RdYlGn'), label='X=I')
+    elif switch == 'sigma':
+        if (plot_anion is not None) and (plot_anion=="F"):
+            plt.scatter(F_data_dict['octahedral_factors'], F_data_dict['tolerance_factors'], marker='^',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=F_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('Blues_r'), label='X=F')
+        elif (plot_anion is None):
+            plt.scatter(F_data_dict['octahedral_factors'], F_data_dict['tolerance_factors'], marker='^',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=F_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('RdBu'), label='X=F')
+
+        if (plot_anion is not None) and (plot_anion == "Cl"):
+            plt.scatter(Cl_data_dict['octahedral_factors'], Cl_data_dict['tolerance_factors'], marker='s',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=Cl_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('Reds_r'), label='X=Cl')
+        elif (plot_anion is None):
+            plt.scatter(Cl_data_dict['octahedral_factors'], Cl_data_dict['tolerance_factors'], marker='s',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=Cl_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('RdBu'), label='X=Cl')
+
+        if (plot_anion is not None) and (plot_anion == "Br"):
+            plt.scatter(Br_data_dict['octahedral_factors'], Br_data_dict['tolerance_factors'], marker='d',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=Br_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('YlOrBr_r'), label='X=Br')
+        elif (plot_anion is None):
+            plt.scatter(Br_data_dict['octahedral_factors'], Br_data_dict['tolerance_factors'], marker='d',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=Br_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('RdBu'), label='X=Br')
+
+        if (plot_anion is not None) and (plot_anion == "I"):
+            plt.scatter(I_data_dict['octahedral_factors'], I_data_dict['tolerance_factors'], marker='p',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=I_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('Greens_r'), label='X=I')
+        elif (plot_anion is None):
+            plt.scatter(I_data_dict['octahedral_factors'], I_data_dict['tolerance_factors'], marker='p',
+                        norm=mpl.colors.Normalize(vmin=0.0, vmax=2.1),
+                        c=I_data_dict['sigma'], edgecolor=None, alpha=0.75, s=45,
+                        cmap=plt.get_cmap('RdBu'), label='X=I')
+    elif switch == 'A-site':
             colors = []
-            for a in all_data_dict[x]['A_site_cation']:
+            for a in all_data_dict['A_site_cation']:
                 if a == 'Li':
                     colors.append('#344d90')
                 elif a == 'Na':
@@ -265,7 +374,7 @@ def formation_energy_landscape(db, uids, switch='sigma'):
                     colors.append("#ffbebd")
                 elif a == 'Cs':
                     colors.append("#CB0000")
-            plt.scatter(all_data_dict[x]['octahedral_factors'], all_data_dict[x]['tolerance_factors'], marker='s',
+            plt.scatter(all_data_dict['octahedral_factors'], all_data_dict['tolerance_factors'], marker='s',
                         c=colors, edgecolor=None, alpha=0.25, s=25)
 
 
@@ -321,13 +430,13 @@ def formation_energy_landscape(db, uids, switch='sigma'):
 
     plt.tight_layout()
     if switch == 'A-site':
-        name = "formation_energy_landscape_dpv_A.pdf"
+        name = "formation_energy_landscape_dpv_A_new.pdf"
     elif switch == 'formation_energy':
-        name = "formation_energy_landscape_dpv.pdf"
+        name = "formation_energy_landscape_dpv_new.pdf"
     elif switch == 'octahedral_mismatch':
-        name = "formation_energy_landscape_dpv_delta_mu.pdf"
+        name = "formation_energy_landscape_dpv_delta_mu_new.pdf"
     elif switch == 'sigma':
-        name = "sigma_geometry_landscape.pdf"
+        name = "sigma_geometry_landscape_new.pdf"
     plt.savefig(name)
 
 
@@ -561,8 +670,9 @@ if __name__ == "__main__":
                 pass
     """
 
-    #formation_energy_landscape(db, all_uids, switch='sigma')
-    sigma_landscape(db, all_uids, x='band_gap')
+    formation_energy_landscape(db, all_uids, switch='sigma',plot_anion='I')
+
+    #sigma_landscape(db, all_uids, x='band_gap')
 
     #get_band_gap_energy_dict()
 
